@@ -30,7 +30,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "Caps Word/Tap";
             #binding-cells = <2>;
-            bindings = <&caps_word>, <&kp>;
+            bindings = <&pcw>, <&kp>;
 
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
@@ -58,6 +58,12 @@
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
+        };
+
+        pcw: prog_caps_word {
+            compatible = "zmk,behavior-caps-word";
+            #binding-cells = <0>;
+            continue-list = <UNDERSCORE DOT BACKSPACE DELETE>;
         };
     };
 
@@ -97,10 +103,10 @@
         adjust {
             display-name = "BT & Media";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none       &kp C_BRI_DN  &kp C_BRI_UP  &none  &none
-&none         &none         &none         &none         &none           &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none  &none
-&none         &none         &none         &none         &bt BT_CLR      &none       &none         &none         &none  &none
-                            &none         &trans        &none           &none       &trans        &none
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &none       &kp C_BRI_DN  &kp C_BRI_UP  &none  &none
+&none         &none         &none         &none         &bt BT_CLR        &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none  &none
+&none         &none         &none         &none         &bt BT_CLR_ALL    &none       &none         &none         &none  &none
+                            &none         &trans        &none             &none       &trans        &none
             >;
         };
     };
