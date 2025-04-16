@@ -11,8 +11,8 @@
             bindings = <&kp>, <&kp>;
 
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <250>;
         };
 
         tlt: thumb_layer_tap {
@@ -22,8 +22,8 @@
             bindings = <&mo>, <&kp>;
 
             flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <250>;
         };
 
         tcwt: thumb_caps_word_tap {
@@ -32,8 +32,8 @@
             #binding-cells = <2>;
             bindings = <&pcw>, <&kp>;
 
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <250>;
             flavor = "tap-preferred";
         };
 
@@ -44,9 +44,9 @@
             bindings = <&kp>, <&kp>;
 
             flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <125>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <250>;
+            require-prior-idle-ms = <150>;
         };
 
         tst: thumb_shift_tap {
@@ -56,14 +56,15 @@
             bindings = <&kp>, <&kp>;
 
             flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <250>;
         };
 
         pcw: prog_caps_word {
             compatible = "zmk,behavior-caps-word";
             #binding-cells = <0>;
             continue-list = <UNDERSCORE DOT BACKSPACE DELETE>;
+            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -86,7 +87,7 @@
 &kp F1        &kp F2         &kp F3         &kp F4        &none    &kp HOME  &kp PG_UP       &kp PG_DN            &kp END           &kp INS
 &hmt LALT F5  &hmt LCTRL F6  &hmt LSHFT F7  &hmt LGUI F8  &none    &kp LEFT  &hmt RGUI DOWN  &hmt RSHFT UP_ARROW  &hmt RCTRL RIGHT  &hmt RALT PSCRN
 &kp F9        &kp F10        &kp F11        &kp F12       &none    &none     &none           &none                &none             &none
-                             &none          &trans        &to 0    &to 1     &trans          &none
+                             &none          &trans        &none    &none     &trans          &none
             >;
         };
 
@@ -96,18 +97,27 @@
 &kp EXCL        &kp AT           &kp HASH         &kp DLLR        &kp PRCNT    &kp KP_DIVIDE    &kp KP_N7        &kp KP_N8         &kp KP_N9         &kp KP_MINUS
 &hmt LALT LPAR  &hmt LCTRL RPAR  &hmt LSHFT LBKT  &hmt LGUI RBKT  &kp SQT      &kp KP_MULTIPLY  &hmt RGUI KP_N4  &hmt RSHFT KP_N5  &hmt RCTRL KP_N6  &hmt RALT KP_PLUS
 &kp GRAVE       &kp CARET        &kp AMPS         &kp BSLH        &kp UNDER    &kp KP_N0        &kp KP_N1        &kp KP_N2         &kp KP_N3         &kp EQUAL
-                                 &none            &trans          &to 2        &to 0            &trans           &none
+                                 &none            &trans          &none        &none            &trans           &none
             >;
         };
 
         adjust {
             display-name = "BT & Media";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &none       &kp C_BRI_DN  &kp C_BRI_UP  &none  &none
-&none         &none         &none         &none         &bt BT_CLR        &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none  &none
-&none         &none         &none         &none         &bt BT_CLR_ALL    &none       &none         &none         &none  &none
-                            &none         &trans        &none             &none       &trans        &none
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none       &kp C_BRI_DN  &kp C_BRI_UP  &none  &none
+&none         &none         &none         &none         &none           &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none  &none
+&none         &none         &none         &none         &bt BT_CLR      &none       &none         &none         &none  &none
+                            &none         &trans        &none           &none       &trans        &none
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
