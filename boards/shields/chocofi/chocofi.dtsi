@@ -3,6 +3,7 @@
 / {
     chosen {
         zmk,physical-layout = &physical_layout0;
+        zmk,kscan = &kscan
     };
 
     physical_layout0: physical_layout_0 {
@@ -12,7 +13,7 @@
         transform = <&default_transform>;
     };
 
-    kscan0: kscan {
+    kscan: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
         wakeup-source;
