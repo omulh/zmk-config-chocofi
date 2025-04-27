@@ -1,32 +1,38 @@
-if SHIELD_CHOCOFI_LEFT
+if SHIELD_CHOCOFI_DONGLE
 
-# Name must be less than 16 characters long
+# Name of the BT device
+# (must be less than 16 characters long)
 config ZMK_KEYBOARD_NAME
     default "Chocofi"
 
-# This side as central
+# Dongle as the central part
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 # Number of peripherals to connect to the central
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-    default 1
+    default 2
 
 # Maximum simultaneous BT connections
 # (incl. peripherals and host profiles)
 config BT_MAX_CONN
-    default 4
+    default 5
 
 # Maximum paired BT devices
 config BT_MAX_PAIRED
-    default 4
+    default 5
+
+endif
+
+if SHIELD_CHOCOFI_DONGLE || SHIELD_CHOCOFI_LEFT || SHIELD_CHOCOFI_RIGHT
+
+# Enable split support
+config ZMK_SPLIT
+    default y
 
 endif
 
 if SHIELD_CHOCOFI_LEFT || SHIELD_CHOCOFI_RIGHT
-
-config ZMK_SPLIT
-    default y
 
 # Enable deep sleep support
 config ZMK_SLEEP
