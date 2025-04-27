@@ -1,4 +1,4 @@
-#include "chocofi.dtsi"
+#include "chocofi-kscan.dtsi"
 
 &kscan {
     col-gpios
