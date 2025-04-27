@@ -6,7 +6,7 @@
     behaviors {
         tmt: thumb_mod_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "Mod/Tap";
+            display-name = "Mod/Tap";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
@@ -17,7 +17,7 @@
 
         tlt: thumb_layer_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "Layer/Tap";
+            display-name = "Layer/Tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
 
@@ -28,7 +28,7 @@
 
         tcwt: thumb_caps_word_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "Caps Word/Tap";
+            display-name = "Caps Word/Tap";
             #binding-cells = <2>;
             bindings = <&pcw>, <&kp>;
 
@@ -39,7 +39,7 @@
 
         hmt: homerow_mod_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "Homerow Mod/Tap";
+            display-name = "Homerow Mod/Tap";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
@@ -51,7 +51,7 @@
 
         tst: thumb_shift_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "Shift/Tap";
+            display-name = "Shift/Tap";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
