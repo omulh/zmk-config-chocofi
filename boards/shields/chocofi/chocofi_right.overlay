@@ -1,5 +1,5 @@
-#include "chocofi-kscan.dtsi"
-#include "chocofi-transform.dtsi"
+#include "chocofi_kscan.dtsi"
+#include "chocofi_transform.dtsi"
 
 &kscan {
     col-gpios
