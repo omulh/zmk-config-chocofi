@@ -31,11 +31,3 @@ config ZMK_SPLIT
     default y
 
 endif
-
-if SHIELD_CHOCOFI_LEFT || SHIELD_CHOCOFI_RIGHT
-
-# Enable deep sleep support
-config ZMK_SLEEP
-    default y
-
-endif
