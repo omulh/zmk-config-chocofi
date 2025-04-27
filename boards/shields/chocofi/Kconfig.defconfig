@@ -28,4 +28,11 @@ if SHIELD_CHOCOFI_LEFT || SHIELD_CHOCOFI_RIGHT
 config ZMK_SPLIT
     default y
 
+# Enable deep sleep support
+config ZMK_SLEEP
+    default y
+
+config ZMK_IDLE_SLEEP_TIMEOUT
+    default 60000
+
 endif
