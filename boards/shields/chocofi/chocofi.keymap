@@ -129,18 +129,18 @@
             compatible = "zmk,behavior-input-two-axis";
             label = "Mouse move fast acceleration";
             #binding-cells = <1>;
-            x-input-code = <INPUT_REL_X>;
-            y-input-code = <INPUT_REL_Y>;
-            time-to-max-speed-ms = <50>;
+            x-input-code = <0>;
+            y-input-code = <1>;
+            time-to-max-speed-ms = <0>;
         };
 
         msc_fst: msc_fast {
             compatible = "zmk,behavior-input-two-axis";
             label = "Mouse scroll fast acceleration";
             #binding-cells = <1>;
-            x-input-code = <INPUT_REL_HWHEEL>;
-            y-input-code = <INPUT_REL_WHEEL>;
-            time-to-max-speed-ms = <50>;
+            x-input-code = <6>;
+            y-input-code = <8>;
+            time-to-max-speed-ms = <0>;
         };
     };
 
