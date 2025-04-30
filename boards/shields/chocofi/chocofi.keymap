@@ -69,68 +69,60 @@
             mods = <(MOD_LSFT)>;
         };
 
-        mmmvl: morph_mmv_left {
-            compatible = "zmk,behavior-mod-morph";
-            display-name = "Morph mouse move left";
+        mmvl_td: mmv_left_td {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "Mouse move left tap tance";
             #binding-cells = <0>;
-            bindings = <&mmv MOVE_X(-450)>, <&mmv MOVE_X(-900)>;
-            mods = <(MOD_LSFT)>;
+            bindings = <&mmv MOVE_X(-330)>, <&mmv MOVE_X(-1000)>;
         };
 
-        mmmvr: morph_mmv_right {
-            compatible = "zmk,behavior-mod-morph";
-            display-name = "Morph mouse move right";
+        mmvr_td: mmv_right_td {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "Mouse move right tap tance";
             #binding-cells = <0>;
-            bindings = <&mmv MOVE_X(450)>, <&mmv MOVE_X(900)>;
-            mods = <(MOD_LSFT)>;
+            bindings = <&mmv MOVE_X(330)>, <&mmv MOVE_X(1000)>;
         };
 
-        mmmvu: morph_mmv_up {
-            compatible = "zmk,behavior-mod-morph";
-            display-name = "Morph mose move up";
+        mmvu_td: mmv_up_td {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "Mouse move up tap tance";
             #binding-cells = <0>;
-            bindings = <&mmv MOVE_Y(-450)>, <&mmv MOVE_Y(-900)>;
-            mods = <(MOD_LSFT)>;
+            bindings = <&mmv MOVE_Y(-330)>, <&mmv MOVE_Y(-1000)>;
         };
 
-        mmmvd: morph_mmv_down {
-            compatible = "zmk,behavior-mod-morph";
-            display-name = "Morph muose move down";
+        mmvd_td: mmv_down_td {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "Mouse move down tap tance";
             #binding-cells = <0>;
-            bindings = <&mmv MOVE_Y(450)>, <&mmv MOVE_Y(900)>;
-            mods = <(MOD_LSFT)>;
+            bindings = <&mmv MOVE_Y(330)>, <&mmv MOVE_Y(1000)>;
         };
-		
-		mmscl: morph_msc_left {
-            compatible = "zmk,behavior-mod-morph";
-            display-name = "Morph mouse scroll left";
+
+        mscl_td: msc_left_td {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "Mouse scroll left tap tance";
             #binding-cells = <0>;
             bindings = <&msc MOVE_X(-15)>, <&msc MOVE_X(-30)>;
-            mods = <(MOD_LSFT)>;
         };
 
-        mmscr: morph_msc_right {
-            compatible = "zmk,behavior-mod-morph";
-            display-name = "Morph mouse scroll right";
+        mscr_td: msc_right_td {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "Mouse scroll right tap tance";
             #binding-cells = <0>;
             bindings = <&msc MOVE_X(15)>, <&msc MOVE_X(30)>;
-            mods = <(MOD_LSFT)>;
         };
 
-        mmscd: morph_msc_down {
-            compatible = "zmk,behavior-mod-morph";
-            display-name = "Morph muose scroll down";
+        mscd_td: msc_down_td {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "Mouse scroll down tap tance";
             #binding-cells = <0>;
             bindings = <&msc MOVE_Y(-15)>, <&msc MOVE_Y(-30)>;
-            mods = <(MOD_LSFT)>;
         };
 
-        mmscu: morph_msc_up {
-            compatible = "zmk,behavior-mod-morph";
-            display-name = "Morph mose scroll up";
+        mscu_td: msc_up_td {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "Mouse scroll up tap tance";
             #binding-cells = <0>;
             bindings = <&msc MOVE_Y(15)>, <&msc MOVE_Y(30)>;
-            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -198,9 +190,9 @@
         adjust {
             display-name = "Mouse & Fn";
             bindings = <
-&kp F1  &kp F2         &kp F3         &kp F4         &none    &mkp MB5  &mkp LCLK  &mmmvu  &mkp RCLK  &mkp MCLK
-&kp F5  &hmt LCTRL F6  &hmt LSHFT F7  &hmt LGUI F8   &none    &mmv MB4  &mmmvl     &mmmvd  &mmmvr     &none
-&kp F9  &kp F10        &kp F11        &hmt LALT F12  &none    &mmscl    &mmscd     &mmscu  &mmscr     &none
+&kp F1  &kp F2         &kp F3         &kp F4         &none    &mkp MB5  &mkp LCLK  &mmvu_td  &mkp RCLK  &mkp MCLK
+&kp F5  &hmt LCTRL F6  &hmt LSHFT F7  &hmt LGUI F8   &none    &mmv MB4  &mmvl_td   &mmvd_td  &mmvr_td   &none
+&kp F9  &kp F10        &kp F11        &hmt LALT F12  &none    &mscl_td  &mscd_td   &mscu_td  &mscr_td   &none
                        &none          &none          &none    &trans    &none      &none
             >;
         };
