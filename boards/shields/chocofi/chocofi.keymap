@@ -73,7 +73,7 @@
             compatible = "zmk,behavior-mod-morph";
             display-name = "Morph mouse move left";
             #binding-cells = <0>;
-            bindings = <&mmv MOVE_X(-500)>, <&mmv MOVE_X(-750)>;
+            bindings = <&mmv MOVE_X(-450)>, <&mmv MOVE_X(-900)>;
             mods = <(MOD_LSFT)>;
         };
 
@@ -81,15 +81,7 @@
             compatible = "zmk,behavior-mod-morph";
             display-name = "Morph mouse move right";
             #binding-cells = <0>;
-            bindings = <&mmv MOVE_X(500)>, <&mmv MOVE_X(750)>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mmmvd: morph_mmv_down {
-            compatible = "zmk,behavior-mod-morph";
-            display-name = "Morph muose move down";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_Y(-500)>, <&mmv MOVE_Y(-750)>;
+            bindings = <&mmv MOVE_X(450)>, <&mmv MOVE_X(900)>;
             mods = <(MOD_LSFT)>;
         };
 
@@ -97,7 +89,15 @@
             compatible = "zmk,behavior-mod-morph";
             display-name = "Morph mose move up";
             #binding-cells = <0>;
-            bindings = <&mmv MOVE_Y(500)>, <&mmv MOVE_Y(750)>;
+            bindings = <&mmv MOVE_Y(-450)>, <&mmv MOVE_Y(-900)>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mmmvd: morph_mmv_down {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Morph muose move down";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_Y(450)>, <&mmv MOVE_Y(900)>;
             mods = <(MOD_LSFT)>;
         };
 		
@@ -105,7 +105,7 @@
             compatible = "zmk,behavior-mod-morph";
             display-name = "Morph mouse scroll left";
             #binding-cells = <0>;
-            bindings = <&msc MOVE_X(-10)>, <&msc MOVE_X(-20)>;
+            bindings = <&msc MOVE_X(-15)>, <&msc MOVE_X(-30)>;
             mods = <(MOD_LSFT)>;
         };
 
@@ -113,7 +113,7 @@
             compatible = "zmk,behavior-mod-morph";
             display-name = "Morph mouse scroll right";
             #binding-cells = <0>;
-            bindings = <&msc MOVE_X(10)>, <&msc MOVE_X(20)>;
+            bindings = <&msc MOVE_X(15)>, <&msc MOVE_X(30)>;
             mods = <(MOD_LSFT)>;
         };
 
@@ -121,7 +121,7 @@
             compatible = "zmk,behavior-mod-morph";
             display-name = "Morph muose scroll down";
             #binding-cells = <0>;
-            bindings = <&msc MOVE_Y(-10)>, <&msc MOVE_Y(-20)>;
+            bindings = <&msc MOVE_Y(-15)>, <&msc MOVE_Y(-30)>;
             mods = <(MOD_LSFT)>;
         };
 
@@ -129,7 +129,7 @@
             compatible = "zmk,behavior-mod-morph";
             display-name = "Morph mose scroll up";
             #binding-cells = <0>;
-            bindings = <&msc MOVE_Y(10)>, <&msc MOVE_Y(20)>;
+            bindings = <&msc MOVE_Y(15)>, <&msc MOVE_Y(30)>;
             mods = <(MOD_LSFT)>;
         };
     };
