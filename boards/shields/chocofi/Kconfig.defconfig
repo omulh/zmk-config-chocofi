@@ -30,4 +30,8 @@ if SHIELD_CHOCOFI_DONGLE || SHIELD_CHOCOFI_LEFT || SHIELD_CHOCOFI_RIGHT
 config ZMK_SPLIT
     default y
 
+# Enable pointing/mouse functionality
+config ZMK_POINTING
+    default y
+
 endif
