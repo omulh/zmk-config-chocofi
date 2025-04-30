@@ -158,10 +158,6 @@
             y-input-code = <INPUT_REL_WHEEL>;
             time-to-max-speed-ms = <0>;
         };
-
-        &mmv { time-to-max-speed-ms = <250>; };
-
-        &msc { time-to-max-speed-ms = <250>; };
     };
 
     combos {
