@@ -68,6 +68,70 @@
             continue-list = <UNDERSCORE DOT BACKSPACE DELETE>;
             mods = <(MOD_LSFT)>;
         };
+
+        mmmvl: morph_mmv_left {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Morph mouse move left";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_X(-500)>, <&mmv MOVE_X(-750)>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mmmvr: morph_mmv_right {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Morph mouse move right";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_X(500)>, <&mmv MOVE_X(750)>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mmmvd: morph_mmv_down {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Morph muose move down";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_Y(-500)>, <&mmv MOVE_Y(-750)>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mmmvu: morph_mmv_up {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Morph mose move up";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_Y(500)>, <&mmv MOVE_Y(750)>;
+            mods = <(MOD_LSFT)>;
+        };
+		
+		mmscl: morph_msc_left {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Morph mouse scroll left";
+            #binding-cells = <0>;
+            bindings = <&msc MOVE_X(-10)>, <&msc MOVE_X(-20)>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mmscr: morph_msc_right {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Morph mouse scroll right";
+            #binding-cells = <0>;
+            bindings = <&msc MOVE_X(10)>, <&msc MOVE_X(20)>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mmscd: morph_msc_down {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Morph muose scroll down";
+            #binding-cells = <0>;
+            bindings = <&msc MOVE_Y(-10)>, <&msc MOVE_Y(-20)>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mmscu: morph_msc_up {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Morph mose scroll up";
+            #binding-cells = <0>;
+            bindings = <&msc MOVE_Y(10)>, <&msc MOVE_Y(20)>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     combos {
@@ -114,10 +178,10 @@
         lower {
             display-name = "Num & Sym";
             bindings = <
-&kp EXCL   &kp AT           &kp HASH          &kp DLLR                 &kp PRCNT            &kp KP_DIVIDE    &kp N7  &kp N8  &kp N9  &kp KP_MINUS
-&kp CARET  &hmt LCTRL AMPS  &hmt LSHFT STAR   &hmt LGUI LPAR           &kp RPAR             &kp KP_MULTIPLY  &kp N4  &kp N5  &kp N6  &kp KP_PLUS
-&kp LG(L)  &kp LS(LG(END))  &kp LS(LG(HOME))  &hmt LALT LS(LG(PG_DN))  &kp LS(LG(PG_UP))    &kp N0           &kp N1  &kp N2  &kp N3  &kp DOT
-                            &none             &trans                   &none                &none            &none   &none
+&kp EXCL   &kp AT           &kp HASH          &kp DLLR                 &kp PRCNT            &kp KP_DIVIDE    &kp N7        &kp N8         &kp N9         &kp KP_MINUS
+&kp CARET  &hmt LCTRL AMPS  &hmt LSHFT STAR   &hmt LGUI LPAR           &kp RPAR             &kp KP_MULTIPLY  &hmt RGUI N4  &hmt RSHFT N5  &hmt RCTRL N6  &kp KP_PLUS
+&kp LG(L)  &kp LS(LG(END))  &kp LS(LG(HOME))  &hmt LALT LS(LG(PG_DN))  &kp LS(LG(PG_UP))    &kp N0           &hmt RALT N1  &kp N2         &kp N3         &kp DOT
+                            &none             &trans                   &none                &none            &none         &none
             >;
         };
 
@@ -134,10 +198,10 @@
         adjust {
             display-name = "Mouse & Fn";
             bindings = <
-&kp F1  &kp F2   &kp F3   &kp F4   &none    &mkp LCLK       &mkp MCLK       &mkp RCLK     &mkp MB4         &mkp MB5
-&kp F5  &kp F6   &kp F7   &kp F8   &none    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
-&kp F9  &kp F10  &kp F11  &kp F12  &none    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
-                 &none    &none    &none    &trans          &none           &none
+&kp F1  &kp F2         &kp F3         &kp F4         &none    &mkp MB5  &mkp LCLK  &mmmvu  &mkp RCLK  &mkp MCLK
+&kp F5  &hmt LCTRL F6  &hmt LSHFT F7  &hmt LGUI F8   &none    &mmv MB4  &mmmvl     &mmmvd  &mmmvr     &none
+&kp F9  &kp F10        &kp F11        &hmt LALT F12  &none    &mmscl    &mmscd     &mmscu  &mmscr     &none
+                       &none          &none          &none    &trans    &none      &none
             >;
         };
     };
