@@ -124,24 +124,6 @@
             #binding-cells = <0>;
             bindings = <&msc_fst MOVE_Y(10)>, <&msc MOVE_Y(30)>;
         };
-
-        mmv_fst: mmv_fast {
-            compatible = "zmk,behavior-input-two-axis";
-            label = "Mouse move fast acceleration";
-            #binding-cells = <1>;
-            x-input-code = <0>;
-            y-input-code = <1>;
-            time-to-max-speed-ms = <50>;
-        };
-
-        msc_fst: msc_fast {
-            compatible = "zmk,behavior-input-two-axis";
-            label = "Mouse scroll fast acceleration";
-            #binding-cells = <1>;
-            x-input-code = <6>;
-            y-input-code = <8>;
-            time-to-max-speed-ms = <50>;
-        };
     };
 
     combos {
