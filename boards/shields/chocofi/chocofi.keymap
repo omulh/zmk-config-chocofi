@@ -69,56 +69,56 @@
             mods = <(MOD_LSFT)>;
         };
 
-        mmvl_td: mmv_left_td {
+        mml_td: mouse_move_left_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Mouse move left tap tance";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_X(-330)>, <&mmv MOVE_X(-1000)>;
         };
 
-        mmvr_td: mmv_right_td {
+        mmr_td: mouse_move_right_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Mouse move right tap tance";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_X(330)>, <&mmv MOVE_X(1000)>;
         };
 
-        mmvu_td: mmv_up_td {
+        mmu_td: mouse_move_up_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Mouse move up tap tance";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_Y(-330)>, <&mmv MOVE_Y(-1000)>;
         };
 
-        mmvd_td: mmv_down_td {
+        mmd_td: mouse_move_down_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Mouse move down tap tance";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_Y(330)>, <&mmv MOVE_Y(1000)>;
         };
 
-        mscl_td: msc_left_td {
+        msl_td: mouse_scroll_left_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Mouse scroll left tap tance";
             #binding-cells = <0>;
             bindings = <&msc MOVE_X(-10)>, <&msc MOVE_X(-30)>;
         };
 
-        mscr_td: msc_right_td {
+        msr_td: mouse_scroll_right_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Mouse scroll right tap tance";
             #binding-cells = <0>;
             bindings = <&msc MOVE_X(10)>, <&msc MOVE_X(30)>;
         };
 
-        mscd_td: msc_down_td {
+        msd_td: mouse_scroll_down_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Mouse scroll down tap tance";
             #binding-cells = <0>;
             bindings = <&msc MOVE_Y(-10)>, <&msc MOVE_Y(-30)>;
         };
 
-        mscu_td: msc_up_td {
+        msu_td: mouse_scroll_up_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Mouse scroll up tap tance";
             #binding-cells = <0>;
@@ -190,9 +190,9 @@
         adjust {
             display-name = "Mouse & Fn";
             bindings = <
-&kp F1  &kp F2         &kp F3         &kp F4         &none    &mkp MB5  &mkp LCLK  &mmvu_td  &mkp RCLK  &mkp MCLK
-&kp F5  &hmt LCTRL F6  &hmt LSHFT F7  &hmt LGUI F8   &none    &mmv MB4  &mmvl_td   &mmvd_td  &mmvr_td   &none
-&kp F9  &kp F10        &kp F11        &hmt LALT F12  &none    &mscl_td  &mscd_td   &mscu_td  &mscr_td   &none
+&kp F1  &kp F2         &kp F3         &kp F4         &none    &mkp MB4  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB5
+&kp F5  &hmt LCTRL F6  &hmt LSHFT F7  &hmt LGUI F8   &none    &mml_td   &mmd_td    &mmu_td    &mmr_td    &none
+&kp F9  &kp F10        &kp F11        &hmt LALT F12  &none    &msl_td   &msd_td    &msu_td    &msr_td    &none
                        &none          &none          &none    &trans    &none      &none
             >;
         };
