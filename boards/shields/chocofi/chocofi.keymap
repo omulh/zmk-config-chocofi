@@ -131,7 +131,7 @@
             #binding-cells = <1>;
             x-input-code = <0>;
             y-input-code = <1>;
-            time-to-max-speed-ms = <0>;
+            time-to-max-speed-ms = <50>;
         };
 
         msc_fst: msc_fast {
@@ -140,7 +140,7 @@
             #binding-cells = <1>;
             x-input-code = <6>;
             y-input-code = <8>;
-            time-to-max-speed-ms = <0>;
+            time-to-max-speed-ms = <50>;
         };
     };
 
