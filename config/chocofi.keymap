@@ -14,7 +14,7 @@
     behaviors {
         tp_ht: tap_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            display-name = "Mod/Tap";
+            display-name = "Tap-preferred Hold/Tap";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
@@ -23,9 +23,9 @@
             quick-tap-ms = <200>;
         };
 
-        th_lt: thumb_layer_tap {
+        tl_ht: thumb_layer_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            display-name = "Layer/Tap";
+            display-name = "Thumb Layer Hold/Tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
 
@@ -36,7 +36,7 @@
 
         lhm_ht: left_homerow_mod_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            display-name = "Homerow Mod/Tap";
+            display-name = "Left Homerow Mod Hold/Tap";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
@@ -50,7 +50,7 @@
 
         rhm_ht: right_homerow_mod_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            display-name = "Homerow Mod/Tap";
+            display-name = "Right Homerow Mod Hold/Tap";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
@@ -64,7 +64,7 @@
 
         ts_ht: thumb_shift_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            display-name = "Shift/Tap";
+            display-name = "Thumb Shift Hold/Tap";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
@@ -75,63 +75,63 @@
 
         mml_td: mouse_move_left_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse move left tap tance";
+            display-name = "Mouse Move Left Tap Dance";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_X(-330)>, <&mmv MOVE_X(-1000)>;
         };
 
         mmr_td: mouse_move_right_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse move right tap tance";
+            display-name = "Mouse Move Right Tap Dance";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_X(330)>, <&mmv MOVE_X(1000)>;
         };
 
         mmu_td: mouse_move_up_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse move up tap tance";
+            display-name = "Mouse Move Up Tap Dance";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_Y(-330)>, <&mmv MOVE_Y(-1000)>;
         };
 
         mmd_td: mouse_move_down_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse move down tap tance";
+            display-name = "Mouse Move Down Tap Dance";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_Y(330)>, <&mmv MOVE_Y(1000)>;
         };
 
         msl_td: mouse_scroll_left_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse scroll left tap tance";
+            display-name = "Mouse scroll left tap Dance";
             #binding-cells = <0>;
             bindings = <&msc MOVE_X(-10)>, <&msc MOVE_X(-30)>;
         };
 
         msr_td: mouse_scroll_right_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse scroll right tap tance";
+            display-name = "Mouse Scroll Right Tap Dance";
             #binding-cells = <0>;
             bindings = <&msc MOVE_X(10)>, <&msc MOVE_X(30)>;
         };
 
         msd_td: mouse_scroll_down_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse scroll down tap tance";
+            display-name = "Mouse Scroll Down Tap Dance";
             #binding-cells = <0>;
             bindings = <&msc MOVE_Y(-10)>, <&msc MOVE_Y(-30)>;
         };
 
         msu_td: mouse_scroll_up_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse scroll up tap tance";
+            display-name = "Mouse Scroll Up Tap Dance";
             #binding-cells = <0>;
             bindings = <&msc MOVE_Y(10)>, <&msc MOVE_Y(30)>;
         };
 
         cp_td: caps_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            label = "Caps tap dance";
+            display-name = "Caps Tap Dance";
             #binding-cells = <0>;
             bindings = <&caps_word>, <&kp CAPS>;
         };
@@ -169,17 +169,17 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "Base";
+            display-name = "Colemak DH";
             bindings = <
 &kp Q  &kp W            &kp F            &kp P           &kp B               &kp J              &kp L           &kp U            &kp Y            &kp SEMI
 &kp A  &lhm_ht LCTRL R  &lhm_ht LSHFT S  &lhm_ht LGUI T  &kp G               &kp M              &rhm_ht RGUI N  &rhm_ht RSHFT E  &rhm_ht RCTRL I  &kp O
 &kp Z  &kp X            &kp C            &lhm_ht LALT D  &kp V               &kp K              &rhm_ht RALT H  &kp COMMA        &kp DOT          &kp FSLH
-                        &kp TAB          &th_lt 1 SPACE  &ts_ht LSHFT ESC    &ts_ht RSHFT BSPC  &th_lt 2 RET    &th_lt 3 DEL
+                        &kp TAB          &tl_ht 1 SPACE  &ts_ht LSHFT ESC    &ts_ht RSHFT BSPC  &tl_ht 2 RET    &tl_ht 3 DEL
             >;
         };
 
-        lower {
-            display-name = "Num & Sym";
+        num-and-sym {
+            display-name = "Numbers and their Symbols";
             bindings = <
 &kp EXCL   &kp AT              &kp HASH            &kp DLLR                    &kp PRCNT            &kp KP_DIVIDE    &kp N7           &kp N8            &kp N9            &kp KP_MINUS
 &kp CARET  &lhm_ht LCTRL AMPS  &lhm_ht LSHFT STAR  &lhm_ht LGUI LPAR           &kp RPAR             &kp N0           &rhm_ht RGUI N1  &rhm_ht RSHFT N2  &rhm_ht RCTRL N3  &tp_ht KP_ENTER DOT
@@ -188,8 +188,8 @@
             >;
         };
 
-        raise {
-            display-name = "Navi & Sym";
+        navi-and-sym {
+            display-name = "Navigation and More Symbols";
             bindings = <
 &kp PIPE  &kp PLUS             &kp UNDER            &kp LBRC           &kp RBRC    &kp HOME    &kp PG_DN              &kp PG_UP               &kp END              &kp INS
 &kp BSLH  &lhm_ht LCTRL EQUAL  &lhm_ht LSHFT MINUS  &lhm_ht LGUI LBKT  &kp RBKT    &kp LEFT    &rhm_ht RGUI DOWN      &rhm_ht RSHFT UP_ARROW  &rhm_ht RCTRL RIGHT  &kp PSCRN
@@ -198,8 +198,8 @@
             >;
         };
 
-        adjust {
-            display-name = "Mouse & Fn";
+        mouse-and-fn {
+            display-name = "Mouse and Fn Keys";
             bindings = <
 &kp F1  &kp F2            &kp F3            &kp F4            &none    &mkp MB4  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB5
 &kp F5  &lhm_ht LCTRL F6  &lhm_ht LSHFT F7  &lhm_ht LGUI F8   &none    &mml_td   &mmd_td    &mmu_td    &mmr_td    &none
