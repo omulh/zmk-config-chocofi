@@ -1,14 +1,12 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
 &mmv { time-to-max-speed-ms = <100>; };
 
 &msc { time-to-max-speed-ms = <100>; };
 
-&caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE DOT>; };
+&caps_word { continue-list = <UNDERSCORE DOT BACKSPACE DELETE>; };
 
 / {
     behaviors {
@@ -137,33 +135,7 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        combo_usb_out {
-            bindings = <&out OUT_USB>;
-            key-positions = <30 32>;
-            layers = <0>;
-        };
-
-        combo_ble_out {
-            bindings = <&out OUT_BLE>;
-            key-positions = <30 32 31>;
-            layers = <0>;
-        };
-
-        combo_bt_nxt {
-            bindings = <&bt BT_NXT>;
-            key-positions = <35 33>;
-            layers = <0>;
-        };
-
-        combo_bt_clr {
-            bindings = <&bt BT_CLR>;
-            key-positions = <33 34 35>;
-            layers = <0>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -171,40 +143,49 @@
         default_layer {
             display-name = "Colemak DH";
             bindings = <
-&kp Q  &kp W            &kp F            &kp P           &kp B               &kp J              &kp L           &kp U            &kp Y            &kp SEMI
-&kp A  &lhm_ht LCTRL R  &lhm_ht LSHFT S  &lhm_ht LGUI T  &kp G               &kp M              &rhm_ht RGUI N  &rhm_ht RSHFT E  &rhm_ht RCTRL I  &kp O
-&kp Z  &kp X            &kp C            &lhm_ht LALT D  &kp V               &kp K              &rhm_ht RALT H  &kp COMMA        &kp DOT          &kp FSLH
-                        &kp TAB          &tl_ht 1 SPACE  &ts_ht LSHFT ESC    &ts_ht RSHFT BSPC  &tl_ht 2 RET    &tl_ht 3 DEL
+&kp Q  &kp W            &kp F            &kp P           &kp B               &kp J              &kp L           &kp U            &kp Y            &kp SQT
+&kp A  &lhm_ht LCTRL R  &lhm_ht LSHFT S  &lhm_ht LGUI T  &lhm_ht LALT G      &rhm_ht RALT M     &rhm_ht RGUI N  &rhm_ht RSHFT E  &rhm_ht RCTRL I  &kp O
+&kp Z  &kp X            &kp C            &kp D           &kp V               &kp K              &kp H           &kp COMMA        &kp DOT          &kp FSLH
+                        &tl_ht 3 TAB     &tl_ht 1 SPACE  &ts_ht LSHFT ESC    &ts_ht RSHFT BSPC  &tl_ht 2 RET    &tl_ht 4 DEL
             >;
         };
 
         num-and-sym {
             display-name = "Numbers and their Symbols";
             bindings = <
-&kp EXCL   &kp AT              &kp HASH            &kp DLLR                    &kp PRCNT            &kp KP_DIVIDE    &kp N7           &kp N8            &kp N9            &kp KP_MINUS
-&kp CARET  &lhm_ht LCTRL AMPS  &lhm_ht LSHFT STAR  &lhm_ht LGUI LPAR           &kp RPAR             &kp N0           &rhm_ht RGUI N1  &rhm_ht RSHFT N2  &rhm_ht RCTRL N3  &tp_ht KP_ENTER DOT
-&kp LG(L)  &kp LS(LG(END))     &kp LS(LG(HOME))    &lhm_ht LALT LS(LG(PG_DN))  &kp LS(LG(PG_UP))    &kp KP_MULTIPLY  &rhm_ht RALT N4  &kp N5            &kp N6            &kp KP_PLUS
-                               &none               &trans                      &none                &none            &none            &none
+&kp EXCL   &kp AT              &kp HASH            &kp DLLR           &kp PRCNT            &kp KP_DIVIDE    &kp N7           &kp N8            &kp N9            &kp KP_MINUS
+&kp CARET  &lhm_ht LCTRL AMPS  &lhm_ht LSHFT STAR  &lhm_ht LGUI LPAR  &lhm_ht LALT RPAR    &rhm_ht RALT N0  &rhm_ht RGUI N1  &rhm_ht RSHFT N2  &rhm_ht RCTRL N3  &tp_ht KP_ENTER DOT
+&none      &none               &none               &none              &none                &kp KP_MULTIPLY  &kp N4           &kp N5            &kp N6            &kp KP_PLUS
+                               &none               &trans             &none                &none            &none            &none
             >;
         };
 
         navi-and-sym {
             display-name = "Navigation and More Symbols";
             bindings = <
-&kp PIPE  &kp PLUS             &kp UNDER            &kp LBRC           &kp RBRC    &kp HOME    &kp PG_DN              &kp PG_UP               &kp END              &kp INS
-&kp BSLH  &lhm_ht LCTRL EQUAL  &lhm_ht LSHFT MINUS  &lhm_ht LGUI LBKT  &kp RBKT    &kp LEFT    &rhm_ht RGUI DOWN      &rhm_ht RSHFT UP_ARROW  &rhm_ht RCTRL RIGHT  &kp PSCRN
-&none     &kp GRAVE            &kp TILDE            &lhm_ht LALT SQT   &kp DQT     &kp C_MUTE  &rhm_ht RALT C_VOL_DN  &kp C_VOL_UP            &kp LA(LG(K))        &kp C_AL_CALC
-                               &cp_td               &none              &none       &none       &trans                 &none
+&kp PIPE   &kp PLUS             &kp UNDER            &kp LBRC           &kp RBRC             &kp HOME           &kp PG_DN          &kp PG_UP               &kp END              &kp INS
+&kp BSLH   &lhm_ht LCTRL EQUAL  &lhm_ht LSHFT MINUS  &lhm_ht LGUI LBKT  &lhm_ht LALT RBKT    &rhm_ht RALT LEFT  &rhm_ht RGUI DOWN  &rhm_ht RSHFT UP_ARROW  &rhm_ht RCTRL RIGHT  &kp PSCRN
+&kp TILDE  &kp GRAVE            &kp COLON            &kp SEMI           &none                &kp RS(RA(TAB))    &kp RS(RC(TAB))    &kp RC(TAB)             &kp RA(TAB)          &none
+                                &cp_td               &none              &none                &none              &trans             &none
             >;
         };
 
-        mouse-and-fn {
+        media-and-fun {
+            bindings = <
+&kp F1  &kp F2   &kp F3   &kp F4   &none    &kp C_MUTE         &kp C_VOL_DN     &kp C_VOL_UP      &kp RA(RG(K))      &kp C_AL_CALC
+&kp F5  &kp F6   &kp F7   &kp F8   &none    &kp RALT           &kp RGUI         &kp RSHFT         &kp RCTRL          &kp RS(RG(S))
+&kp F9  &kp F10  &kp F11  &kp F12  &none    &kp RS(RG(PG_DN))  &kp RS(RG(END))  &kp RS(RG(HOME))  &kp RS(RG(PG_UP))  &none
+                 &trans   &none    &none    &none              &none            &none
+            >;
+        };
+
+        mouse-and-bt {
             display-name = "Mouse and Fn Keys";
             bindings = <
-&kp F1  &kp F2            &kp F3            &kp F4            &none    &mkp MB4  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB5
-&kp F5  &lhm_ht LCTRL F6  &lhm_ht LSHFT F7  &lhm_ht LGUI F8   &none    &mml_td   &mmd_td    &mmu_td    &mmr_td    &none
-&kp F9  &kp F10           &kp F11           &lhm_ht LALT F12  &none    &msl_td   &msd_td    &msu_td    &msr_td    &none
-                          &none             &none             &none    &none     &none      &trans
+&none  &none  &none  &none  &none    &msl_td   &msd_td   &msu_td   &msr_td   &none
+&none  &none  &none  &none  &none    &mml_td   &mmd_td   &mmu_td   &mmr_td   &kp K_CMENU
+&none  &none  &none  &none  &none    &mkp MB4  &mkp MB1  &mkp MB3  &mkp MB2  &mkp MB5
+              &none  &none  &none    &none     &none     &trans
             >;
         };
     };
