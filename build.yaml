@@ -22,13 +22,18 @@ include:
     # seed xiao BLE cental dongle
   - board: seeeduino_xiao_ble
     shield: chocofi_dongle
+    artifact-name: chocofi_dongle
   - board: seeeduino_xiao_ble
     shield: settings_reset
+    artifact-name: xiao_reset
 
     # nice!nano chocofi peripherals
   - board: nice_nano_v2
     shield: chocofi_left
+    artifact-name: chocofi_left
   - board: nice_nano_v2
     shield: chocofi_right
+    artifact-name: chocofi_right
   - board: nice_nano_v2
     shield: settings_reset
+    artifact-name: nice_nano_reset
