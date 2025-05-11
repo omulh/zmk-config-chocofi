@@ -1,0 +1,21 @@
+/* Spanish letters */
+ZMK_UNICODE_PAIR(a_acute,       N0, N0, E, N1,    N0, N0, C, N1)  // á/Á
+ZMK_UNICODE_PAIR(e_acute,       N0, N0, E, N9,    N0, N0, C, N9)  // é/É
+ZMK_UNICODE_PAIR(i_acute,       N0, N0, E, D,     N0, N0, C, D)   // í/Í
+ZMK_UNICODE_PAIR(o_acute,       N0, N0, F, N3,    N0, N0, D, N3)  // ó/Ó
+ZMK_UNICODE_PAIR(u_acute,       N0, N0, F, A,     N0, N0, D, A)   // ú/Ú
+ZMK_UNICODE_PAIR(u_dieresis,    N0, N0, F, C,     N0, N0, D, C)   // ü/Ü
+ZMK_UNICODE_PAIR(n_tilde,       N0, N0, F, N1,    N0, N0, D, N1)  // ñ/Ñ
+
+/* German umlauts */
+ZMK_UNICODE_PAIR(ae,        N0, N0, E, N4,    N0, N0, C, N4)  // ä/Ä
+ZMK_UNICODE_PAIR(oe,        N0, N0, F, N6,    N0, N0, D, N6)  // ö/Ö
+ZMK_UNICODE_PAIR(ue,        N0, N0, F, C,     N0, N0, D, C)   // ü/Ü
+ZMK_UNICODE_PAIR(eszett,    N0, N0, D, F,     N1, E, N9, E)   // ß/ẞ
+
+/* Symbols */
+ZMK_UNICODE_SINGLE(degree,     N0, N0, B, N0)   // ° (degree)
+ZMK_UNICODE_SINGLE(euro,       N2, N0, A, C)    // € (Euro)
+ZMK_UNICODE_SINGLE(inv_qstn,   N0, N0, B, F)    // ¿ (inverted question mark)
+ZMK_UNICODE_SINGLE(inv_excl,   N0, N0, A, N1)   // ¡ (inverted exclamation mark)
+ZMK_UNICODE_SINGLE(mu_prefix,  N0, N3,  B,  C)  // μ (prefix micro)
