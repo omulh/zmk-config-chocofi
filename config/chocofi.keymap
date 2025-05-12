@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <behaviors/rgbled_widget.dtsi>
 
 #include "unicode_helpers.h"
 #include "unicode_chars.dtsi"
@@ -186,8 +187,8 @@
         mouse-and-bt {
             display-name = "Mouse and Bluetooth";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none         &bt BT_CLR      &msl_td   &msd_td   &msu_td   &msr_td   &none
-&none         &none         &none         &none         &none           &mml_td   &mmd_td   &mmu_td   &mmr_td   &kp K_CMENU
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &ind_con      &bt BT_CLR      &msl_td   &msd_td   &msu_td   &msr_td   &none
+&none         &none         &none         &ind_bat      &none           &mml_td   &mmd_td   &mmu_td   &mmr_td   &kp K_CMENU
 &none         &none         &none         &out OUT_BLE  &out OUT_USB    &mkp MB4  &mkp MB1  &mkp MB3  &mkp MB2  &mkp MB5
                             &none         &none         &none           &none     &none     &trans
             >;
