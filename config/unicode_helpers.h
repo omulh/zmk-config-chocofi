@@ -8,7 +8,7 @@
                 #binding-cells = <0>; \
                 bindings \
                     = <&macro_press &kp LALT> \
-                    , <&macro_tap KP_PLUS> \
+                    , <&macro_tap &kp KP_PLUS> \
                     , <&macro_tap unicode_bindings> \
                     , <&macro_release &kp LALT> \
                     ; \
