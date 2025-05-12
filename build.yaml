@@ -21,7 +21,7 @@
 include:
     # seed xiao BLE cental dongle
   - board: seeeduino_xiao_ble
-    shield: chocofi_dongle
+    shield: chocofi_dongle rgbled_adapter
     artifact-name: chocofi_dongle
   - board: seeeduino_xiao_ble
     shield: settings_reset
