@@ -195,5 +195,25 @@
                             &none         &none         &none           &none     &none     &trans
             >;
         };
+
+        de-unicode {
+            display-name = "German Unicode Characters";
+            bindings = <
+&none    &none  &none    &euro  &none        &none       &none  &ue    &none  &none
+&ae      &none  &eszett  &none  &none        &mu_prefix  &none  &none  &none  &oe
+&degree  &none  &none    &none  &none        &none       &none  &none  &none  &none
+                &none    &none  &kp LSHFT    &kp RSHFT   &none  &none
+            >;
+        };
+
+        es-unicode {
+            display-name = "Spanish Unicode Characters";
+            bindings = <
+&inv_excl  &none  &none  &none  &none        &none      &none     &u_acute  &none     &none
+&a_acute   &none  &none  &none  &none        &none      &n_tilde  &e_acute  &i_acute  &o_acute
+&none      &none  &none  &none  &none        &none      &none     &none     &none     &inv_qstn
+                  &none  &none  &kp LSHFT    &kp RSHFT  &none     &none
+            >;
+        };
     };
 };
