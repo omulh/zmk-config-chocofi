@@ -1,3 +1,7 @@
+/* LEAD and TRAIL for Windows Alt Codes with Unicode Support */
+#define OS_UNICODE_LEAD &macro_press &kp LALT &macro_tap &kp KP_PLUS
+#define OS_UNICODE_TRAIL &macro_release &kp LALT
+
 #define UC_MACRO(name, unicode_bindings) \
     / { \
         macros { \
@@ -7,10 +11,9 @@
                 tap-ms = <20>; \
                 #binding-cells = <0>; \
                 bindings \
-                    = <&macro_press &kp LALT> \
-                    , <&macro_tap &kp KP_PLUS> \
+                    = <OS_UNICODE_LEAD> \
                     , <&macro_tap unicode_bindings> \
-                    , <&macro_release &kp LALT> \
+                    , <OS_UNICODE_TRAIL> \
                     ; \
             }; \
         }; \
