@@ -8,11 +8,13 @@
 #include "unicode_helpers.h"
 #include "unicode_chars.dtsi"
 
+&caps_word { continue-list = <UNDERSCORE DOT BACKSPACE DELETE>; };
+
 &mmv { time-to-max-speed-ms = <100>; };
 
 &msc { time-to-max-speed-ms = <100>; };
 
-&caps_word { continue-list = <UNDERSCORE DOT BACKSPACE DELETE>; };
+&sk { quick-release; };
 
 / {
     behaviors {
@@ -23,17 +25,6 @@
             bindings = <&kp>, <&kp>;
 
             flavor = "tap-preferred";
-            tapping-term-ms = <250>;
-            quick-tap-ms = <200>;
-        };
-
-        tl_ht: thumb_layer_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "Thumb Layer Hold/Tap";
-            #binding-cells = <2>;
-            bindings = <&mo>, <&kp>;
-
-            flavor = "balanced";
             tapping-term-ms = <250>;
             quick-tap-ms = <200>;
         };
@@ -70,11 +61,29 @@
             compatible = "zmk,behavior-hold-tap";
             display-name = "Thumb Shift Hold/Tap";
             #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&sk>, <&kp>;
 
             flavor = "balanced";
             tapping-term-ms = <250>;
             quick-tap-ms = <200>;
+        };
+
+        tl_ht: thumb_layer_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Thumb Layer Hold/Tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <200>;
+        };
+
+        cp_td: caps_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "Caps Tap Dance";
+            #binding-cells = <0>;
+            bindings = <&caps_word>, <&kp CAPS>;
         };
 
         mml_td: mouse_move_left_tap_dance {
@@ -131,13 +140,6 @@
             display-name = "Mouse Scroll Up Tap Dance";
             #binding-cells = <0>;
             bindings = <&msc MOVE_Y(10)>, <&msc MOVE_Y(30)>;
-        };
-
-        cp_td: caps_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Caps Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&caps_word>, <&kp CAPS>;
         };
     };
 
