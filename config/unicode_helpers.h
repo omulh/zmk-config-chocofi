@@ -7,8 +7,8 @@
         macros { \
             name: name { \
                 compatible = "zmk,behavior-macro"; \
-                wait-ms = <10>; \
-                tap-ms = <20>; \
+                wait-ms = <0>; \
+                tap-ms = <0>; \
                 #binding-cells = <0>; \
                 bindings \
                     = <OS_UNICODE_LEAD> \
