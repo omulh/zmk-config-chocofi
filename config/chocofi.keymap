@@ -14,8 +14,6 @@
 
 &msc { time-to-max-speed-ms = <100>; };
 
-&sk { quick-release; };
-
 / {
     behaviors {
         tp_ht: tap_hold_tap {
@@ -61,7 +59,7 @@
             compatible = "zmk,behavior-hold-tap";
             display-name = "Thumb Shift Hold/Tap";
             #binding-cells = <2>;
-            bindings = <&sk>, <&kp>;
+            bindings = <&kp>, <&kp>;
 
             flavor = "balanced";
             tapping-term-ms = <250>;
