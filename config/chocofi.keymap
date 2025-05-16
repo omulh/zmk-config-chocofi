@@ -55,17 +55,6 @@
             quick-tap-ms = <200>;
         };
 
-        tp_ht: tap_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "Tap-preferred Hold/Tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "tap-preferred";
-            tapping-term-ms = <250>;
-            quick-tap-ms = <200>;
-        };
-
         kl_ht: key_layer_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             display-name = "Balanced Key/Layer Hold/Tap";
@@ -93,6 +82,13 @@
             display-name = "Caps Tap Dance";
             #binding-cells = <0>;
             bindings = <&caps_word>, <&kp CAPS>;
+        };
+
+        de_td: dot_enter_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "Dot/Enter Tap Dance";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp KP_ENTER>;
         };
 
         mml_td: mouse_move_left_tap_dance {
@@ -169,7 +165,7 @@
             display-name = "Numbers and their Symbols";
             bindings = <
 &kp EXCL   &kp AT              &kp HASH            &kp DLLR           &kp PRCNT            &kp KP_DIVIDE    &kp N7           &kp N8            &kp N9            &kp KP_MINUS
-&kp CARET  &lhm_ht LCTRL AMPS  &lhm_ht LSHFT STAR  &lhm_ht LGUI LPAR  &lhm_ht LALT RPAR    &rhm_ht RALT N0  &rhm_ht RGUI N1  &rhm_ht RSHFT N2  &rhm_ht RCTRL N3  &tp_ht KP_ENTER DOT
+&kp CARET  &lhm_ht LCTRL AMPS  &lhm_ht LSHFT STAR  &lhm_ht LGUI LPAR  &lhm_ht LALT RPAR    &rhm_ht RALT N0  &rhm_ht RGUI N1  &rhm_ht RSHFT N2  &rhm_ht RCTRL N3  &de_td
 &none      &none               &none               &none              &none                &kp KP_MULTIPLY  &kp N4           &kp N5            &kp N6            &kp KP_PLUS
                                &none               &trans             &none                &none            &none            &kp KP_NLCK
             >;
