@@ -81,11 +81,11 @@
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32>;
         };
 
-        kl_ht: key_layer_hold_tap {
+        lk_ht: layer_key_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            display-name = "Balanced Key/Layer Hold/Tap";
+            display-name = "Balanced Layer/Key Hold/Tap";
             #binding-cells = <2>;
-            bindings = <&kp>, <&to>;
+            bindings = <&mo>, <&kp>;
 
             flavor = "balanced";
             tapping-term-ms = <250>;
