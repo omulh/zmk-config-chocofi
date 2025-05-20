@@ -33,22 +33,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        sqt_sl7: single_quote_sticky_layer_7_morph {
-            compatible = "zmk,behavior-mod-morph";
-            display-name = "Single Quote / Sticky Layer 7 Morph";
-            #binding-cells = <0>;
-            bindings = <&kp SQT>, <&sl 7>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        fslh_sl8: forward_slash_sticky_layer_8_morph {
-            compatible = "zmk,behavior-mod-morph";
-            display-name = "Forward Slash / Sticky Layer 8 Morph";
-            #binding-cells = <0>;
-            bindings = <&kp FSLH>, <&sl 8>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
         sz_ht: eszett_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             display-name = "Balanced Key/Eszett Hold/Tap";
@@ -102,6 +86,17 @@
             display-name = "Balanced Layer/Key Hold/Tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <200>;
+        };
+
+        slk_ht: sticky_layer_key_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Balanced Sticky Layer/Key Hold/Tap";
+            #binding-cells = <2>;
+            bindings = <&sl>, <&kp>;
 
             flavor = "balanced";
             tapping-term-ms = <250>;
@@ -187,9 +182,9 @@
         default_layer {
             display-name = "Colemak DH";
             bindings = <
-&kp Q  &kp W            &kp F            &kp P           &kp B           &kp J          &kp L           &kp U            &kp Y            &sqt_sl7
+&kp Q  &kp W            &kp F            &kp P           &kp B           &kp J          &kp L           &kp U            &kp Y            &slk_ht 7 SQT
 &kp A  &lhm_ht LCTRL R  &lhm_ht LSHFT S  &lhm_ht LALT T  &kp G           &kp M          &rhm_ht RALT N  &rhm_ht RSHFT E  &rhm_ht RCTRL I  &kp O
-&kp Z  &kp X            &kp C            &lhm_ht LGUI D  &kp V           &kp K          &rhm_ht RGUI H  &comma_semi      &dot_colon       &fslh_sl8
+&kp Z  &kp X            &kp C            &lhm_ht LGUI D  &kp V           &kp K          &rhm_ht RGUI H  &comma_semi      &dot_colon       &slk_ht 8 FSLH
                         &lk_ht 5 TAB     &lk_ht 1 SPACE  &lk_ht 3 ESC    &lk_ht 4 BSPC  &lk_ht 2 RET    &lk_ht 6 DEL
             >;
         };
