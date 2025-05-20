@@ -15,7 +15,23 @@
 &msc { time-to-max-speed-ms = <100>; };
 
 / {
-    behaviors {
+    behaviors {dot_colon: dot_colon_morph {
+        dot_colon: dot_colon_morph {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Dot Colon Morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        comma_semi: comma_semicolon_morph {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Comma Semicolon Morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         lhm_ht: left_homerow_mod_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             display-name = "Left Homerow Mod Hold/Tap";
@@ -156,7 +172,7 @@
             bindings = <
 &kp Q  &kp W            &kp F            &kp P           &kp B               &kp J              &kp L           &kp U            &kp Y            &kp SQT
 &kp A  &lhm_ht LCTRL R  &lhm_ht LSHFT S  &lhm_ht LGUI T  &lhm_ht LALT G      &rhm_ht RALT M     &rhm_ht RGUI N  &rhm_ht RSHFT E  &rhm_ht RCTRL I  &kp O
-&kp Z  &kp X            &kp C            &kp D           &kp V               &kp K              &kp H           &kp COMMA        &kp DOT          &kp FSLH
+&kp Z  &kp X            &kp C            &kp D           &kp V               &kp K              &kp H           &comma_semi      &dot_colon       &kp FSLH
                         &lk_ht 3 TAB     &lk_ht 1 SPACE  &bl_ht LSHFT ESC    &bl_ht RSHFT BSPC  &lk_ht 2 RET    &lk_ht 4 DEL
             >;
         };
