@@ -37,7 +37,7 @@
             compatible = "zmk,behavior-tri-state";
             display-name = "Window Swapper Previous";
             #binding-cells = <0>;
-            bindings = <&kt RALT>, <&kp LS(TAB)>, <&kt RALT>;
+            bindings = <&kt RALT>, <&kp RS(TAB)>, <&kt RALT>;
             ignored-key-positions = <15 18>;
         };
 
