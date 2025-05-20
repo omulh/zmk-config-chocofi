@@ -17,6 +17,14 @@
 
 / {
     behaviors {
+        ssl: slow_sticky_layer {
+            compatible = "zmk,behavior-sticky-key";
+            display-name = "Slow Sticky Layer";
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            bindings = <&mo>;
+        };
+
         dot_colon: dot_colon_morph {
             compatible = "zmk,behavior-mod-morph";
             display-name = "Dot/Colon Morph";
@@ -96,7 +104,7 @@
             compatible = "zmk,behavior-hold-tap";
             display-name = "Balanced Sticky Layer/Key Hold/Tap";
             #binding-cells = <2>;
-            bindings = <&sl>, <&kp>;
+            bindings = <&ssl>, <&kp>;
 
             flavor = "balanced";
             tapping-term-ms = <250>;
