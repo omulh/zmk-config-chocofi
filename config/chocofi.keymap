@@ -214,50 +214,50 @@
         default_layer {
             display-name = "Colemak DH";
             bindings = <
-&kp Q  &kp W            &kp F            &kp P           &kp B               &kp J          &kp L           &kp U            &kp Y            &slk_ht 6 SQT
-&kp A  &lhm_ht LCTRL R  &lhm_ht LSHFT S  &lhm_ht LALT T  &kp G               &kp M          &rhm_ht RALT N  &rhm_ht RSHFT E  &rhm_ht RCTRL I  &kp O
-&kp Z  &kp X            &kp C            &lhm_ht LGUI D  &kp V               &kp K          &rhm_ht RGUI H  &comma_semi      &dot_colon       &slk_ht 7 FSLH
-                        &lk_ht 4 TAB     &lk_ht 1 SPACE  &kk_ht LSHFT ESC    &lk_ht 3 BSPC  &lk_ht 2 RET    &lk_ht 5 DEL
+&kp Q  &kp W           &kp F            &kp P            &kp B               &kp J          &kp L            &kp U            &kp Y           &slk_ht 6 SQT
+&kp A  &lhm_ht LALT R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp G               &kp M          &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RALT I  &kp O
+&kp Z  &kp X           &kp C            &lhm_ht LGUI D   &kp V               &kp K          &rhm_ht RGUI H   &comma_semi      &dot_colon      &slk_ht 7 FSLH
+                       &lk_ht 4 TAB     &lk_ht 1 SPACE   &kk_ht LSHFT ESC    &lk_ht 3 BSPC  &lk_ht 2 RET     &lk_ht 5 DEL
             >;
         };
 
         sym {
             display-name = "Symbols";
             bindings = <
-&none   &kp PIPE            &kp LBRC            &kp RBRC           &kp PLUS     &kp TILDE  &kp LT              &kp GT              &kp UNDER            &none
-&kp AT  &lhm_ht LCTRL BSLH  &lhm_ht LSHFT LBKT  &lhm_ht LALT RBKT  &kp EQUAL    &kp GRAVE  &rhm_ht RALT LPAR   &rhm_ht RSHFT RPAR  &rhm_ht RCTRL MINUS  &kp EXCL
-&none   &kp PRCNT           &kp STAR            &lhm_ht LGUI HASH  &none        &none      &rhm_ht RGUI CARET  &kp DLLR            &kp AMPS             &none
-                            &none               &trans             &none        &none      &none               &cp_td
+&none   &kp PIPE           &kp LBRC            &kp RBRC            &kp PLUS     &kp TILDE  &kp LT              &kp GT              &kp UNDER           &none
+&kp AT  &lhm_ht LALT BSLH  &lhm_ht LSHFT LBKT  &lhm_ht LCTRL RBKT  &kp EQUAL    &kp GRAVE  &rhm_ht RCTRL LPAR  &rhm_ht RSHFT RPAR  &rhm_ht RALT MINUS  &kp EXCL
+&none   &kp PRCNT          &kp STAR            &lhm_ht LGUI HASH   &none        &none      &rhm_ht RGUI CARET  &kp DLLR            &kp AMPS            &none
+                           &none               &trans              &none        &none      &none               &cp_td
             >;
         };
 
         num {
             display-name = "Numbers";
             bindings = <
-&none  &none      &none        &none     &none    &kp KP_DIVIDE    &kp N7  &kp N8  &kp N9  &kp KP_MINUS
-&none  &kp LCTRL  &kp LSHFT    &kp LALT  &none    &kp N0           &kp N4  &kp N5  &kp N6  &kp DOT
-&none  &none      &none        &kp LGUI  &none    &kp KP_MULTIPLY  &kp N1  &kp N2  &kp N3  &kp KP_PLUS
-                  &kp KP_NLCK  &none     &none    &none            &trans  &none
+&none  &none     &none        &none      &none    &kp KP_DIVIDE    &kp N7  &kp N8  &kp N9  &kp KP_MINUS
+&none  &kp LALT  &kp LSHFT    &kp LCTRL  &none    &kp N0           &kp N4  &kp N5  &kp N6  &kp DOT
+&none  &none     &none        &kp LGUI   &none    &kp KP_MULTIPLY  &kp N1  &kp N2  &kp N3  &kp KP_PLUS
+                 &kp KP_NLCK  &none      &none    &none            &trans  &none
             >;
         };
 
         navi {
             display-name = "Navigation";
             bindings = <
-&none  &none      &none      &none     &none    &kp HOME         &kp PG_DN  &kp PG_UP &kp END      &kp INS
-&none  &kp LCTRL  &kp LSHFT  &kp LALT  &none    &kp LEFT         &kp DOWN   &kp UP    &kp RIGHT    &kp PSCRN
-&none  &none      &none      &kp LGUI  &none    &kp LC(LS(TAB))  &swp_prev  &swp_nxt  &kp LC(TAB)  &kp K_CMENU
-                  &none      &none     &none    &trans           &none      &none
+&none  &none     &none      &none      &none    &kp HOME         &kp PG_DN  &kp PG_UP &kp END      &kp INS
+&none  &kp LALT  &kp LSHFT  &kp LCTRL  &none    &kp LEFT         &kp DOWN   &kp UP    &kp RIGHT    &kp PSCRN
+&none  &none     &none      &kp LGUI   &none    &kp LC(LS(TAB))  &swp_prev  &swp_nxt  &kp LC(TAB)  &kp K_CMENU
+                 &none      &none      &none    &trans           &none      &none
             >;
         };
 
         fun {
             display-name = "Function Keys";
             bindings = <
-&none  &none      &none      &none     &none    &kp F12  &kp F7  &kp F8  &kp F9  &none
-&none  &kp LCTRL  &kp LSHFT  &kp LALT  &none    &kp F11  &kp F4  &kp F5  &kp F6  &none
-&none  &none      &none      &kp LGUI  &none    &kp F10  &kp F1  &kp F2  &kp F3  &none
-                  &trans     &none     &none    &none    &none   &none
+&none  &none     &none      &none      &none    &kp F12  &kp F7  &kp F8  &kp F9  &none
+&none  &kp LALT  &kp LSHFT  &kp LCTRL  &none    &kp F11  &kp F4  &kp F5  &kp F6  &none
+&none  &none     &none      &kp LGUI   &none    &kp F10  &kp F1  &kp F2  &kp F3  &none
+                 &trans     &none      &none    &none    &none   &none
             >;
         };
 
