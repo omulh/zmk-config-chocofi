@@ -29,7 +29,7 @@
             compatible = "zmk,behavior-tri-state";
             display-name = "Window Swapper Next";
             #binding-cells = <0>;
-            bindings = <&kt RALT>, <&kp TAB>, <&kt RALT>;
+            bindings = <&kt RALT>, <&kp RS(TAB)>, <&kt RALT>;
             ignored-key-positions = <15 18>;
         };
 
@@ -37,7 +37,7 @@
             compatible = "zmk,behavior-tri-state";
             display-name = "Window Swapper Previous";
             #binding-cells = <0>;
-            bindings = <&kt RALT>, <&kp RS(TAB)>, <&kt RALT>;
+            bindings = <&kt RALT>, <&kp TAB>, <&kt RALT>;
             ignored-key-positions = <15 18>;
         };
 
@@ -235,8 +235,8 @@
             display-name = "Numbers";
             bindings = <
 &none  &none      &none        &none     &none    &kp KP_DIVIDE    &kp N7  &kp N8  &kp N9  &kp KP_MINUS
-&none  &kp LCTRL  &kp LSHFT    &kp LALT  &none    &kp N0           &kp N1  &kp N2  &kp N3  &kp DOT
-&none  &none      &none        &kp LGUI  &none    &kp KP_MULTIPLY  &kp N4  &kp N5  &kp N6  &kp KP_PLUS
+&none  &kp LCTRL  &kp LSHFT    &kp LALT  &none    &kp N0           &kp N4  &kp N5  &kp N6  &kp DOT
+&none  &none      &none        &kp LGUI  &none    &kp KP_MULTIPLY  &kp N1  &kp N2  &kp N3  &kp KP_PLUS
                   &kp KP_NLCK  &none     &none    &none            &trans  &none
             >;
         };
@@ -244,19 +244,19 @@
         navi {
             display-name = "Navigation";
             bindings = <
-&none  &none      &none      &none     &none    &kp HOME   &kp PG_DN    &kp PG_UP        &kp END    &kp INS
-&none  &kp LCTRL  &kp LSHFT  &kp LALT  &none    &kp LEFT   &kp DOWN     &kp UP           &kp RIGHT  &kp PSCRN
-&none  &none      &none      &kp LGUI  &none    &swp_prev  &kp LC(TAB)  &kp LC(LS(TAB))  &swp_nxt   &kp K_CMENU
-                  &none      &none     &none    &trans     &none        &none
+&none  &none      &none      &none     &none    &kp HOME         &kp PG_DN  &kp PG_UP &kp END      &kp INS
+&none  &kp LCTRL  &kp LSHFT  &kp LALT  &none    &kp LEFT         &kp DOWN   &kp UP    &kp RIGHT    &kp PSCRN
+&none  &none      &none      &kp LGUI  &none    &kp LC(LS(TAB))  &swp_prev  &swp_nxt  &kp LC(TAB)  &kp K_CMENU
+                  &none      &none     &none    &trans           &none      &none
             >;
         };
 
         fun {
             display-name = "Function Keys";
             bindings = <
-&none  &none      &none      &none     &none    &kp F12  &kp F7  &kp F8       &kp F9  &none
-&none  &kp LCTRL  &kp LSHFT  &kp LALT  &none    &kp F10  &kp F1  &kp F2       &kp F3  &none
-&none  &none      &none      &kp LGUI  &none    &kp F11  &kp F4  &kp F5       &kp F6  &none
+&none  &none      &none      &none     &none    &kp F12  &kp F7  &kp F8  &kp F9  &none
+&none  &kp LCTRL  &kp LSHFT  &kp LALT  &none    &kp F11  &kp F4  &kp F5  &kp F6  &none
+&none  &none      &none      &kp LGUI  &none    &kp F10  &kp F1  &kp F2  &kp F3  &none
                   &trans     &none     &none    &none    &none   &none
             >;
         };
@@ -264,10 +264,10 @@
         media {
             display-name = "Media Keys";
             bindings = <
-&none  &none  &none  &none     &none    &kp C_PREV       &kp C_PAUSE        &kp C_PLAY         &kp C_NEXT        &kp C_AL_CALC
-&none  &none  &none  &ind_bat  &none    &kp C_MUTE       &kp C_VOL_DN       &kp C_VOL_UP       &kp RG(RA(K))     &kp RG(RS(S))
-&none  &none  &none  &ind_con  &none    &kp RG(RS(END))  &kp RG(RS(PG_DN))  &kp RG(RS(PG_UP))  &kp RG(RS(HOME))  &kp RG(L)
-              &none  &none     &none    &none            &none              &trans
+&none  &none  &none  &none     &none    &kp C_PREV  &kp C_PAUSE        &kp C_PLAY         &kp C_NEXT       &kp C_AL_CALC
+&none  &none  &none  &ind_bat  &none    &kp C_MUTE  &kp C_VOL_DN       &kp C_VOL_UP       &kp RG(RA(K))    &kp RG(RS(S))
+&none  &none  &none  &ind_con  &none    &kp RG(L)   &kp RG(RS(PG_DN))  &kp RG(RS(PG_UP))  &kp RG(RS(END))  &kp RG(RS(HOME))
+              &none  &none     &none    &none       &none              &trans
             >;
         };
 
