@@ -189,13 +189,13 @@
 
         combo_mouse {
             bindings = <&to 10>;
-            key-positions = <34 35 33>;
+            key-positions = <16 17 18>;
             layers = <0>;
         };
 
         combo_conf {
             bindings = <&sl 9>;
-            key-positions = <30 31 32>;
+            key-positions = <11 12 13>;
             layers = <0>;
         };
     };
