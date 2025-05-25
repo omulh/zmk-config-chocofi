@@ -57,21 +57,11 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        sz_ht: eszett_hold_tap {
+        kk_ht: key_key_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            display-name = "Balanced Key/Eszett Hold/Tap";
+            display-name = "Balanced Key/Key Hold/Tap";
             #binding-cells = <2>;
-            bindings = <&kp>, <&eszett>;
-
-            flavor = "balanced";
-            tapping-term-ms = <250>;
-        };
-
-        e_ht: acute_e_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "Balanced Key/Acute E Hold/Tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&e_acute>;
+            bindings = <&kp>, <&kp>;
 
             flavor = "balanced";
             tapping-term-ms = <250>;
@@ -138,6 +128,13 @@
             quick-tap-ms = <200>;
         };
 
+        cp_td: caps_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "Caps Tap Dance";
+            #binding-cells = <0>;
+            bindings = <&caps_word>, <&kp CAPS>;
+        };
+
         mml_td: mouse_move_left_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Mouse Move Left Tap Dance";
@@ -198,15 +195,15 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_mouse {
-            bindings = <&to 9>;
-            key-positions = <16 17 18>;
-            layers = <0>;
-        };
-
         combo_conf {
             bindings = <&sl 8>;
             key-positions = <11 12 13>;
+            layers = <0>;
+        };
+
+        combo_mouse {
+            bindings = <&to 9>;
+            key-positions = <16 17 18>;
             layers = <0>;
         };
     };
@@ -217,10 +214,10 @@
         default_layer {
             display-name = "Colemak DH";
             bindings = <
-&kp Q  &kp W            &kp F            &kp P           &kp B           &kp J          &kp L           &kp U            &kp Y            &slk_ht 6 SQT
-&kp A  &lhm_ht LCTRL R  &lhm_ht LSHFT S  &lhm_ht LALT T  &kp G           &kp M          &rhm_ht RALT N  &rhm_ht RSHFT E  &rhm_ht RCTRL I  &kp O
-&kp Z  &kp X            &kp C            &lhm_ht LGUI D  &kp V           &kp K          &rhm_ht RGUI H  &comma_semi      &dot_colon       &slk_ht 7 FSLH
-                        &lk_ht 4 TAB     &lk_ht 1 SPACE  &kp ESC    &lk_ht 3 BSPC  &lk_ht 2 RET    &lk_ht 5 DEL
+&kp Q  &kp W            &kp F            &kp P           &kp B               &kp J          &kp L           &kp U            &kp Y            &slk_ht 6 SQT
+&kp A  &lhm_ht LCTRL R  &lhm_ht LSHFT S  &lhm_ht LALT T  &kp G               &kp M          &rhm_ht RALT N  &rhm_ht RSHFT E  &rhm_ht RCTRL I  &kp O
+&kp Z  &kp X            &kp C            &lhm_ht LGUI D  &kp V               &kp K          &rhm_ht RGUI H  &comma_semi      &dot_colon       &slk_ht 7 FSLH
+                        &lk_ht 4 TAB     &lk_ht 1 SPACE  &kk_ht LSHFT ESC    &lk_ht 3 BSPC  &lk_ht 2 RET    &lk_ht 5 DEL
             >;
         };
 
@@ -230,17 +227,17 @@
 &none   &kp PIPE            &kp LBRC            &kp RBRC           &kp PLUS     &kp TILDE  &kp LT              &kp GT              &kp UNDER            &none
 &kp AT  &lhm_ht LCTRL BSLH  &lhm_ht LSHFT LBKT  &lhm_ht LALT RBKT  &kp EQUAL    &kp GRAVE  &rhm_ht RALT LPAR   &rhm_ht RSHFT RPAR  &rhm_ht RCTRL MINUS  &kp EXCL
 &none   &kp PRCNT           &kp STAR            &lhm_ht LGUI HASH  &none        &none      &rhm_ht RGUI CARET  &kp DLLR            &kp AMPS             &none
-                            &none               &trans             &none        &none      &none               &caps_word
+                            &none               &trans             &none        &none      &none               &cp_td
             >;
         };
 
         num {
             display-name = "Numbers";
             bindings = <
-&none  &none      &none      &none     &none    &kp KP_DIVIDE    &kp N7  &kp N8  &kp N9  &kp KP_MINUS
-&none  &kp LCTRL  &kp LSHFT  &kp LALT  &none    &kp N0           &kp N1  &kp N2  &kp N3  &kp DOT
-&none  &none      &none      &kp LGUI  &none    &kp KP_MULTIPLY  &kp N4  &kp N5  &kp N6  &kp KP_PLUS
-                  &none      &none     &none    &none            &trans  &none
+&none  &none      &none        &none     &none    &kp KP_DIVIDE    &kp N7  &kp N8  &kp N9  &kp KP_MINUS
+&none  &kp LCTRL  &kp LSHFT    &kp LALT  &none    &kp N0           &kp N1  &kp N2  &kp N3  &kp DOT
+&none  &none      &none        &kp LGUI  &none    &kp KP_MULTIPLY  &kp N4  &kp N5  &kp N6  &kp KP_PLUS
+                  &kp KP_NLCK  &none     &none    &none            &trans  &none
             >;
         };
 
@@ -260,7 +257,7 @@
 &none  &none      &none      &none     &none    &kp F12  &kp F7  &kp F8       &kp F9  &none
 &none  &kp LCTRL  &kp LSHFT  &kp LALT  &none    &kp F10  &kp F1  &kp F2       &kp F3  &none
 &none  &none      &none      &kp LGUI  &none    &kp F11  &kp F4  &kp F5       &kp F6  &none
-                  &trans     &none     &none    &none    &none   &kp KP_NLCK
+                  &trans     &none     &none    &none    &none   &none
             >;
         };
 
@@ -300,7 +297,7 @@
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &bt BT_CLR      &none  &none  &none  &none  &none
 &none         &none         &none         &none  &out OUT_BLE    &none  &none  &none  &none  &none
 &none         &none         &none         &none  &out OUT_USB    &none  &none  &none  &none  &none
-                            &none         &none  &none           &none  &none  &none
+                            &none         &none  &to 0           &none  &none  &none
             >;
         };
 
