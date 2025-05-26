@@ -268,10 +268,10 @@
         media {
             display-name = "Media Keys";
             bindings = <
-&none  &none  &none  &none     &none    &kp C_PREV       &kp C_PAUSE        &kp C_PLAY         &kp C_NEXT        &kp C_AL_CALC
-&none  &none  &none  &ind_bat  &none    &kp C_MUTE       &kp C_VOL_DN       &kp C_VOL_UP       &kp RG(RA(K))     &kp RG(RS(S))
-&none  &none  &none  &ind_con  &none    &kp RG(RS(END))  &kp RG(RS(PG_DN))  &kp RG(RS(PG_UP))  &kp RG(RS(HOME))  &kp RG(L)
-              &none  &none     &none    &none            &none              &trans
+&none  &none  &none  &none     &none    &kp C_PREV  &kp C_PAUSE   &kp C_PLAY    &kp C_NEXT     &kp C_AL_CALC
+&none  &none  &none  &ind_bat  &none    &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp RG(RA(K))  &kp RG(RS(S))
+&none  &none  &none  &ind_con  &none    &none       &kp C_BRI_DN  &kp C_BRI_UP  &none          &kp RG(L)
+              &none  &none     &none    &none       &none         &trans
             >;
         };
 
