@@ -227,17 +227,17 @@
 &none   &kp PIPE           &kp LBRC            &kp RBRC            &kp PLUS     &kp TILDE  &kp LT              &kp GT              &kp UNDER           &none
 &kp AT  &lhm_ht LALT BSLH  &lhm_ht LSHFT LBKT  &lhm_ht LCTRL RBKT  &kp EQUAL    &kp GRAVE  &rhm_ht RCTRL LPAR  &rhm_ht RSHFT RPAR  &rhm_ht RALT MINUS  &kp EXCL
 &none   &kp PRCNT          &kp STAR            &lhm_ht LGUI HASH   &none        &none      &rhm_ht RGUI CARET  &kp DLLR            &kp AMPS            &none
-                           &none               &trans              &none        &none      &none               &cp_td
+                           &none               &trans              &none        &none      &cp_td              &none
             >;
         };
 
         num {
             display-name = "Numbers";
             bindings = <
-&none  &none     &none        &none      &none    &kp KP_DIVIDE    &kp N7  &kp N8  &kp N9  &kp KP_MINUS
-&none  &kp LALT  &kp LSHFT    &kp LCTRL  &none    &kp N0           &kp N4  &kp N5  &kp N6  &kp DOT
-&none  &none     &none        &kp LGUI   &none    &kp KP_MULTIPLY  &kp N1  &kp N2  &kp N3  &kp KP_PLUS
-                 &kp KP_NLCK  &none      &none    &none            &trans  &none
+&none  &none     &none      &none        &none    &kp KP_DIVIDE    &kp N7  &kp N8  &kp N9  &kp KP_MINUS
+&none  &kp LALT  &kp LSHFT  &kp LCTRL    &none    &kp N0           &kp N4  &kp N5  &kp N6  &kp DOT
+&none  &none     &none      &kp LGUI     &none    &kp KP_MULTIPLY  &kp N1  &kp N2  &kp N3  &kp KP_PLUS
+                 &none      &kp KP_NLCK  &none    &none            &trans  &none
             >;
         };
 
