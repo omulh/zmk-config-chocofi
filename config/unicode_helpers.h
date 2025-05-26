@@ -1,6 +1,6 @@
-/* LEAD and TRAIL for Windows Alt Codes with Unicode Support */
-#define OS_UNICODE_LEAD &macro_press &kp LALT &macro_tap &kp KP_PLUS
-#define OS_UNICODE_TRAIL &macro_release &kp LALT
+/* LEAD and TRAIL for Linux */
+#define OS_UNICODE_LEAD &macro_tap &kp LS(LC(U))
+#define OS_UNICODE_TRAIL &macro_tap &kp ENTER
 
 #define UC_MACRO(name, unicode_bindings) \
     / { \
