@@ -4,8 +4,6 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    - name: dhruvinsh
-      url-base: https://github.com/dhruvinsh
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -15,9 +13,6 @@ manifest:
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: main
-    - name: zmk-tri-state
-      remote: dhruvinsh
       revision: main
   self:
     path: config
