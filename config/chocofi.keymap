@@ -196,6 +196,15 @@
         };
     };
 
+    macros {
+        proton: proton_macro {
+            compatible = "zmk,behavior-macro";
+            display-name = "Proton User Macro";
+            #binding-cells = <0>;
+            bindings = <&kp O &kp L &kp H &kp DOT &kp X &kp Y &kp Z>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -258,10 +267,10 @@
         fun {
             display-name = "Function Keys";
             bindings = <
-&none  &none     &none      &none      &none    &kp F12  &kp F7  &kp F8  &kp F9  &none
-&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &kp F11  &kp F4  &kp F5  &kp F6  &none
-&none  &none     &none      &kp LALT   &none    &kp F10  &kp F1  &kp F2  &kp F3  &none
-                 &trans     &none      &none    &none    &none   &none
+&none  &none     &none      &none      &proton    &kp F12  &kp F7  &kp F8  &kp F9  &none
+&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none      &kp F11  &kp F4  &kp F5  &kp F6  &none
+&none  &none     &none      &kp LALT   &none      &kp F10  &kp F1  &kp F2  &kp F3  &none
+                 &trans     &none      &none      &none    &none   &none
             >;
         };
 
