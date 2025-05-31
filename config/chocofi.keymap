@@ -239,7 +239,7 @@
             bindings = <
 &none   &kp PIPE           &kp LBRC            &kp RBRC            &kp PLUS     &kp TILDE  &kp LT              &kp GT              &kp UNDER           &none
 &kp AT  &lhm_ht LGUI BSLH  &lhm_ht LSHFT LBKT  &lhm_ht LCTRL RBKT  &kp EQUAL    &kp GRAVE  &rhm_ht RCTRL LPAR  &rhm_ht RSHFT RPAR  &rhm_ht RGUI MINUS  &kp EXCL
-&none   &kp PRCNT          &kp STAR            &lhm_ht LALT HASH   &none        &none      &rhm_ht RALT CARET  &kp DLLR            &kp AMPS            &none
+&none   &kp PRCNT          &kp HASH            &lhm_ht LALT STAR   &none        &none      &rhm_ht RALT CARET  &kp DLLR            &kp AMPS            &none
                            &none               &trans              &none        &none      &cp_td              &none
             >;
         };
