@@ -209,13 +209,13 @@
         compatible = "zmk,combos";
 
         combo_conf {
-            bindings = <&sl 8>;
+            bindings = <&sl 6>;
             key-positions = <21 22 23>;
             layers = <0>;
         };
 
         combo_mouse {
-            bindings = <&to 9>;
+            bindings = <&to 7>;
             key-positions = <26 27 28>;
             layers = <0>;
         };
@@ -227,9 +227,9 @@
         default_layer {
             display-name = "Colemak DH";
             bindings = <
-&kp Q  &kp W           &kp F            &kp P            &kp B               &kp J          &kp L            &kp U            &kp Y           &slk_ht 6 SQT
+&kp Q  &kp W           &kp F            &kp P            &kp B               &kp J          &kp L            &kp U            &kp Y           &kp SQT
 &kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp G               &kp M          &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp O
-&kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V               &kp K          &rhm_ht RALT H   &comma_semi      &dot_colon      &slk_ht 7 FSLH
+&kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V               &kp K          &rhm_ht RALT H   &comma_semi      &dot_colon      &kp FSLH
                        &lk_ht 4 TAB     &lk_ht 1 SPACE   &kk_ht LSHFT ESC    &lk_ht 3 BSPC  &lk_ht 2 RET     &lk_ht 5 DEL
             >;
         };
