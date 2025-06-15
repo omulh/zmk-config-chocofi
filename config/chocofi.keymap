@@ -199,7 +199,7 @@
             bindings = <
 &kp Q  &kp W           &kp F            &kp P            &kp B               &kp J          &kp L            &kp U            &kp Y           &kp SQT
 &kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp G               &kp M          &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp O
-&kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V               &kp K          &rhm_ht RALT H   &comma_semi      &dot_colon      &kp FSLH
+&kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V               &kp K          &rhm_ht LALT H   &comma_semi      &dot_colon      &kp FSLH
                        &lk_ht 4 TAB     &lk_ht 1 SPACE   &kk_ht LSHFT ESC    &lk_ht 3 BSPC  &lk_ht 2 RET     &lk_ht 5 DEL
             >;
         };
@@ -209,7 +209,7 @@
             bindings = <
 &none   &kp PIPE           &kp LBRC            &kp RBRC            &kp PLUS     &kp TILDE  &kp LT              &kp GT              &kp UNDER           &none
 &kp AT  &lhm_ht LGUI BSLH  &lhm_ht LSHFT LBKT  &lhm_ht LCTRL RBKT  &kp EQUAL    &kp GRAVE  &rhm_ht RCTRL LPAR  &rhm_ht RSHFT RPAR  &rhm_ht RGUI MINUS  &kp EXCL
-&none   &kp PRCNT          &kp HASH            &lhm_ht LALT STAR   &none        &none      &rhm_ht RALT CARET  &kp DLLR            &kp AMPS            &none
+&none   &kp PRCNT          &kp HASH            &lhm_ht LALT STAR   &none        &none      &rhm_ht LALT CARET  &kp DLLR            &kp AMPS            &none
                            &none               &trans              &none        &none      &cp_td              &none
             >;
         };
