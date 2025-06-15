@@ -207,9 +207,9 @@
         sym {
             display-name = "Symbols";
             bindings = <
-&none   &kp PIPE           &kp LBRC            &kp RBRC            &kp PLUS     &kp TILDE  &kp LT              &kp GT              &kp UNDER           &none
+&none   &kp PIPE           &kp LBRC            &kp RBRC            &kp PLUS     &kp TILDE  &kp LT              &kp GT              &kp UNDER           &kp RA(SQT)
 &kp AT  &lhm_ht LGUI BSLH  &lhm_ht LSHFT LBKT  &lhm_ht LCTRL RBKT  &kp EQUAL    &kp GRAVE  &rhm_ht RCTRL LPAR  &rhm_ht RSHFT RPAR  &rhm_ht RGUI MINUS  &kp EXCL
-&none   &kp PRCNT          &kp HASH            &lhm_ht LALT STAR   &none        &none      &rhm_ht LALT CARET  &kp DLLR            &kp AMPS            &none
+&none   &kp PRCNT          &kp HASH            &lhm_ht LALT STAR   &none        &none      &rhm_ht LALT CARET  &kp DLLR            &kp AMPS            &kp RA(DQT)
                            &none               &trans              &none        &none      &cp_td              &none
             >;
         };
