@@ -6,9 +6,6 @@
 
 #include <behaviors/rgbled_widget.dtsi>
 
-#include "unicode_helpers.h"
-#include "unicode_chars.dtsi"
-
 #define TD_TAPPING_TERM_MS 200
 #define HT_TAPPING_TERM_MS 250
 #define QUICK_TAP_MS 200
