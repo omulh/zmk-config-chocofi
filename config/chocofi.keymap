@@ -284,26 +284,6 @@
             >;
         };
 
-        es-unicode {
-            display-name = "Spanish Unicode Characters";
-            bindings = <
-&none     &none  &none  &none  &none             &none  &none     &u_acute  &none     &inv_excl
-&a_acute  &none  &none  &none  &none             &none  &n_tilde  &e_acute  &i_acute  &o_acute
-&none     &none  &none  &none  &none             &none  &none     &none     &none     &inv_qstn
-                 &none  &none  &kl_ht LSHFT 0    &none  &none     &none
-            >;
-        };
-
-        de-unicode {
-            display-name = "German Unicode Characters";
-            bindings = <
-&none  &none  &none    &pi_math  &none             &degree     &none  &ue    &none  &none
-&ae    &none  &eszett  &none     &none             &mu_prefix  &none  &none  &none  &oe
-&none  &none  &none    &none     &none             &none       &none  &euro  &none  &none
-              &none    &none     &kl_ht LSHFT 0    &none       &none  &none
-            >;
-        };
-
         conf {
             display-name = "Configuration";
             bindings = <
