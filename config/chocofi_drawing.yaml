@@ -9,14 +9,14 @@ layers:
     - [Z, X, C, {h: Alt, t: D}, V, K, {h: Alt, t: H}, {t: ',', s: ';'}, {t: ., s: ':'}, {t: /, s: '?'}]
     - [{h: FUN, t: Tab}, {h: SYM, t: Space}, {h: Shift, t: Esc}, {h: NAV, t: Bspace}, {h: NUM, t: Enter}, {h: MEDIA, t: Delete}]
   NAV:
-    - [null, null, null, null, null, Home, "Pg  Dn", "Pg  Up", End, Ins]
+    - ["Close Win", null, null, null, null, Home, "Pg  Dn", "Pg  Up", End, Ins]
     - [null, Gui, Shift, Ctrl, null, '←', '↓', '↑', '→', Print]
-    - [null, null, null, Alt, null, "Prev Tab", null, null, "Next Tab", "Context Menu"]
+    - [null, null, null, Alt, null, "Prev Tab", "PREV WIN", "NEXT WIN", "Next Tab", "Context Menu"]
     - [null, null, null, {type: held}, null, null]
   SYM:
-    - [null, '|', '{', '}', '+', '~', '<', '>', '_', '◌́']
+    - [null, '|', '{', '}', '+', '~', '<', '>', '_', '́◌']
     - ['@', {h: Gui, t: "\\"}, {h: Shift, t: '['}, {h: Ctrl, t: ']'}, '=', '`', {h: Ctrl, t: '('}, {h: Shift, t: ')'}, {h: Gui, t: '-'}, '!']
-    - [null, '%', '#', {h: Alt, t: '*'}, null, null, {h: Alt, t: '^'}, '$', '&', '◌̈']
+    - [null, '%', '#', {h: Alt, t: '*'}, null, null, {h: Alt, t: '^'}, '$', '&', '̈◌']
     - [null, {type: held}, null, {t: AltGr, s: (sticky)}, {t: "CAPS WORD", s: "2x Caps"}, null]
   NUM:
     - [null, null, null, null, null, "Kp  /", 7, 8, 9, "Kp  -"]
@@ -24,22 +24,22 @@ layers:
     - [null, null, null, Alt, null, "Kp  *", 1, 2, 3, "Kp  +"]
     - [null, "Num Lock", null, null, {type: held}, null]
   FUN:
-    - [null, null, null, null, "proton", F12, F7, F8, F9, null]
+    - [null, null, null, null, "username", F12, F7, F8, F9, null]
     - [null, Gui, Shift, Ctrl, null, F11, F4, F5, F6, null]
     - [null, null, null, Alt, null, F10, F1, F2, F3, null]
     - [{type: held}, null, null, null, null, null]
   MEDIA:
     - [null, null, null, null, null, '󰒮', '󰏤', '󰐊', '󰒭', '󰃬']
     - [null, null, null, "SHOW BATT", null, '󰖁', '', '', '󰍭', '󱣴']
-    - [null, null, null, "SHOW CONN", null, null, '', '', null, '']
+    - [null, null, null, "SHOW CONN", null, "Scr  2 Br-", "Scr  1 Br-", "Scr  1 Br+", "Scr  2 Br+", '']
     - [null, null, null, null, null, {type: held}]
   (AltGr) DEF:
-    - [{t: 'ä', s: 'Ä'}, {t: 'å', s: 'Å'}, null, {t: 'ö', s: 'Ö'}, {t: '·', s: ' ̵◌'}]
-    - [{t: 'ï', s: 'Ï'}, {t: 'ø', s: 'Ø'}, {t: 'ú', s: 'Ú'}, {t: 'ü', s: 'Ü'}, {t: '◌́', s: '◌̈'}]
+    - [{t: 'ä', s: 'Ä'}, {t: 'å', s: 'Å'}, null, {t: 'ö', s: 'Ö'}, null]
+    - [{t: 'ï', s: 'Ï'}, {t: 'ø', s: 'Ø'}, {t: 'ú', s: 'Ú'}, {t: 'ü', s: 'Ü'}, {t: '́◌', s: '̈◌'}]
     - [{t: 'á', s: 'Á'}, {t: 'ë', s: 'Ë'}, {t: 'ß', s: '§'}, {t: 'þ', s: 'Þ'}, null]
-    - [{t: 'µ', s: '±'}, {t: 'ñ', s: 'Ñ'}, {t: 'é', s: 'É'}, {t: 'í', s: 'Í'}, {t: 'ó', s: 'Ó'}]
-    - [{t: 'æ', s: 'Æ'}, {t: 'œ', s: 'Œ'}, {t: '©', s: '¢'}, {t: 'ð', s: 'Ð'}, {t: '®', s: '™'}]
-    - [{t: 'œ', s: 'Œ'}, null, {t: 'ç', s: '¶'}, {t: '◌̇', s: '°'}, {t: '¿', s: '◌̉'}]
+    - [{t: 'µ', s: 'µ'}, {t: 'ñ', s: 'Ñ'}, {t: 'é', s: 'É'}, {t: 'í', s: 'Í'}, {t: 'ó', s: 'Ó'}]
+    - [{t: 'æ', s: 'Æ'}, {t: 'œ', s: 'Œ'}, {t: '©', s: '¢'}, {t: 'ð', s: 'Ð'}, {t: '®', s: '®'}]
+    - [{t: 'œ', s: 'Œ'}, null, {t: 'ç', s: '¶'}, {t: '̇◌', s: '°'}, {t: '¿', s: '̉◌'}]
     - [null, null, {h: Shift, t: Esc}, null, null, null]
   MOUSE:
     - [null, null, null, null, null, {t: "Scrl ←", s: "2x fast"}, {t: "Scrl ↓", s: "2x fast"}, {t: "↑", s: "2x fast"}, {t: "Scrl ↑", s: "2x fast"}, {t: "Scrl →", s: "2x fast"}]
