@@ -24,6 +24,22 @@
 
 / {
     behaviors {
+        swp_nxt: window_swapper_next {
+            compatible = "zmk,behavior-tri-state";
+            display-name = "Window Swapper Next";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp LS(TAB)>, <&kt LALT>;
+            ignored-key-positions = <15 18>;
+        };
+
+        swp_prev: window_swapper_previous {
+            compatible = "zmk,behavior-tri-state";
+            display-name = "Window Swapper Previous";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+            ignored-key-positions = <15 18>;
+        };
+
         dot_colon: dot_colon_morph {
             compatible = "zmk,behavior-mod-morph";
             display-name = "Dot/Colon Morph";
@@ -225,9 +241,9 @@
             display-name = "Navigation";
             bindings = <
 &kp LA(F4)  &none     &none      &none      &none    &kp HOME         &kp PG_DN  &kp PG_UP  &kp END      &kp INS
-&none        &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &kp LEFT         &kp DOWN   &kp UP     &kp RIGHT    &kp PSCRN
-&none        &none     &none      &kp LALT   &none    &kp LC(LS(TAB))  &none      &none      &kp LC(TAB)  &kp K_CMENU
-                       &none      &none      &none    &trans           &none      &none
+&none       &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &kp LEFT         &kp DOWN   &kp UP     &kp RIGHT    &kp PSCRN
+&none       &none     &none      &kp LALT   &none    &kp LC(LS(TAB))  &swp_prev  &swp_nxt   &kp LC(TAB)  &kp K_CMENU
+                      &none      &none      &none    &trans           &none      &none
             >;
         };
 
