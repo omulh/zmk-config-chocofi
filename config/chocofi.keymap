@@ -6,9 +6,6 @@
 
 #include <behaviors/rgbled_widget.dtsi>
 
-#include "unicode_helpers.h"
-#include "unicode_chars.dtsi"
-
 #define TD_TAPPING_TERM_MS 200
 #define HT_TAPPING_TERM_MS 250
 #define QUICK_TAP_MS 200
@@ -27,14 +24,6 @@
 
 / {
     behaviors {
-        ssl: slow_sticky_layer {
-            compatible = "zmk,behavior-sticky-key";
-            display-name = "Slow Sticky Layer";
-            #binding-cells = <1>;
-            release-after-ms = <1000>;
-            bindings = <&mo>;
-        };
-
         dot_colon: dot_colon_morph {
             compatible = "zmk,behavior-mod-morph";
             display-name = "Dot/Colon Morph";
@@ -90,33 +79,11 @@
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32>;
         };
 
-        kl_ht: key_layer_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "Balanced Key/Layer Hold/Tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&to>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HT_TAPPING_TERM_MS>;
-            quick-tap-ms = <QUICK_TAP_MS>;
-        };
-
         lk_ht: layer_key_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             display-name = "Balanced Layer/Key Hold/Tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HT_TAPPING_TERM_MS>;
-            quick-tap-ms = <QUICK_TAP_MS>;
-        };
-
-        slk_ht: sticky_layer_key_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "Balanced Sticky Layer/Key Hold/Tap";
-            #binding-cells = <2>;
-            bindings = <&ssl>, <&kp>;
 
             flavor = "balanced";
             tapping-term-ms = <HT_TAPPING_TERM_MS>;
@@ -209,13 +176,13 @@
         compatible = "zmk,combos";
 
         combo_conf {
-            bindings = <&sl 8>;
+            bindings = <&sl 6>;
             key-positions = <21 22 23>;
             layers = <0>;
         };
 
         combo_mouse {
-            bindings = <&to 9>;
+            bindings = <&to 7>;
             key-positions = <26 27 28>;
             layers = <0>;
         };
@@ -227,9 +194,9 @@
         default_layer {
             display-name = "Colemak DH";
             bindings = <
-&kp Q  &kp W           &kp F            &kp P            &kp B               &kp J          &kp L            &kp U            &kp Y           &slk_ht 6 SQT
+&kp Q  &kp W           &kp F            &kp P            &kp B               &kp J          &kp L            &kp U            &kp Y           &kp SQT
 &kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp G               &kp M          &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp O
-&kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V               &kp K          &rhm_ht RALT H   &comma_semi      &dot_colon      &slk_ht 7 FSLH
+&kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V               &kp K          &rhm_ht LALT H   &comma_semi      &dot_colon      &kp FSLH
                        &lk_ht 4 TAB     &lk_ht 1 SPACE   &kk_ht LSHFT ESC    &lk_ht 3 BSPC  &lk_ht 2 RET     &lk_ht 5 DEL
             >;
         };
@@ -237,20 +204,20 @@
         sym {
             display-name = "Symbols";
             bindings = <
-&none   &kp PIPE           &kp LBRC            &kp RBRC            &kp PLUS     &kp TILDE  &kp LT              &kp GT              &kp UNDER           &none
+&none   &kp PIPE           &kp LBRC            &kp RBRC            &kp PLUS     &kp TILDE  &kp LT              &kp GT              &kp UNDER           &kp RA(SQT)
 &kp AT  &lhm_ht LGUI BSLH  &lhm_ht LSHFT LBKT  &lhm_ht LCTRL RBKT  &kp EQUAL    &kp GRAVE  &rhm_ht RCTRL LPAR  &rhm_ht RSHFT RPAR  &rhm_ht RGUI MINUS  &kp EXCL
-&none   &kp PRCNT          &kp HASH            &lhm_ht LALT STAR   &none        &none      &rhm_ht RALT CARET  &kp DLLR            &kp AMPS            &none
-                           &none               &trans              &none        &none      &cp_td              &none
+&none   &kp PRCNT          &kp HASH            &lhm_ht LALT STAR   &none        &none      &rhm_ht LALT CARET  &kp DLLR            &kp AMPS            &kp RA(DQT)
+                           &none               &trans              &none        &sk RALT   &cp_td              &none
             >;
         };
 
         num {
             display-name = "Numbers";
             bindings = <
-&none  &none     &none      &none        &none    &kp KP_DIVIDE    &kp N7  &kp N8  &kp N9  &kp KP_MINUS
-&none  &kp LGUI  &kp LSHFT  &kp LCTRL    &none    &kp N0           &kp N4  &kp N5  &kp N6  &kp DOT
-&none  &none     &none      &kp LALT     &none    &kp KP_MULTIPLY  &kp N1  &kp N2  &kp N3  &kp KP_PLUS
-                 &none      &kp KP_NLCK  &none    &none            &trans  &none
+&none  &none     &none      &none        &none       &kp KP_DIVIDE    &kp N7  &kp N8  &kp N9  &kp KP_MINUS
+&none  &kp LGUI  &kp LSHFT  &kp LCTRL    &none       &kp N0           &kp N4  &kp N5  &kp N6  &kp DOT
+&none  &none     &none      &kp LALT     &none       &kp KP_MULTIPLY  &kp N1  &kp N2  &kp N3  &kp KP_PLUS
+                 &none      &kp KP_NLCK  &none       &none            &trans  &none
             >;
         };
 
@@ -281,26 +248,6 @@
 &none  &none  &none  &ind_bat  &none    &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp RG(RC(RS(A)))  &kp RG(RS(S))
 &none  &none  &none  &ind_con  &none    &none       &kp C_BRI_DN  &kp C_BRI_UP  &none              &kp RG(RC(RS(L)))
               &none  &none     &none    &none       &none         &trans
-            >;
-        };
-
-        es-unicode {
-            display-name = "Spanish Unicode Characters";
-            bindings = <
-&none     &none  &none  &none  &none             &none  &none     &u_acute  &none     &inv_excl
-&a_acute  &none  &none  &none  &none             &none  &n_tilde  &e_acute  &i_acute  &o_acute
-&none     &none  &none  &none  &none             &none  &none     &none     &none     &inv_qstn
-                 &none  &none  &kl_ht LSHFT 0    &none  &none     &none
-            >;
-        };
-
-        de-unicode {
-            display-name = "German Unicode Characters";
-            bindings = <
-&none  &none  &none    &pi_math  &none             &degree     &none  &ue    &none  &none
-&ae    &none  &eszett  &none     &none             &mu_prefix  &none  &none  &none  &oe
-&none  &none  &none    &none     &none             &none       &none  &euro  &none  &none
-              &none    &none     &kl_ht LSHFT 0    &none       &none  &none
             >;
         };
 
