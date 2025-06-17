@@ -48,7 +48,7 @@ layers:
     - [null, null, DEF, "Right Click", "Left Click", "Mid Click"]
   (AltGr) SYM:
     - [null, '¦', '“', '”', '÷', {type: dead, t: '̃◌'}, 'Ç', {type: dead, t: '̌◌'}, {type: dead, t: '̣◌'}, null]
-    - [null, '¬', '«', '»', '×', {type: dead, t: '̀◌'}, {type: dead, t: '̆◌'}, {type: dead, t: '̊◌'}, '¥', '¡']
+    - [{type: dead, t: '̋◌'}, '¬', '«', '»', '×', {type: dead, t: '̀◌'}, {type: dead, t: '̆◌'}, {type: dead, t: '̊◌'}, '¥', '¡']
     - [null, {type: dead, t: '̧◌'}, {type: dead, t: '̄◌'}, '¾', null, null, '¼', '£', '½', null]
     - [null, {type: held}, null, null, null, null]
   (AltGr) NUM:
