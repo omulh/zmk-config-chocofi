@@ -14,9 +14,9 @@ layers:
     - [null, null, null, Alt, null, "Prev Tab", null, null, "Next Tab", "Context Menu"]
     - [null, null, null, {type: held}, null, null]
   SYM:
-    - [null, '|', '{', '}', '+', '~', '<', '>', '_', '◌́']
+    - [null, '|', '{', '}', '+', '~', '<', '>', '_', {type: dead, t: '́◌'}]
     - ['@', {h: Gui, t: "\\"}, {h: Shift, t: '['}, {h: Ctrl, t: ']'}, '=', '`', {h: Ctrl, t: '('}, {h: Shift, t: ')'}, {h: Gui, t: '-'}, '!']
-    - [null, '%', '#', {h: Alt, t: '*'}, null, null, {h: Alt, t: '^'}, '$', '&', '◌̈']
+    - [null, '%', '#', {h: Alt, t: '*'}, null, null, {h: Alt, t: '^'}, '$', '&', {type: dead, t: '̈◌'}]
     - [null, {type: held}, null, {t: AltGr, s: (sticky)}, {t: "CAPS WORD", s: "2x Caps"}, null]
   NUM:
     - [null, null, null, null, null, "Kp  /", 7, 8, 9, "Kp  -"]
@@ -35,11 +35,11 @@ layers:
     - [null, null, null, null, null, {type: held}]
   (AltGr) DEF:
     - [{t: 'ä', s: 'Ä'}, {t: 'å', s: 'Å'}, null, {t: 'ö', s: 'Ö'}, {t: '·', s: ' ̵◌'}]
-    - [{t: 'ï', s: 'Ï'}, {t: 'ø', s: 'Ø'}, {t: 'ú', s: 'Ú'}, {t: 'ü', s: 'Ü'}, {t: '◌́', s: '◌̈'}]
+    - [{t: 'ï', s: 'Ï'}, {t: 'ø', s: 'Ø'}, {t: 'ú', s: 'Ú'}, {t: 'ü', s: 'Ü'}, {type: dead, t: '́◌', s: '̈◌'}]
     - [{t: 'á', s: 'Á'}, {t: 'ë', s: 'Ë'}, {t: 'ß', s: '§'}, {t: 'þ', s: 'Þ'}, null]
     - [{t: 'µ', s: '±'}, {t: 'ñ', s: 'Ñ'}, {t: 'é', s: 'É'}, {t: 'í', s: 'Í'}, {t: 'ó', s: 'Ó'}]
     - [{t: 'æ', s: 'Æ'}, {t: 'œ', s: 'Œ'}, {t: '©', s: '¢'}, {t: 'ð', s: 'Ð'}, {t: '®', s: '™'}]
-    - [{t: 'œ', s: 'Œ'}, null, {t: 'ç', s: '¶'}, {t: '◌̇', s: '°'}, {t: '¿', s: '◌̉'}]
+    - [{t: 'œ', s: 'Œ'}, null, {t: 'ç', s: '¶'}, {type: t_dead, t: '̇◌', s: '°'}, {type: s_dead, t: '¿', s: '̉◌'}]
     - [null, null, {h: Shift, t: Esc}, null, null, null]
   MOUSE:
     - [null, null, null, null, null, {t: "Scrl ←", s: "2x fast"}, {t: "Scrl ↓", s: "2x fast"}, {t: "↑", s: "2x fast"}, {t: "Scrl ↑", s: "2x fast"}, {t: "Scrl →", s: "2x fast"}]
@@ -47,13 +47,13 @@ layers:
     - [null, null, null, "Alt", null, null, null, null, null, null]
     - [null, null, DEF, "Right Click", "Left Click", "Mid Click"]
   (AltGr) SYM:
-    - [null, '¦', '“', '”', '÷', '◌̃', 'Ç', '◌̌', '◌̣', null]
-    - ['◌̋', '¬', '«', '»', '×', '◌̀', '◌̆', '◌̊', '¥', '¡']
-    - [null, '◌̧', '◌̄', '¾', null, null, '¼', '£', '½', null]
+    - [null, '¦', '“', '”', '÷', {type: dead, t: '̃◌'}, 'Ç', {type: dead, t: '̌◌'}, {type: dead, t: '̣◌'}, null]
+    - [{type: dead, t: '̋◌'}, '¬', '«', '»', '×', {type: dead, t: '̀◌'}, {type: dead, t: '̆◌'}, {type: dead, t: '̊◌'}, '¥', '¡']
+    - [null, {type: dead, t: '̧◌'}, {type: dead, t: '̄◌'}, '¾', null, null, '¼', '£', '½', null]
     - [null, {type: held}, null, null, null, null]
   (AltGr) NUM:
-    - [null, null, null, null, null, null, '◌̛', '◌̨', '‘', null]
-    - [null, null, null, null, null, '’', '¤', '€', '◌̂', '◌̇']
+    - [null, null, null, null, null, null, {type: dead, t: '◌̛ '}, {type: dead, t: '̨◌'}, '‘', null]
+    - [null, null, null, null, null, '’', '¤', '€', {type: dead, t: '̂◌'}, {type: dead, t: '̇◌'}]
     - [null, null, null, null, null, null, '¹', '²', '³', null]
     - [null, null, null, null, {type: held}, null]
   CONFIG:
@@ -96,7 +96,7 @@ draw_config:
     rel_h: 12.0
     rx: 4.0
     ry: 4.0
-  svg_extra_style: 'svg.keymap { font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Symbols Nerd Font,monospace; } text.hold { font-size: 10px; fill: #1b3dc4} text.layer-activator { fill: #147f1b; text-decoration: none; }'
+  svg_extra_style: 'svg.keymap { font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Symbols Nerd Font,monospace; } text.hold { font-size: 10px; fill: #1b3dc4} text.layer-activator { fill: #147f1b; text-decoration: none; } text.dead { font-size: 19px } text.dead.shifted { font-size: 15px} text.s_dead { font-size: 14px } text.s_dead.shifted { font-size: 15px} text.t_dead { font-size: 19px } text.t_dead.shifted { font-size: 11px} '
   footer_text: Created with <a href="https://github.com/caksoylar/keymap-drawer">keymap-drawer</a>
   shrink_wide_legends: 7
   style_layer_activators: true
