@@ -63,8 +63,8 @@ layers:
     - [null, null, DEF, null, null, null]
 
 combos:
-  - {p: [21, 22, 23], k: CONFIG, l: ["DEF"]}
-  - {p: [26, 27, 28], k: MOUSE, l: ["DEF"]}
+  - {p: [21, 22, 23], k: CONFIG, l: ["DEF"], type: layer, a: "bottom", slide: -0.2, w: 45, o: 0.1}
+  - {p: [26, 27, 28], k: MOUSE, l: ["DEF"], type: layer, a: "bottom", slide: 0.2, w: 45, o: 0.1}
 
 draw_config:
   key_w: 60
@@ -76,7 +76,7 @@ draw_config:
   key_ry: 6.0
   dark_mode: false
   n_columns: 2
-  separate_combo_diagrams: true
+  separate_combo_diagrams: false
   combo_diagrams_scale: 2
   inner_pad_w: 2.0
   inner_pad_h: 2.0
@@ -96,7 +96,7 @@ draw_config:
     rel_h: 12.0
     rx: 4.0
     ry: 4.0
-  svg_extra_style: 'svg.keymap { font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Symbols Nerd Font,monospace; } text.hold { font-size: 10px; fill: #1b3dc4} text.layer-activator { fill: #147f1b; text-decoration: none; } text.dead { font-size: 19px } text.dead.shifted { font-size: 15px} text.s_dead { font-size: 14px } text.s_dead.shifted { font-size: 15px} text.t_dead { font-size: 19px } text.t_dead.shifted { font-size: 11px} '
+  svg_extra_style: 'svg.keymap { font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Symbols Nerd Font,monospace; } text.hold { font-size: 10px; fill: #1b3dc4} text.layer-activator { fill: #147f1b; text-decoration: none; } text.dead { font-size: 19px; } text.dead.shifted { font-size: 15px; } text.s_dead { font-size: 14px; } text.s_dead.shifted { font-size: 15px; } text.t_dead { font-size: 19px; } text.t_dead.shifted { font-size: 11px; } rect.combo { fill: #e0e9fc; } text.combo.layer { fill: #147f1b; } '
   footer_text: Created with <a href="https://github.com/caksoylar/keymap-drawer">keymap-drawer</a>
   shrink_wide_legends: 7
   style_layer_activators: true
