@@ -24,6 +24,16 @@
 
 / {
     behaviors {
+        skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            display-name = "Sticky Key Quick Release";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <1000>;
+            quick-release;
+            ignore-modifiers;
+        };
+
         swp_nxt: window_swapper_next {
             compatible = "zmk,behavior-tri-state";
             display-name = "Window Swapper Next";
@@ -40,6 +50,14 @@
             ignored-key-positions = <15 18>;
         };
 
+        magic_shift: shift_caps_word_morph {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Shift/Caps Word Morph";
+            #binding-cells = <0>;
+            bindings = <&skq LSHFT>, <&caps_word>;
+            mods = <(MOD_LSFT)>;
+        };
+
         dot_colon: dot_colon_morph {
             compatible = "zmk,behavior-mod-morph";
             display-name = "Dot/Colon Morph";
@@ -54,6 +72,16 @@
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp SEMI>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ms_ht: magic_shift_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Magic Shift Hold/Tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&magic_shift>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HT_TAPPING_TERM_MS>;
         };
 
         kk_ht: key_key_hold_tap {
@@ -210,10 +238,10 @@
         default_layer {
             display-name = "Colemak DH";
             bindings = <
-&kp Q  &kp W           &kp F            &kp P            &kp B               &kp J          &kp L            &kp U            &kp Y           &kp SQT
-&kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp G               &kp M          &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp O
-&kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V               &kp K          &rhm_ht LALT H   &comma_semi      &dot_colon      &kp FSLH
-                       &lk_ht 4 TAB     &lk_ht 1 SPACE   &kk_ht LSHFT ESC    &lk_ht 3 BSPC  &lk_ht 2 RET     &lk_ht 5 DEL
+&kp Q  &kp W           &kp F            &kp P            &kp B             &kp J          &kp L            &kp U            &kp Y           &kp SQT
+&kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp G             &kp M          &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp O
+&kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V             &kp K          &rhm_ht LALT H   &comma_semi      &dot_colon      &kp FSLH
+                       &lk_ht 4 ESC     &lk_ht 1 SPACE   &ms_ht LSHFT 0    &lk_ht 3 BSPC  &lk_ht 2 RET     &lk_ht 5 DEL
             >;
         };
 
@@ -243,7 +271,7 @@
 &kp LA(F4)  &none     &none      &none      &none    &kp HOME         &kp PG_DN  &kp PG_UP  &kp END      &kp INS
 &none       &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &kp LEFT         &kp DOWN   &kp UP     &kp RIGHT    &kp PSCRN
 &none       &none     &none      &kp LALT   &none    &kp LC(LS(TAB))  &swp_prev  &swp_nxt   &kp LC(TAB)  &kp K_CMENU
-                      &none      &none      &none    &trans           &none      &none
+                      &none      &kp TAB    &none    &trans           &none      &none
             >;
         };
 
