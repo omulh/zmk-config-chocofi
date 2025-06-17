@@ -96,7 +96,7 @@ draw_config:
     rel_h: 12.0
     rx: 4.0
     ry: 4.0
-  svg_extra_style: 'svg.keymap { font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Symbols Nerd Font,monospace; } text.layer-activator { fill: #147f1b; text-decoration: none; } text.dead { font-size: 19px } text.dead.shifted { font-size: 15px} text.s_dead { font-size: 14px } text.s_dead.shifted { font-size: 15px} text.t_dead { font-size: 19px } text.t_dead.shifted { font-size: 11px} '
+  svg_extra_style: 'svg.keymap { font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Symbols Nerd Font,monospace; } text.hold { font-size: 10px; fill: #1b3dc4} text.layer-activator { fill: #147f1b; text-decoration: none; } text.dead { font-size: 19px } text.dead.shifted { font-size: 15px} text.s_dead { font-size: 14px } text.s_dead.shifted { font-size: 15px} text.t_dead { font-size: 19px } text.t_dead.shifted { font-size: 11px} '
   footer_text: Created with <a href="https://github.com/caksoylar/keymap-drawer">keymap-drawer</a>
   shrink_wide_legends: 7
   style_layer_activators: true
