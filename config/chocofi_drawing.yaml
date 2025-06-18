@@ -24,14 +24,14 @@ layers:
     - [null, null, null, Alt, null, "Kp  *", 1, 2, 3, "Kp  +"]
     - [null, "Num Lock", null, null, {type: held}, null]
   FUN:
-    - [null, null, null, null, "username", F12, F7, F8, F9, null]
+    - [null, null, null, null, {type: zmk, t: "USERNAME MACRO"}, F12, F7, F8, F9, null]
     - [null, Gui, Shift, Ctrl, null, F11, F4, F5, F6, null]
     - [null, null, null, Alt, null, F10, F1, F2, F3, null]
     - [{type: held}, null, null, null, null, null]
   MEDIA:
     - [null, null, null, null, null, '󰒮', '󰏤', '󰐊', '󰒭', '󰃬']
-    - [null, null, null, "SHOW BATT", null, '󰖁', '', '', '󰍭', '󱣴']
-    - [null, null, null, "SHOW CONN", null, "Scr  2 Br-", "Scr  1 Br-", "Scr  1 Br+", "Scr  2 Br+", '']
+    - [null, null, null, {type: zmk, t: "SHOW BATT"}, null, '󰖁', '', '', '󰍭', '󱣴']
+    - [null, null, null, {type: zmk, t: "SHOW CONN"}, null, "Scr  2 Br-", "Scr  1 Br-", "Scr  1 Br+", "Scr  2 Br+", '']
     - [null, null, null, null, null, {type: held}]
   (AltGr) DEF:
     - [{t: 'ä', s: 'Ä'}, {t: 'å', s: 'Å'}, null, {t: 'ö', s: 'Ö'}, null]
