@@ -34,6 +34,14 @@
             ignore-modifiers;
         };
 
+        sls: sticky_layer_slow_release {
+            compatible = "zmk,behavior-sticky-key";
+            display-name = "Sticky Layer Slow Release";
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            bindings = <&mo>;
+        };
+
         swp_nxt: window_swapper_next {
             compatible = "zmk,behavior-tri-state";
             display-name = "Window Swapper Next";
@@ -138,7 +146,7 @@
             compatible = "zmk,behavior-hold-tap";
             display-name = "Balanced Layer/Sticky Layer Hold/Tap";
             #binding-cells = <2>;
-            bindings = <&mo>, <&sl>;
+            bindings = <&mo>, <&sls>;
 
             flavor = "balanced";
             tapping-term-ms = <HT_TAPPING_TERM_MS>;
