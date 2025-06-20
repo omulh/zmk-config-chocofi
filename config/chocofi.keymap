@@ -134,6 +134,16 @@
             quick-tap-ms = <QUICK_TAP_MS>;
         };
 
+        lsl_ht: layer_sticky_layer_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Balanced Layer/Sticky Layer Hold/Tap";Add commentMore actions
+            #binding-cells = <2>;
+            bindings = <&mo>, <&sl>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HT_TAPPING_TERM_MS>;
+        };
+
         mml_td: mouse_move_left_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Mouse Move Left Tap Dance";
@@ -233,7 +243,7 @@
 &kp Q  &kp W           &kp F            &kp P            &kp B             &kp J         &kp L            &kp U            &kp Y           &kp SQT
 &kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp G             &kp M         &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp O
 &kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V             &kp K         &rhm_ht LALT H   &comma_semi      &dot_colon      &kp FSLH
-                       &lk_ht 4 ESC     &lk_ht 1 SPACE   &ms_ht LSHFT 0    &lk_ht 3 RET  &lk_ht 2 SPACE   &lk_ht 5 BSPC
+                       &lsl_ht 4 4      &lsl_ht 1 1      &ms_ht LSHFT 0    &lk_ht 3 RET  &lk_ht 2 SPACE   &lk_ht 5 BSPC
             >;
         };
 
