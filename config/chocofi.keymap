@@ -136,7 +136,7 @@
 
         lsl_ht: layer_sticky_layer_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            display-name = "Balanced Layer/Sticky Layer Hold/Tap";Add commentMore actions
+            display-name = "Balanced Layer/Sticky Layer Hold/Tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&sl>;
 
