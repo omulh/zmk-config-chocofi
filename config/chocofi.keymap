@@ -230,10 +230,10 @@
         default_layer {
             display-name = "Colemak DH";
             bindings = <
-&kp Q  &kp W           &kp F            &kp P            &kp B             &kp J          &kp L            &kp U            &kp Y           &kp SQT
-&kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp G             &kp M          &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp O
-&kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V             &kp K          &rhm_ht LALT H   &comma_semi      &dot_colon      &kp FSLH
-                       &lk_ht 4 ESC     &lk_ht 1 SPACE   &ms_ht LSHFT 0    &lk_ht 3 BSPC  &lk_ht 2 RET     &lk_ht 5 DEL
+&kp Q  &kp W           &kp F            &kp P            &kp B             &kp J         &kp L            &kp U            &kp Y           &kp SQT
+&kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp G             &kp M         &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp O
+&kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V             &kp K         &rhm_ht LALT H   &comma_semi      &dot_colon      &kp FSLH
+                       &lk_ht 4 ESC     &lk_ht 1 SPACE   &ms_ht LSHFT 0    &lk_ht 3 RET  &lk_ht 2 SPACE   &lk_ht 5 BSPC
             >;
         };
 
@@ -250,10 +250,10 @@
         navi {
             display-name = "Navigation";
             bindings = <
-&kp LA(F4)  &none     &none      &none      &none    &kp HOME         &kp PG_DN  &kp PG_UP  &kp END      &kp INS
-&none       &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &kp LEFT         &kp DOWN   &kp UP     &kp RIGHT    &kp PSCRN
-&none       &none     &none      &kp LALT   &none    &kp LC(LS(TAB))  &swp_prev  &swp_nxt   &kp LC(TAB)  &kp K_CMENU
-                      &none      &kp TAB    &none    &none            &trans     &none
+&kp LA(F4)  &none     &none      &none      &none      &kp HOME         &kp PG_DN  &kp PG_UP  &kp END      &kp INS
+&none       &kp LGUI  &kp LSHFT  &kp LCTRL  &none      &kp LEFT         &kp DOWN   &kp UP     &kp RIGHT    &kp PSCRN
+&none       &none     &none      &kp LALT   &none      &kp LC(LS(TAB))  &swp_prev  &swp_nxt   &kp LC(TAB)  &kp K_CMENU
+                      &kp DEL    &kp TAB    &kp ESC    &none            &trans     &none
             >;
         };
 
