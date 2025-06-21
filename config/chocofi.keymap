@@ -92,17 +92,6 @@
             tapping-term-ms = <HT_TAPPING_TERM_MS>;
         };
 
-        kk_ht: key_key_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "Balanced Key/Key Hold/Tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HT_TAPPING_TERM_MS>;
-            quick-tap-ms = <QUICK_TAP_MS>;
-        };
-
         lhm_ht: left_homerow_mod_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             display-name = "Left Homerow Mod Hold/Tap";
