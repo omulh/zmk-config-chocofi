@@ -260,17 +260,17 @@
 &none   &kp PIPE           &kp LBRC            &kp RBRC            &kp PLUS     &kp TILDE  &kp LT              &kp GT              &kp UNDER           &kp RA(SQT)
 &kp AT  &lhm_ht LGUI BSLH  &lhm_ht LSHFT LBKT  &lhm_ht LCTRL RBKT  &kp EQUAL    &kp GRAVE  &rhm_ht RCTRL LPAR  &rhm_ht RSHFT RPAR  &rhm_ht RGUI MINUS  &kp EXCL
 &none   &kp PRCNT          &kp HASH            &lhm_ht LALT STAR   &none        &none      &rhm_ht LALT CARET  &kp DLLR            &kp AMPS            &kp RA(DQT)
-                           &none               &trans              &none        &sk RALT   &kp CAPS            &none
+                           &none               &trans              &none        &kp ESC    &kp TAB             &kp DEL
             >;
         };
 
         navi {
             display-name = "Navigation";
             bindings = <
-&kp LA(F4)  &none     &none      &none      &none      &kp HOME         &kp PG_DN  &kp PG_UP  &kp END      &kp INS
-&none       &kp LGUI  &kp LSHFT  &kp LCTRL  &none      &kp LEFT         &kp DOWN   &kp UP     &kp RIGHT    &kp PSCRN
-&none       &none     &none      &kp LALT   &none      &kp LC(LS(TAB))  &swp_prev  &swp_nxt   &kp LC(TAB)  &kp K_CMENU
-                      &kp DEL    &kp TAB    &kp ESC    &none            &trans     &none
+&kp LA(F4)  &none     &none      &none      &none       &kp HOME         &kp PG_DN  &kp PG_UP  &kp END      &kp INS
+&none       &kp LGUI  &kp LSHFT  &kp LCTRL  &none       &kp LEFT         &kp DOWN   &kp UP     &kp RIGHT    &kp PSCRN
+&none       &none     &none      &kp LALT   &none       &kp LC(LS(TAB))  &swp_prev  &swp_nxt   &kp LC(TAB)  &kp K_CMENU
+                      &none      &kp CAPS   &sk RALT    &none            &trans     &none
             >;
         };
 
