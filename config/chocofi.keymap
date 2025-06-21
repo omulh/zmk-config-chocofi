@@ -133,7 +133,7 @@
 
         lk_ht: layer_key_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            display-name = "Balanced Layer/Key Hold/Tap";
+            display-name = "Layer/Key Hold/Tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
 
@@ -142,11 +142,21 @@
             quick-tap-ms = <QUICK_TAP_MS>;
         };
 
-        lsl_ht: layer_sticky_layer_hold_tap {
+        lsls_ht: layer_sticky_layer_slow_release_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            display-name = "Balanced Layer/Sticky Layer Hold/Tap";
+            display-name = "Layer/Sticky Layer Slow Release Hold/Tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&sls>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HT_TAPPING_TERM_MS>;
+        };
+
+        lsl_ht: layer_sticky_layer_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Layer/Sticky Layer Hold/Tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&sl>;
 
             flavor = "balanced";
             tapping-term-ms = <HT_TAPPING_TERM_MS>;
@@ -251,7 +261,7 @@
 &kp Q  &kp W           &kp F            &kp P            &kp B             &kp J         &kp L            &kp U            &kp Y           &kp SQT
 &kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp G             &kp M         &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp O
 &kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V             &kp K         &rhm_ht LALT H   &comma_semi      &dot_colon      &kp FSLH
-                       &lsl_ht 4 4      &lsl_ht 1 1      &ms_ht LSHFT 0    &lk_ht 3 RET  &lk_ht 2 SPACE   &lk_ht 5 BSPC
+                       &lsl_ht 4 4      &lsls_ht 1 1     &ms_ht LSHFT 0    &lk_ht 3 RET  &lk_ht 2 SPACE   &lk_ht 5 BSPC
             >;
         };
 
