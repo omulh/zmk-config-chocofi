@@ -7,26 +7,26 @@ layers:
     - [Q, W, F, P, B, J, L, U, Y, {t: "'", s: '"'}]
     - [A, {h: Gui, t: R}, {h: Shift, t: S}, {h: Ctrl, t: T}, G, M, {h: Ctrl, t: N}, {h: Shift, t: E}, {h: Gui, t: I}, O]
     - [Z, X, C, {h: Alt, t: D}, V, K, {h: Alt, t: H}, {t: ',', s: ';'}, {t: ., s: ':'}, {t: /, s: '?'}]
-    - [{h: FUN, t: Esc}, {h: SYM, t: Space}, {type: dance, h: Shift, t: "sticky Shift", s: "x2 CW"}, {h: NAV, t: Bspace}, {h: NUM, t: Enter}, {h: MEDIA, t: Delete}]
-  NAV:
-    - ["Close Win", null, null, null, null, Home, "Pg  Dn", "Pg  Up", End, Ins]
-    - [null, Gui, Shift, Ctrl, null, '←', '↓', '↑', '→', Print]
-    - [null, null, null, Alt, null, "Prev Tab", {type: zmk, t: "PREV WIN"}, {type: zmk, t: "NEXT WIN"}, "Next Tab", "Context Menu"]
-    - [null, Tab, null, {type: held}, null, null]
-  SYM:
-    - [null, '|', '{', '}', '+', '~', '<', '>', '_', {type: dead, t: '́◌'}]
-    - ['@', {h: Gui, t: "\\"}, {h: Shift, t: '['}, {h: Ctrl, t: ']'}, '=', '`', {h: Ctrl, t: '('}, {h: Shift, t: ')'}, {h: Gui, t: '-'}, '!']
-    - [null, '%', '#', {h: Alt, t: '*'}, null, null, {h: Alt, t: '^'}, '$', '&', {type: dead, t: '̈◌'}]
-    - [null, {type: held}, null, "sticky AltGr", "Caps Lock", null]
+    - [{type: sticky-layer, h: FUN, t: "[FUN]"}, {type: sticky-layer, h: SYM, t: "[SYM]"}, {type: dance, h: Shift, t: "[Shift]", s: "x2 CW"}, {h: NAV, t: Enter}, {h: NUM, t: Space}, {h: MEDIA, t: Bspace}]
   NUM:
     - [null, null, null, null, null, "Kp  /", 7, 8, 9, "Kp  -"]
     - [null, Gui, Shift, Ctrl, null, 0, 4, 5, 6, .]
     - [null, null, null, Alt, null, "Kp  *", 1, 2, 3, "Kp  +"]
-    - [null, "Num Lock", null, null, {type: held}, null]
+    - [null, "Num Lock", null, {type: held}, null, null]
+  SYM:
+    - [null, '|', '{', '}', '+', '~', '<', '>', '_', {type: dead, t: '́◌'}]
+    - ['@', {h: Gui, t: "\\"}, {h: Shift, t: '['}, {h: Ctrl, t: ']'}, '=', '`', {h: Ctrl, t: '('}, {h: Shift, t: ')'}, {h: Gui, t: '-'}, '!']
+    - [null, '%', '#', {h: Alt, t: '*'}, null, null, {h: Alt, t: '^'}, '$', '&', {type: dead, t: '̈◌'}]
+    - [null, {type: held}, null, Esc, Tab, Delete]
+  NAV:
+    - ["Close Win", null, null, null, null, Home, "Pg  Dn", "Pg  Up", End, Ins]
+    - [null, Gui, Shift, Ctrl, null, '←', '↓', '↑', '→', Print]
+    - [null, null, null, Alt, null, "Prev Tab", {type: zmk, t: "PREV WIN"}, {type: zmk, t: "NEXT WIN"}, "Next Tab", "Context Menu"]
+    - [null, "Caps Lock", "[AltGr]", null, {type: held}, null]
   FUN:
     - [null, null, null, null, {type: zmk, t: "USERNAME MACRO"}, F12, F7, F8, F9, null]
-    - [null, Gui, Shift, Ctrl, null, F11, F4, F5, F6, null]
-    - [null, null, null, Alt, null, F10, F1, F2, F3, null]
+    - [null, "[Gui]", "[Shift]", "[Ctrl]", null, F11, F4, F5, F6, null]
+    - [null, null, null, "[Alt]", null, F10, F1, F2, F3, null]
     - [{type: held}, null, null, null, null, null]
   MEDIA:
     - [null, null, null, null, null, '󰒮', '󰏤', '󰐊', '󰒭', '󰃬']
@@ -40,22 +40,22 @@ layers:
     - [{t: 'µ', s: 'µ'}, {t: 'ñ', s: 'Ñ'}, {t: 'é', s: 'É'}, {t: 'í', s: 'Í'}, {t: 'ó', s: 'Ó'}]
     - [{t: 'æ', s: 'Æ'}, {t: 'œ', s: 'Œ'}, {t: '©', s: '¢'}, {t: 'ð', s: 'Ð'}, {t: '®', s: '®'}]
     - [{t: 'œ', s: 'Œ'}, null, {t: 'ç', s: '¶'}, {type: t_dead, t: '̇◌', s: '°'}, {type: s_dead, t: '¿', s: '̉◌'}]
-    - [null, null, {h: Shift, t: "sticky Shift"}, null, null, null]
-  MOUSE:
-    - [null, null, null, null, null, {type: dance, t: "Scrl ←", s: "2x fast"}, {type: dance, t: "Scrl ↓", s: "2x fast"}, {type: dance, t: "↑", s: "2x fast"}, {type: dance, t: "Scrl ↑", s: "2x fast"}, {type: dance, t: "Scrl →", s: "2x fast"}]
-    - [null, "Gui", "Shift", "Ctrl", null, "MB4 Click", {type: dance, t: "←  ", s: "2x fast"}, {type: dance, t: "↓", s: "2x fast"}, {type: dance, t: "    →", s: "2x fast"}, "MB5 Click"]
-    - [null, null, null, "Alt", null, null, null, null, null, null]
-    - [null, null, DEF, "Right Click", "Left Click", "Mid Click"]
+    - [null, null, {h: Shift, t: "[Shift]"}, null, null, null]
+  (AltGr) NUM:
+    - [null, null, null, null, null, null, {type: dead, t: '◌̛ '}, {type: dead, t: '̨◌'}, '‘', null]
+    - [null, null, null, null, null, '’', '¤', '€', {type: dead, t: '̂◌'}, {type: dead, t: '̇◌'}]
+    - [null, null, null, null, null, null, '¹', '²', '³', null]
+    - [null, null, null, {type: held}, null, null]
   (AltGr) SYM:
     - [null, '¦', '“', '”', '÷', {type: dead, t: '̃◌'}, 'Ç', {type: dead, t: '̌◌'}, {type: dead, t: '̣◌'}, null]
     - [{type: dead, t: '̋◌'}, '¬', '«', '»', '×', {type: dead, t: '̀◌'}, {type: dead, t: '̆◌'}, {type: dead, t: '̊◌'}, '¥', '¡']
     - [null, {type: dead, t: '̧◌'}, {type: dead, t: '̄◌'}, '¾', null, null, '¼', '£', '½', null]
     - [null, {type: held}, null, null, null, null]
-  (AltGr) NUM:
-    - [null, null, null, null, null, null, {type: dead, t: '◌̛ '}, {type: dead, t: '̨◌'}, '‘', null]
-    - [null, null, null, null, null, '’', '¤', '€', {type: dead, t: '̂◌'}, {type: dead, t: '̇◌'}]
-    - [null, null, null, null, null, null, '¹', '²', '³', null]
-    - [null, null, null, null, {type: held}, null]
+  MOUSE:
+    - [null, null, null, null, null, {type: dance, t: "Scrl ←", s: "2x fast"}, {type: dance, t: "Scrl ↓", s: "2x fast"}, {type: dance, t: "↑", s: "2x fast"}, {type: dance, t: "Scrl ↑", s: "2x fast"}, {type: dance, t: "Scrl →", s: "2x fast"}]
+    - [null, "Gui", "Shift", "Ctrl", null, "MB4 Click", {type: dance, t: "←  ", s: "2x fast"}, {type: dance, t: "↓", s: "2x fast"}, {type: dance, t: "    →", s: "2x fast"}, "MB5 Click"]
+    - [null, null, null, "Alt", null, null, null, null, null, null]
+    - [null, null, DEF, "Right Click", "Left Click", "Mid Click"]
   CONFIG:
     - [{type: zmk, t: "BT0"}, {type: zmk, t: "BT1"}, {type: zmk, t: "BT2"}, null, {type: zmk, t: "BT CLR"}, null, null, null, null, null]
     - [null, null, null, null, {type: zmk, t: "OUT BLE"}, null, null, null, null, null]
@@ -96,7 +96,7 @@ draw_config:
     rel_h: 12.0
     rx: 4.0
     ry: 4.0
-  svg_extra_style: 'svg.keymap { font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Symbols Nerd Font,monospace; } text.hold { font-size: 10px; fill: #1b3dc4} text.layer-activator { fill: #147f1b; text-decoration: none; } text.dance.shifted { fill: #747; } text.zmk { fill: #703d3d; } text.dead { font-size: 19px; } text.dead.shifted { font-size: 15px; } text.s_dead { font-size: 14px; } text.s_dead.shifted { font-size: 15px; } text.t_dead { font-size: 19px; } text.t_dead.shifted { font-size: 11px; } rect.combo { fill: #e0e9fc; } text.combo.layer { fill: #147f1b; } '
+  svg_extra_style: 'svg.keymap { font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Symbols Nerd Font,monospace; } text.hold { font-size: 10px; fill: #1b3dc4} text.layer-activator { fill: #147f1b; text-decoration: none; } text.sticky-layer { fill: #147f1b; } text.dance.shifted { fill: #747; } text.zmk { fill: #703d3d; } text.dead { font-size: 19px; } text.dead.shifted { font-size: 15px; } text.s_dead { font-size: 14px; } text.s_dead.shifted { font-size: 15px; } text.t_dead { font-size: 19px; } text.t_dead.shifted { font-size: 11px; } rect.combo { fill: #e0e9fc; } text.combo.layer { fill: #147f1b; } '
   footer_text: Created with <a href="https://github.com/caksoylar/keymap-drawer">keymap-drawer</a>
   shrink_wide_legends: 7
   style_layer_activators: true

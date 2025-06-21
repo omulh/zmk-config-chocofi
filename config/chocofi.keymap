@@ -34,6 +34,14 @@
             ignore-modifiers;
         };
 
+        sls: sticky_layer_slow_release {
+            compatible = "zmk,behavior-sticky-key";
+            display-name = "Sticky Layer Slow Release";
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            bindings = <&mo>;
+        };
+
         swp_nxt: window_swapper_next {
             compatible = "zmk,behavior-tri-state";
             display-name = "Window Swapper Next";
@@ -84,17 +92,6 @@
             tapping-term-ms = <HT_TAPPING_TERM_MS>;
         };
 
-        kk_ht: key_key_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "Balanced Key/Key Hold/Tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HT_TAPPING_TERM_MS>;
-            quick-tap-ms = <QUICK_TAP_MS>;
-        };
-
         lhm_ht: left_homerow_mod_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             display-name = "Left Homerow Mod Hold/Tap";
@@ -125,13 +122,33 @@
 
         lk_ht: layer_key_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            display-name = "Balanced Layer/Key Hold/Tap";
+            display-name = "Layer/Key Hold/Tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
 
             flavor = "balanced";
             tapping-term-ms = <HT_TAPPING_TERM_MS>;
             quick-tap-ms = <QUICK_TAP_MS>;
+        };
+
+        lsls_ht: layer_sticky_layer_slow_release_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Layer/Sticky Layer Slow Release Hold/Tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&sls>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HT_TAPPING_TERM_MS>;
+        };
+
+        lsl_ht: layer_sticky_layer_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Layer/Sticky Layer Hold/Tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&sl>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HT_TAPPING_TERM_MS>;
         };
 
         mml_td: mouse_move_left_tap_dance {
@@ -230,10 +247,10 @@
         default_layer {
             display-name = "Colemak DH";
             bindings = <
-&kp Q  &kp W           &kp F            &kp P            &kp B             &kp J          &kp L            &kp U            &kp Y           &kp SQT
-&kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp G             &kp M          &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp O
-&kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V             &kp K          &rhm_ht LALT H   &comma_semi      &dot_colon      &kp FSLH
-                       &lk_ht 4 ESC     &lk_ht 1 SPACE   &ms_ht LSHFT 0    &lk_ht 3 BSPC  &lk_ht 2 RET     &lk_ht 5 DEL
+&kp Q  &kp W           &kp F            &kp P            &kp B             &kp J         &kp L            &kp U            &kp Y           &kp SQT
+&kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp G             &kp M         &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp O
+&kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V             &kp K         &rhm_ht LALT H   &comma_semi      &dot_colon      &kp FSLH
+                       &lsl_ht 4 4      &lsls_ht 1 1     &ms_ht LSHFT 0    &lk_ht 3 RET  &lk_ht 2 SPACE   &lk_ht 5 BSPC
             >;
         };
 
@@ -243,27 +260,27 @@
 &none   &kp PIPE           &kp LBRC            &kp RBRC            &kp PLUS     &kp TILDE  &kp LT              &kp GT              &kp UNDER           &kp RA(SQT)
 &kp AT  &lhm_ht LGUI BSLH  &lhm_ht LSHFT LBKT  &lhm_ht LCTRL RBKT  &kp EQUAL    &kp GRAVE  &rhm_ht RCTRL LPAR  &rhm_ht RSHFT RPAR  &rhm_ht RGUI MINUS  &kp EXCL
 &none   &kp PRCNT          &kp HASH            &lhm_ht LALT STAR   &none        &none      &rhm_ht LALT CARET  &kp DLLR            &kp AMPS            &kp RA(DQT)
-                           &none               &trans              &none        &sk RALT   &kp CAPS            &none
-            >;
-        };
-
-        num {
-            display-name = "Numbers";
-            bindings = <
-&none  &none     &none      &none        &none       &kp KP_DIVIDE    &kp N7  &kp N8  &kp N9  &kp KP_MINUS
-&none  &kp LGUI  &kp LSHFT  &kp LCTRL    &none       &kp N0           &kp N4  &kp N5  &kp N6  &kp DOT
-&none  &none     &none      &kp LALT     &none       &kp KP_MULTIPLY  &kp N1  &kp N2  &kp N3  &kp KP_PLUS
-                 &none      &kp KP_NLCK  &none       &none            &trans  &none
+                           &none               &trans              &none        &kp ESC    &kp TAB             &kp DEL
             >;
         };
 
         navi {
             display-name = "Navigation";
             bindings = <
-&kp LA(F4)  &none     &none      &none      &none    &kp HOME         &kp PG_DN  &kp PG_UP  &kp END      &kp INS
-&none       &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &kp LEFT         &kp DOWN   &kp UP     &kp RIGHT    &kp PSCRN
-&none       &none     &none      &kp LALT   &none    &kp LC(LS(TAB))  &swp_prev  &swp_nxt   &kp LC(TAB)  &kp K_CMENU
-                      &none      &kp TAB    &none    &trans           &none      &none
+&kp LA(F4)  &none     &none      &none      &none       &kp HOME         &kp PG_DN  &kp PG_UP  &kp END      &kp INS
+&none       &kp LGUI  &kp LSHFT  &kp LCTRL  &none       &kp LEFT         &kp DOWN   &kp UP     &kp RIGHT    &kp PSCRN
+&none       &none     &none      &kp LALT   &none       &kp LC(LS(TAB))  &swp_prev  &swp_nxt   &kp LC(TAB)  &kp K_CMENU
+                      &none      &kp CAPS   &sk RALT    &none            &trans     &none
+            >;
+        };
+
+        num {
+            display-name = "Numbers";
+            bindings = <
+&none  &none     &none      &none        &none    &kp KP_DIVIDE    &kp N7  &kp N8  &kp N9  &kp KP_MINUS
+&none  &kp LGUI  &kp LSHFT  &kp LCTRL    &none    &kp N0           &kp N4  &kp N5  &kp N6  &kp DOT
+&none  &none     &none      &kp LALT     &none    &kp KP_MULTIPLY  &kp N1  &kp N2  &kp N3  &kp KP_PLUS
+                 &none      &kp KP_NLCK  &none    &trans           &none   &none
             >;
         };
 
@@ -271,8 +288,8 @@
             display-name = "Function Keys";
             bindings = <
 &none  &none     &none      &none      &user    &kp F12  &kp F7  &kp F8  &kp F9  &none
-&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &kp F11  &kp F4  &kp F5  &kp F6  &none
-&none  &none     &none      &kp LALT   &none    &kp F10  &kp F1  &kp F2  &kp F3  &none
+&none  &sk LGUI  &sk LSHFT  &sk LCTRL  &none    &kp F11  &kp F4  &kp F5  &kp F6  &none
+&none  &none     &none      &sk LALT   &none    &kp F10  &kp F1  &kp F2  &kp F3  &none
                  &trans     &none      &none    &none    &none   &none
             >;
         };
