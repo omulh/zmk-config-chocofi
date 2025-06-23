@@ -61,10 +61,15 @@ layers:
     - [null, null, null, null, null, {type: zmk, t: "OUT USB"}, null, null, null, null]
     - [null, null, null, null, null, null, null, null, null, null]
     - [null, null, null, DEF, null, null]
+  Combos:
+    - [null, null, null, null, null, null, null, null, null, null]
+    - [null, null, null, null, null, null, null, null, null, null]
+    - [null, null, null, null, null, null, null, null, null, null]
+    - [null, null, null, null, null, null]
 
 combos:
-  - {p: [6, 7, 8], k: CONFIG, l: ["DEF"], type: layer, a: "top", w: 45, o: 0.15}
-  - {p: [26, 27, 28], k: MOUSE, l: ["DEF"], type: layer, a: "bottom", slide: 0.2, w: 45, o: 0.1}
+  - {p: [6, 7, 8], k: CONFIG, l: ["Combos"], type: layer, a: "bottom", w: 45}
+  - {p: [26, 27, 28], k: MOUSE, l: ["Combos"], type: layer, a: "bottom", w: 45}
 
 draw_config:
   key_w: 60
