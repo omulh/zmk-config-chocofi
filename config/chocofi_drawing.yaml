@@ -57,13 +57,13 @@ layers:
     - [null, null, null, "Alt", null, null, null, null, null, null]
     - [null, null, DEF, "Right Click", "Left Click", "Mid Click"]
   CONFIG:
-    - [{type: zmk, t: "BT0"}, {type: zmk, t: "BT1"}, {type: zmk, t: "BT2"}, null, {type: zmk, t: "BT CLR"}, null, null, null, null, null]
-    - [null, null, null, null, {type: zmk, t: "OUT BLE"}, null, null, null, null, null]
-    - [null, null, null, null, {type: zmk, t: "OUT USB"}, null, null, null, null, null]
-    - [null, null, DEF, null, null, null]
+    - [null, null, null, null, null, {type: zmk, t: "OUT BLE"}, {type: zmk, t: "BT0"}, {type: zmk, t: "BT1"}, {type: zmk, t: "BT2"}, {type: zmk, t: "BT CLR"}]
+    - [null, null, null, null, null, {type: zmk, t: "OUT USB"}, null, null, null, null]
+    - [null, null, null, null, null, null, null, null, null, null]
+    - [null, null, null, DEF, null, null]
 
 combos:
-  - {p: [21, 22, 23], k: CONFIG, l: ["DEF"], type: layer, a: "bottom", slide: -0.2, w: 45, o: 0.1}
+  - {p: [6, 7, 8], k: CONFIG, l: ["DEF"], type: layer, a: "top", w: 45, o: 0.15}
   - {p: [26, 27, 28], k: MOUSE, l: ["DEF"], type: layer, a: "bottom", slide: 0.2, w: 45, o: 0.1}
 
 draw_config:
