@@ -42,6 +42,15 @@
             bindings = <&mo>;
         };
 
+        sll: sticky_layer_long {
+            compatible = "zmk,behavior-sticky-key";
+            display-name = "Sticky Layer Long Wait";
+            #binding-cells = <1>;
+            release-after-ms = <2500>;
+            quick-release;
+            bindings = <&mo>;
+        };
+
         magic_shift: shift_caps_word_morph {
             compatible = "zmk,behavior-mod-morph";
             display-name = "Shift/Caps Word Morph";
@@ -213,7 +222,7 @@
         compatible = "zmk,combos";
 
         combo_conf {
-            bindings = <&sl 6>;
+            bindings = <&sll 6>;
             key-positions = <21 22 23>;
             layers = <0>;
         };
