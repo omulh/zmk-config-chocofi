@@ -42,6 +42,15 @@
             bindings = <&mo>;
         };
 
+        sll: sticky_layer_long {
+            compatible = "zmk,behavior-sticky-key";
+            display-name = "Sticky Layer Long Wait";
+            #binding-cells = <1>;
+            release-after-ms = <2500>;
+            quick-release;
+            bindings = <&mo>;
+        };
+
         swp_nxt: window_swapper_next {
             compatible = "zmk,behavior-tri-state";
             display-name = "Window Swapper Next";
@@ -229,7 +238,7 @@
         compatible = "zmk,combos";
 
         combo_conf {
-            bindings = <&sl 6>;
+            bindings = <&sll 6>;
             key-positions = <21 22 23>;
             layers = <0>;
         };
