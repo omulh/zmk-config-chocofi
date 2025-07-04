@@ -24,6 +24,14 @@ config BT_MAX_PAIRED
 
 endif
 
+if SHIELD_CHOCOFI_LEFT || SHIELD_CHOCOFI_RIGHT
+
+# Enable sleep support
+config ZMK_SLEEP
+    default y
+
+endif
+
 if SHIELD_CHOCOFI_DONGLE || SHIELD_CHOCOFI_LEFT || SHIELD_CHOCOFI_RIGHT
 
 # Enable split support
