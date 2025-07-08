@@ -7,7 +7,7 @@ layers:
     - [Q, W, F, P, B, J, L, U, Y, {t: "'", s: '"'}]
     - [A, {h: Gui, t: R}, {h: Shift, t: S}, {h: Ctrl, t: T}, G, M, {h: Ctrl, t: N}, {h: Shift, t: E}, {h: Gui, t: I}, O]
     - [Z, X, C, {h: Alt, t: D}, V, K, {h: Alt, t: H}, {t: ',', s: ';'}, {t: ., s: ':'}, {t: /, s: '?'}]
-    - [{type: sticky-layer, h: FUN, t: "[FUN]"}, {type: sticky-layer, h: SYM, t: "[SYM]"}, {type: dance, h: Shift, t: "[Shift]", s: "x2 CW"}, {h: NAV, t: Enter}, {h: NUM, t: Space}, {h: MEDIA, t: Bspace}]
+    - [{type: sticky-layer, h: FUN, t: "[FUN]"}, {type: sticky-layer, h: SYM, t: "[SYM]"}, {type: dance, h: Shift, t: "[Shift]", s: "x2 CW"}, {h: NUM, t: Enter}, {h: NAV, t: Space}, {h: MEDIA, t: Bspace}]
   NUM:
     - [null, null, null, null, null, "Kp  /", 7, 8, 9, "Kp  -"]
     - [null, Gui, Shift, Ctrl, null, 0, 4, 5, 6, .]
@@ -17,7 +17,7 @@ layers:
     - [null, '|', '{', '}', '+', '~', '<', '>', '_', {type: dead, t: '́◌'}]
     - ['@', {h: Gui, t: "\\"}, {h: Shift, t: '['}, {h: Ctrl, t: ']'}, '=', '`', {h: Ctrl, t: '('}, {h: Shift, t: ')'}, {h: Gui, t: '-'}, '!']
     - [null, '%', '#', {h: Alt, t: '*'}, null, null, {h: Alt, t: '^'}, '$', '&', {type: dead, t: '̈◌'}]
-    - [null, {type: held}, null, Esc, Tab, Delete]
+    - [null, {type: held}, DEF, Esc, Tab, Delete]
   NAV:
     - ["Close Win", null, null, null, null, Home, "Pg  Dn", "Pg  Up", End, Ins]
     - [null, Gui, Shift, Ctrl, null, '←', '↓', '↑', '→', Print]
@@ -27,11 +27,11 @@ layers:
     - [null, null, null, null, {type: zmk, t: "USERNAME MACRO"}, F12, F7, F8, F9, null]
     - [null, "[Gui]", "[Shift]", "[Ctrl]", null, F11, F4, F5, F6, null]
     - [null, null, null, "[Alt]", null, F10, F1, F2, F3, null]
-    - [{type: held}, null, null, null, null, null]
+    - [{type: held}, null, DEF, null, null, null]
   MEDIA:
     - [null, null, null, null, null, '󰒮', '󰏤', '󰐊', '󰒭', '󰃬']
     - [null, null, null, {type: zmk, t: "SHOW BATT"}, null, '󰖁', '', '', '󰍭', '󱣴']
-    - [null, null, null, {type: zmk, t: "SHOW CONN"}, null, "Scr  2 Br-", "Scr  1 Br-", "Scr  1 Br+", "Scr  2 Br+", '']
+    - [null, null, null, {type: zmk, t: "SHOW CONN"}, null, "Ext Scr Br-", '', '', "Ext Scr Br+", '']
     - [null, null, null, null, null, {type: held}]
   (AltGr) DEF:
     - [{t: 'ä', s: 'Ä'}, {t: 'å', s: 'Å'}, null, {t: 'ö', s: 'Ö'}, null]
@@ -68,6 +68,12 @@ layers:
     - [null, null, null, null, null, null]
 
 combos:
+  - {p: [0, 1], k: Esc, l: ["Combos"], w: 40}
+  - {p: [1, 2], k: Bspace, l: ["Combos"], w: 40}
+  - {p: [2, 3], k: Delete, l: ["Combos"], w: 40}
+  - {p: [3, 4], k: Enter, l: ["Combos"], w: 40}
+  - {p: [10, 11], k: Space, l: ["Combos"], w: 40}
+  - {p: [13, 14], k: Tab, l: ["Combos"], w: 40}
   - {p: [6, 7, 8], k: CONFIG, l: ["Combos"], type: layer, a: "bottom", w: 45}
   - {p: [26, 27, 28], k: MOUSE, l: ["Combos"], type: layer, a: "bottom", w: 45}
 
