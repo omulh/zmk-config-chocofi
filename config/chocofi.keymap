@@ -11,10 +11,10 @@
 #define QUICK_TAP_MS 200
 #define REQUIRE_PRIOR_IDLE_MS 150
 
-#define CURSOR_VEL_SLOW 330
-#define CURSOR_VEL_FAST 1000
-#define SCRL_VEL_SLOW 10
-#define SCRL_VEL_FAST 30
+#define CVS 330
+#define CVF 1000
+#define SVS 10
+#define SVF 30
 
 &caps_word { continue-list = <UNDERSCORE DOT BACKSPACE DELETE>; };
 
@@ -362,9 +362,9 @@
         mouse {
             display-name = "Mouse";
             bindings = <
-&none  &none     &none      &none      &none    &msl_td    &msd_td    &mmu_td    &msu_td  &msr_td
-&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &mkp MB4   &mml_td    &mmd_td    &mmr_td  &mkp MB5
-&none  &none     &none      &kp LALT   &none    &none      &none      &none      &none    &none
+&none  &none     &none      &none      &none    &msc MOVE_X(-SVF)  &msc MOVE_Y(-SVF)  &mmv MOVE_Y(-CVF)  &msc MOVE_Y(SVF)  &msc MOVE_X(SVF)
+&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &mkp MB4           &mmv MOVE_X(-CVF)  &mmv MOVE_Y(CVF)   &mmv MOVE_X(CVF)  &mkp MB5
+&none  &none     &none      &kp LALT   &none    &none              &none              &none              &none             &none
                  &none      &none      &to 0    &mkp RCLK  &mkp LCLK  &mkp MCLK
             >;
         };
