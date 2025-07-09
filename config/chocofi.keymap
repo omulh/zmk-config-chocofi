@@ -18,10 +18,6 @@
 
 &caps_word { continue-list = <UNDERSCORE DOT BACKSPACE DELETE>; };
 
-&mmv { time-to-max-speed-ms = <100>; };
-
-&msc { time-to-max-speed-ms = <100>; };
-
 / {
     behaviors {
         skq: sticky_key_quick_release {
