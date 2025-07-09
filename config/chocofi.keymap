@@ -11,16 +11,12 @@
 #define QUICK_TAP_MS 200
 #define REQUIRE_PRIOR_IDLE_MS 150
 
-#define CURSOR_VEL_SLOW 330
-#define CURSOR_VEL_FAST 1000
-#define SCRL_VEL_SLOW 10
-#define SCRL_VEL_FAST 30
+#define CVS 250
+#define CVF 1250
+#define SVS 150
+#define SVF 1600
 
 &caps_word { continue-list = <UNDERSCORE DOT BACKSPACE DELETE>; };
-
-&mmv { time-to-max-speed-ms = <100>; };
-
-&msc { time-to-max-speed-ms = <100>; };
 
 / {
     behaviors {
@@ -143,70 +139,6 @@
             flavor = "balanced";
             tapping-term-ms = <HT_TAPPING_TERM_MS>;
         };
-
-        mml_td: mouse_move_left_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse Move Left Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_X(-CURSOR_VEL_SLOW)>, <&mmv MOVE_X(-CURSOR_VEL_FAST)>;
-            tapping-term-ms = <TD_TAPPING_TERM_MS>;
-        };
-
-        mmr_td: mouse_move_right_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse Move Right Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_X(CURSOR_VEL_SLOW)>, <&mmv MOVE_X(CURSOR_VEL_FAST)>;
-            tapping-term-ms = <TD_TAPPING_TERM_MS>;
-        };
-
-        mmu_td: mouse_move_up_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse Move Up Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_Y(-CURSOR_VEL_SLOW)>, <&mmv MOVE_Y(-CURSOR_VEL_FAST)>;
-            tapping-term-ms = <TD_TAPPING_TERM_MS>;
-        };
-
-        mmd_td: mouse_move_down_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse Move Down Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_Y(CURSOR_VEL_SLOW)>, <&mmv MOVE_Y(CURSOR_VEL_FAST)>;
-            tapping-term-ms = <TD_TAPPING_TERM_MS>;
-        };
-
-        msl_td: mouse_scroll_left_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse scroll left tap Dance";
-            #binding-cells = <0>;
-            bindings = <&msc MOVE_X(-SCRL_VEL_SLOW)>, <&msc MOVE_X(-SCRL_VEL_FAST)>;
-            tapping-term-ms = <TD_TAPPING_TERM_MS>;
-        };
-
-        msr_td: mouse_scroll_right_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse Scroll Right Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&msc MOVE_X(SCRL_VEL_SLOW)>, <&msc MOVE_X(SCRL_VEL_FAST)>;
-            tapping-term-ms = <TD_TAPPING_TERM_MS>;
-        };
-
-        msd_td: mouse_scroll_down_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse Scroll Down Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&msc MOVE_Y(-SCRL_VEL_SLOW)>, <&msc MOVE_Y(-SCRL_VEL_FAST)>;
-            tapping-term-ms = <TD_TAPPING_TERM_MS>;
-        };
-
-        msu_td: mouse_scroll_up_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Mouse Scroll Up Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&msc MOVE_Y(SCRL_VEL_SLOW)>, <&msc MOVE_Y(SCRL_VEL_FAST)>;
-            tapping-term-ms = <TD_TAPPING_TERM_MS>;
-        };
     };
 
     macros {
@@ -265,8 +197,14 @@
 
         combo_mouse {
             bindings = <&to 7>;
-            key-positions = <26 27 28>;
+            key-positions = <16 17 18>;
             layers = <0>;
+        };
+
+        combo_exit_mouse {
+            bindings = <&to 0>;
+            key-positions = <16 17 18>;
+            layers = <7>;
         };
     };
 
@@ -286,40 +224,40 @@
         sym {
             display-name = "Symbols";
             bindings = <
-&none   &kp PIPE           &kp LBRC            &kp RBRC            &kp PLUS     &kp TILDE  &kp LT              &kp GT              &kp UNDER           &kp RA(SQT)
-&kp AT  &lhm_ht LGUI BSLH  &lhm_ht LSHFT LBKT  &lhm_ht LCTRL RBKT  &kp EQUAL    &kp GRAVE  &rhm_ht RCTRL LPAR  &rhm_ht RSHFT RPAR  &rhm_ht RGUI MINUS  &kp EXCL
-&none   &kp PRCNT          &kp HASH            &lhm_ht LALT STAR   &none        &none      &rhm_ht LALT CARET  &kp DLLR            &kp AMPS            &kp RA(DQT)
-                           &none               &trans              &to 0        &kp ESC    &kp TAB             &kp DEL
+&none   &kp PLUS            &kp LBRC            &kp RBRC            &kp PIPE    &kp TILDE  &kp LT              &kp GT              &kp UNDER           &kp RA(SQT)
+&kp AT  &lhm_ht LGUI EQUAL  &lhm_ht LSHFT LBKT  &lhm_ht LCTRL RBKT  &kp BSLH    &kp GRAVE  &rhm_ht RCTRL LPAR  &rhm_ht RSHFT RPAR  &rhm_ht RGUI MINUS  &kp EXCL
+&none   &kp PRCNT           &kp HASH            &lhm_ht LALT STAR   &none       &none      &rhm_ht LALT CARET  &kp DLLR            &kp AMPS            &kp RA(DQT)
+                            &none               &trans              &to 0       &kp ESC    &kp TAB             &kp DEL
             >;
         };
 
         navi {
             display-name = "Navigation";
             bindings = <
-&none  &none     &none      &none      &none       &kp HOME         &kp PG_DN  &kp PG_UP  &kp END      &kp INS
-&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none       &kp LEFT         &kp DOWN   &kp UP     &kp RIGHT    &kp PSCRN
-&none  &none     &none      &kp LALT   &none       &kp LC(LS(TAB))  &none      &none      &kp LC(TAB)  &kp K_CMENU
-                 &none      &kp CAPS   &sk RALT    &none            &trans     &none
+&none  &none     &none      &none      &none    &kp HOME         &kp PG_DN  &kp PG_UP  &kp END      &kp INS
+&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &kp LEFT         &kp DOWN   &kp UP     &kp RIGHT    &kp PSCRN
+&none  &none     &none      &kp LALT   &none    &kp LC(LS(TAB))  &none      &none      &kp LC(TAB)  &kp K_CMENU
+                 &none      &none      &none    &none            &trans     &none
             >;
         };
 
         num {
             display-name = "Numbers";
             bindings = <
-&none  &none     &none      &none        &none    &kp KP_DIVIDE    &kp N7  &kp N8  &kp N9  &kp KP_MINUS
-&none  &kp LGUI  &kp LSHFT  &kp LCTRL    &none    &kp N0           &kp N4  &kp N5  &kp N6  &kp DOT
-&none  &none     &none      &kp LALT     &none    &kp KP_MULTIPLY  &kp N1  &kp N2  &kp N3  &kp KP_PLUS
-                 &none      &kp KP_NLCK  &none    &trans           &none   &none
+&none  &none     &none      &none      &none    &kp KP_DIVIDE    &kp N7  &kp N8  &kp N9  &kp KP_MINUS
+&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &kp N0           &kp N4  &kp N5  &kp N6  &kp DOT
+&none  &none     &none      &kp LALT   &none    &kp KP_MULTIPLY  &kp N1  &kp N2  &kp N3  &kp KP_PLUS
+                 &none      &none      &none    &trans           &none   &none
             >;
         };
 
         fun {
             display-name = "Function Keys";
             bindings = <
-&none  &none     &none      &none      &user    &kp F12  &kp F7  &kp F8  &kp F9  &none
-&none  &sk LGUI  &sk LSHFT  &sk LCTRL  &none    &kp F11  &kp F4  &kp F5  &kp F6  &none
-&none  &none     &none      &sk LALT   &none    &kp F10  &kp F1  &kp F2  &kp F3  &none
-                 &trans     &none      &to 0    &none    &none   &none
+&none  &none     &none      &none      &user    &kp F12   &kp F7    &kp F8       &kp F9  &none
+&none  &sk LGUI  &sk LSHFT  &sk LCTRL  &none    &kp F11   &kp F4    &kp F5       &kp F6  &none
+&none  &none     &none      &sk LALT   &none    &kp F10   &kp F1    &kp F2       &kp F3  &none
+                 &trans     &none      &to 0    &sk RALT  &kp CAPS  &kp KP_NLCK
             >;
         };
 
@@ -346,10 +284,20 @@
         mouse {
             display-name = "Mouse";
             bindings = <
-&none  &none     &none      &none      &none    &msl_td    &msd_td    &mmu_td    &msu_td  &msr_td
-&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &mkp MB4   &mml_td    &mmd_td    &mmr_td  &mkp MB5
-&none  &none     &none      &kp LALT   &none    &none      &none      &none      &none    &none
-                 &none      &none      &to 0    &mkp RCLK  &mkp LCLK  &mkp MCLK
+&none  &none     &none      &none      &none    &none              &msc MOVE_Y(-SVF)  &mmv MOVE_Y(-CVF)  &msc MOVE_Y(SVF)  &none
+&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &msc MOVE_X(-SVF)  &mmv MOVE_X(-CVF)  &mmv MOVE_Y(CVF)   &mmv MOVE_X(CVF)  &msc MOVE_X(SVF)
+&none  &none     &none      &kp LALT   &none    &none              &mkp MB4           &mkp MB3           &mkp MB5          &none
+                 &none      &mo 8      &to 0    &mkp LCLK          &mo 8              &mkp RCLK
+            >;
+        };
+
+        slow_mouse {
+            display-name = "Slow Mouse";
+            bindings = <
+&none  &none     &none      &none      &none    &none              &msc MOVE_Y(-SVS)  &mmv MOVE_Y(-CVS)  &msc MOVE_Y(SVS)  &none
+&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &msc MOVE_X(-SVS)  &mmv MOVE_X(-CVS)  &mmv MOVE_Y(CVS)   &mmv MOVE_X(CVS)  &msc MOVE_X(SVS)
+&none  &none     &none      &kp LALT   &none    &none              &none              &none              &none             &none
+                 &none      &trans     &none    &mkp LCLK          &trans             &mkp RCLK
             >;
         };
     };
