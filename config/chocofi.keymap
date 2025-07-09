@@ -294,10 +294,10 @@
         mouse {
             display-name = "Mouse";
             bindings = <
-&none  &none     &none      &none      &none    &msc MOVE_X(-SVF)  &msc MOVE_Y(-SVF)  &mmv MOVE_Y(-CVF)  &msc MOVE_Y(SVF)  &msc MOVE_X(SVF)
-&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &mkp MB4           &mmv MOVE_X(-CVF)  &mmv MOVE_Y(CVF)   &mmv MOVE_X(CVF)  &mkp MB5
-&none  &none     &none      &kp LALT   &none    &none              &none              &none              &none             &none
-                 &none      &none      &to 0    &mkp RCLK  &mkp LCLK  &mkp MCLK
+&none  &none     &none      &none      &none    &none              &msc MOVE_Y(-SVF)  &mmv MOVE_Y(-CVF)  &msc MOVE_Y(SVF)  &none
+&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &msc MOVE_X(-SVF)  &mmv MOVE_X(-CVF)  &mmv MOVE_Y(CVF)   &mmv MOVE_X(CVF)  &msc MOVE_X(SVF)
+&none  &none     &none      &kp LALT   &none    &none              &mkp MB4           &mkp MB3           &mkp MB5          &none
+                 &none      &none      &to 0    &mkp LCLK          &none              &mkp RCLK
             >;
         };
     };
