@@ -7,7 +7,7 @@ layers:
     - [Q, W, F, P, B, J, L, U, Y, {t: "'", s: '"'}]
     - [A, {h: Gui, t: R}, {h: Shift, t: S}, {h: Ctrl, t: T}, G, M, {h: Ctrl, t: N}, {h: Shift, t: E}, {h: Gui, t: I}, O]
     - [Z, X, C, {h: Alt, t: D}, V, K, {h: Alt, t: H}, {t: ',', s: ';'}, {t: ., s: ':'}, {t: /, s: '?'}]
-    - [{type: sticky-layer, h: FUN, t: "[FUN]"}, {type: sticky-layer, h: SYM, t: "[SYM]"}, {h: Shift, t: "[Shift]", s: "CAPS WORD"}, {h: NUM, t: Enter}, {h: NAV, t: Space}, {h: MEDIA, t: Bspace}]
+    - [{type: layer, h: FUN, t: "[FUN]"}, {type: layer, h: SYM, t: "[SYM]"}, {h: Shift, t: "[Shift]", s: "CAPS WORD"}, {h: NUM, t: Enter}, {h: NAV, t: Space}, {h: MEDIA, t: Bspace}]
   NUM:
     - [null, null, null, null, null, "Kp  /", 7, 8, 9, "Kp  -"]
     - [null, Gui, Shift, Ctrl, null, 0, 4, 5, 6, .]
@@ -55,12 +55,12 @@ layers:
     - [null, null, null, null, null, null, "Scrl ↓", "↑", "Scrl ↑", null]
     - [null, "Gui", "Shift", "Ctrl", null, "Scrl ←", "←  ", "↓", "    →", "Scrl →"]
     - [null, null, null, "Alt", null, null, "MB4 Click", "Mid Click", "MB5 Click", null]
-    - [null, {type: sticky-layer, t: "SLOW MOUSE"}, DEF, "Left Click", {type: sticky-layer, t: "SLOW MOUSE"}, "Right Click"]
+    - [null, {type: layer, t: "SLOW MOUSE"}, {type: layer, t: DEF}, "Left Click", {type: layer, t: "SLOW MOUSE"}, "Right Click"]
   CONF:
     - [null, null, null, null, null, {type: zmk, t: "OUT BLE"}, {type: zmk, t: "BT0"}, {type: zmk, t: "BT1"}, {type: zmk, t: "BT2"}, {type: zmk, t: "BT CLR"}]
     - [null, null, null, null, null, {type: zmk, t: "OUT USB"}, null, null, null, null]
     - [null, null, null, null, null, null, null, null, null, null]
-    - [null, null, null, DEF, null, null]
+    - [null, null, null, {type: layer, t: DEF}, null, null]
   Combos:
     - [null, null, null, null, null, null, null, null, null, null]
     - [null, null, null, null, null, null, null, null, null, null]
@@ -107,7 +107,7 @@ draw_config:
     rel_h: 12.0
     rx: 4.0
     ry: 4.0
-  svg_extra_style: 'svg.keymap { font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Symbols Nerd Font,monospace; } text.hold { font-size: 10px; fill: #1b3dc4} text.layer-activator { fill: #147f1b; text-decoration: none; } text.sticky-layer { fill: #147f1b; } text.zmk { fill: #703d3d; } text.dead { font-size: 19px; } text.dead.shifted { font-size: 15px; } text.s_dead { font-size: 14px; } text.s_dead.shifted { font-size: 15px; } text.t_dead { font-size: 19px; } text.t_dead.shifted { font-size: 11px; } rect.combo { fill: #e0e9fc; } text.combo.layer { fill: #147f1b; } '
+  svg_extra_style: 'svg.keymap { font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Symbols Nerd Font,monospace; } text.hold { font-size: 10px; fill: #1b3dc4} text.layer-activator { fill: #147f1b; text-decoration: none; } text.layer { fill: #147f1b; } text.zmk { fill: #703d3d; } text.dead { font-size: 19px; } text.dead.shifted { font-size: 15px; } text.s_dead { font-size: 14px; } text.s_dead.shifted { font-size: 15px; } text.t_dead { font-size: 19px; } text.t_dead.shifted { font-size: 11px; } rect.combo { fill: #e0e9fc; } text.combo.layer { fill: #147f1b; } '
   footer_text: Created with <a href="https://github.com/caksoylar/keymap-drawer">keymap-drawer</a>
   shrink_wide_legends: 7
   style_layer_activators: true
