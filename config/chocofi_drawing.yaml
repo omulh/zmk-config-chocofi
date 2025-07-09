@@ -47,8 +47,8 @@ layers:
     - [null, null, null, null, null, null, '¹', '²', '³', null]
     - [null, null, null, {type: held}, null, null]
   (AltGr) SYM:
-    - [null, '¦', '“', '”', '÷', {type: dead, t: '̃◌'}, 'Ç', {type: dead, t: '̌◌'}, {type: dead, t: '̣◌'}, null]
-    - [{type: dead, t: '̋◌'}, '¬', '«', '»', '×', {type: dead, t: '̀◌'}, {type: dead, t: '̆◌'}, {type: dead, t: '̊◌'}, '¥', '¡']
+    - [null, '÷', '“', '”', '¦', {type: dead, t: '̃◌'}, 'Ç', {type: dead, t: '̌◌'}, {type: dead, t: '̣◌'}, null]
+    - [{type: dead, t: '̋◌'}, '×', '«', '»', '¬', {type: dead, t: '̀◌'}, {type: dead, t: '̆◌'}, {type: dead, t: '̊◌'}, '¥', '¡']
     - [null, {type: dead, t: '̧◌'}, {type: dead, t: '̄◌'}, '¾', null, null, '¼', '£', '½', null]
     - [null, {type: held}, null, null, null, null]
   MOUSE:
