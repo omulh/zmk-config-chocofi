@@ -297,7 +297,17 @@
 &none  &none     &none      &none      &none    &none              &msc MOVE_Y(-SVF)  &mmv MOVE_Y(-CVF)  &msc MOVE_Y(SVF)  &none
 &none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &msc MOVE_X(-SVF)  &mmv MOVE_X(-CVF)  &mmv MOVE_Y(CVF)   &mmv MOVE_X(CVF)  &msc MOVE_X(SVF)
 &none  &none     &none      &kp LALT   &none    &none              &mkp MB4           &mkp MB3           &mkp MB5          &none
-                 &none      &none      &to 0    &mkp LCLK          &none              &mkp RCLK
+                 &none      &mo 8      &to 0    &mkp LCLK          &mo 8              &mkp RCLK
+            >;
+        };
+
+        slow_mouse {
+            display-name = "Slow Mouse";
+            bindings = <
+&none  &none     &none      &none      &none    &none              &msc MOVE_Y(-SVS)  &mmv MOVE_Y(-CVS)  &msc MOVE_Y(SVS)  &none
+&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &msc MOVE_X(-SVS)  &mmv MOVE_X(-CVS)  &mmv MOVE_Y(CVS)   &mmv MOVE_X(CVS)  &msc MOVE_X(SVS)
+&none  &none     &none      &kp LALT   &none    &none              &none              &none              &none             &none
+                 &none      &trans     &none    &mkp LCLK          &trans             &mkp RCLK
             >;
         };
     };
