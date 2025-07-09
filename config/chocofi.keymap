@@ -213,8 +213,14 @@
 
         combo_mouse {
             bindings = <&to 7>;
-            key-positions = <26 27 28>;
+            key-positions = <16 17 18>;
             layers = <0>;
+        };
+
+        combo_exit_mouse {
+            bindings = <&to 0>;
+            key-positions = <16 17 18>;
+            layers = <7>;
         };
     };
 
