@@ -11,10 +11,10 @@
 #define QUICK_TAP_MS 200
 #define REQUIRE_PRIOR_IDLE_MS 150
 
-#define CVS 330
-#define CVF 1000
-#define SVS 10
-#define SVF 30
+#define CVS 250
+#define CVF 1250
+#define SVS 150
+#define SVF 1600
 
 &caps_word { continue-list = <UNDERSCORE DOT BACKSPACE DELETE>; };
 
