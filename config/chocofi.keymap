@@ -52,7 +52,7 @@
             display-name = "Window Swapper Next";
             #binding-cells = <0>;
             bindings = <&kt LALT>, <&kp LS(TAB)>, <&kt LALT>;
-            ignored-key-positions = <15 18>;
+            ignored-key-positions = <15 16 17 18>;
         };
 
         swp_prev: window_swapper_previous {
@@ -60,7 +60,7 @@
             display-name = "Window Swapper Previous";
             #binding-cells = <0>;
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-            ignored-key-positions = <15 18>;
+            ignored-key-positions = <15 16 17 18>;
         };
 
         magic_shift: shift_caps_word_morph {
