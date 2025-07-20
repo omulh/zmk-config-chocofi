@@ -31,7 +31,7 @@ layers:
   MEDIA:
     - [null, null, null, null, null, '󰒮', '󰏤', '󰐊', '󰒭', '󰃬']
     - [null, null, null, {type: zmk, t: "SHOW BATT"}, null, '󰖁', '', '', '󰍭', '󱣴']
-    - [null, null, null, {type: zmk, t: "SHOW CONN"}, null, null, '', '', null, '']
+    - [null, null, null, {type: zmk, t: "SHOW CONN"}, null, "Ext Scr Br-", '', '', "Ext Scr Br+", '']
     - [null, null, null, null, null, {type: held}]
   (AltGr) DEF:
     - [{t: 'ä', s: 'Ä'}, {t: 'å', s: 'Å'}, null, {t: 'ö', s: 'Ö'}, {t: '·', s: ' ̵◌'}]
