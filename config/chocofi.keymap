@@ -47,14 +47,6 @@
             bindings = <&mo>;
         };
 
-        swp_nxt: window_swapper_next {
-            compatible = "zmk,behavior-tri-state";
-            display-name = "Window Swapper Next";
-            #binding-cells = <0>;
-            bindings = <&kt LALT>, <&kp LS(TAB)>, <&kt LALT>;
-            ignored-key-positions = <15 16 17 18>;
-        };
-
         swp_prev: window_swapper_previous {
             compatible = "zmk,behavior-tri-state";
             display-name = "Window Swapper Previous";
