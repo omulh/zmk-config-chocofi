@@ -235,7 +235,7 @@
 &none   &kp PLUS            &kp LBRC            &kp RBRC            &kp PIPE    &kp TILDE  &kp LT              &kp GT              &kp UNDER           &kp RA(SQT)
 &kp AT  &lhm_ht LGUI EQUAL  &lhm_ht LSHFT LBKT  &lhm_ht LCTRL RBKT  &kp BSLH    &kp GRAVE  &rhm_ht RCTRL LPAR  &rhm_ht RSHFT RPAR  &rhm_ht RGUI MINUS  &kp EXCL
 &none   &kp PRCNT           &kp HASH            &lhm_ht LALT STAR   &none       &none      &rhm_ht LALT CARET  &kp DLLR            &kp AMPS            &kp RA(DQT)
-                            &none               &none               &to 0       &kp ESC    &kp TAB             &kp DEL
+                            &none               &kp K_CANCEL        &none       &kp ESC    &kp TAB             &kp DEL
             >;
         };
 
@@ -262,10 +262,10 @@
         fun {
             display-name = "Function Keys";
             bindings = <
-&none  &none     &none      &none      &user    &kp F12   &kp F7    &kp F8       &kp F9  &none
-&none  &sk LGUI  &sk LSHFT  &sk LCTRL  &none    &kp F11   &kp F4    &kp F5       &kp F6  &none
-&none  &none     &none      &sk LALT   &none    &kp F10   &kp F1    &kp F2       &kp F3  &none
-                 &none      &none      &to 0    &sk RALT  &kp CAPS  &kp KP_NLCK
+&none  &none     &none         &none      &user    &kp F12   &kp F7    &kp F8       &kp F9  &none
+&none  &sk LGUI  &sk LSHFT     &sk LCTRL  &none    &kp F11   &kp F4    &kp F5       &kp F6  &none
+&none  &none     &none         &sk LALT   &none    &kp F10   &kp F1    &kp F2       &kp F3  &none
+                 &kp K_CANCEL  &none      &none    &sk RALT  &kp CAPS  &kp KP_NLCK
             >;
         };
 
@@ -285,7 +285,7 @@
 &none  &none  &none  &none  &none    &out OUT_BLE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR
 &none  &none  &none  &none  &none    &out OUT_USB  &none         &none         &none         &none
 &none  &none  &none  &none  &none    &none         &none         &none         &none         &none
-              &none  &none  &none    &to 0         &none         &none
+              &none  &none  &none    &none         &none         &none
             >;
         };
 
@@ -295,7 +295,7 @@
 &none  &none     &none      &none      &none    &none              &msc MOVE_Y(-SVF)  &mmv MOVE_Y(-CVF)  &msc MOVE_Y(SVF)  &none
 &none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &msc MOVE_X(-SVF)  &mmv MOVE_X(-CVF)  &mmv MOVE_Y(CVF)   &mmv MOVE_X(CVF)  &msc MOVE_X(SVF)
 &none  &none     &none      &kp LALT   &none    &none              &mkp MB4           &mkp MB3           &mkp MB5          &none
-                 &none      &mo 8      &to 0    &mkp LCLK          &mo 8              &mkp RCLK
+                 &none      &mo 8      &none    &mkp LCLK          &mo 8              &mkp RCLK
             >;
         };
 
