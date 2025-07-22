@@ -50,7 +50,7 @@ layers:
     - [null, '÷', '“', '”', '¦', {type: dead, t: '̃◌'}, 'Ç', {type: dead, t: '̌◌'}, {type: dead, t: '̣◌'}, null]
     - [{type: dead, t: '̋◌'}, '×', '«', '»', '¬', {type: dead, t: '̀◌'}, {type: dead, t: '̆◌'}, {type: dead, t: '̊◌'}, '¥', '¡']
     - [null, {type: dead, t: '̧◌'}, {type: dead, t: '̄◌'}, '¾', null, null, '¼', '£', '½', null]
-    - [null, {type: held}, null, null, null, null]
+    - [null, {type: held, t: '󰜺'}, null, null, null, null]
   MOUSE:
     - [null, null, null, null, null, null, "Scrl ↓", "↑", "Scrl ↑", null]
     - [null, "Gui", "Shift", "Ctrl", null, "Scrl ←", "←  ", "↓", "    →", "Scrl →"]
