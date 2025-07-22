@@ -17,7 +17,7 @@ layers:
     - [null, '+', '{', '}', '|', '~', '<', '>', '_', {type: dead, t: '́◌'}]
     - ['@', {h: Gui, t: '='}, {h: Shift, t: '['}, {h: Ctrl, t: ']'}, '\', '`', {h: Ctrl, t: '('}, {h: Shift, t: ')'}, {h: Gui, t: '-'}, '!']
     - [null, '%', '#', {h: Alt, t: '*'}, null, null, {h: Alt, t: '^'}, '$', '&', {type: dead, t: '̈◌'}]
-    - [null, {type: held}, DEF, Esc, Tab, Delete]
+    - [null, {type: held, t: '󰜺'}, null, Esc, Tab, Delete]
   NAV:
     - [null, null, null, null, null, Home, "Pg  Dn", "Pg  Up", End, Ins]
     - [null, Gui, Shift, Ctrl, null, '←', '↓', '↑', '→', Print]
@@ -27,7 +27,7 @@ layers:
     - [null, null, null, null, {type: zmk, t: "USERNAME MACRO"}, F12, F7, F8, F9, null]
     - [null, "[Gui]", "[Shift]", "[Ctrl]", null, F11, F4, F5, F6, null]
     - [null, null, null, "[Alt]", null, F10, F1, F2, F3, null]
-    - [{type: held}, null, DEF, "[AltGr]", "Caps Lock", "Num Lock"]
+    - [{type: held, t: '󰜺'}, null, null, "[AltGr]", "Caps Lock", "Num Lock"]
   MEDIA:
     - [null, null, null, null, null, '󰒮', '󰏤', '󰐊', '󰒭', '󰃬']
     - [null, null, null, {type: zmk, t: "SHOW BATT"}, null, '󰖁', '', '', '󰍭', '󱣴']
@@ -55,12 +55,12 @@ layers:
     - [null, null, null, null, null, null, "Scrl ↓", "↑", "Scrl ↑", null]
     - [null, "Gui", "Shift", "Ctrl", null, "Scrl ←", "←  ", "↓", "    →", "Scrl →"]
     - [null, null, null, "Alt", null, null, "MB4 Click", "Mid Click", "MB5 Click", null]
-    - [null, {type: layer, t: "SLOW MOUSE"}, {type: layer, t: DEF}, "Left Click", {type: layer, t: "SLOW MOUSE"}, "Right Click"]
+    - [null, {type: layer, t: "SLOW MOUSE"}, null, "Left Click", {type: layer, t: "SLOW MOUSE"}, "Right Click"]
   CONF:
     - [null, null, null, null, null, {type: zmk, t: "OUT BLE"}, {type: zmk, t: "BT0"}, {type: zmk, t: "BT1"}, {type: zmk, t: "BT2"}, {type: zmk, t: "BT CLR"}]
     - [null, null, null, null, null, {type: zmk, t: "OUT USB"}, null, null, null, null]
     - [null, null, null, null, null, null, null, null, null, null]
-    - [null, null, null, {type: layer, t: DEF}, null, null]
+    - [null, null, null, null, null, null]
   Combos:
     - [null, null, null, null, null, null, null, null, null, null]
     - [null, null, null, null, null, null, null, null, null, null]
