@@ -52,8 +52,8 @@ layers:
     - [null, {type: dead, t: '̧◌'}, {type: dead, t: '̄◌'}, '¾', null, null, '¼', '£', '½', null]
     - [null, {type: held, t: '󰜺'}, null, null, null, null]
   MOUSE:
-    - [null, null, null, null, null, null, "Scrl ↓", "↑", "Scrl ↑", null]
-    - [null, "Gui", "Shift", "Ctrl", null, "Scrl ←", "←  ", "↓", "    →", "Scrl →"]
+    - [null, null, null, null, null, "Scrl ←", "Scrl ↓", "Scrl ↑", "Scrl →", null]
+    - [null, "Gui", "Shift", "Ctrl", null,  "←  ", "↓", "↑",  "    →", null]
     - [null, null, null, "Alt", null, null, "MB4 Click", "Mid Click", "MB5 Click", null]
     - [null, {type: layer, t: "SLOW MOUSE"}, null, "Left Click", {type: layer, t: "SLOW MOUSE"}, "Right Click"]
   CONF:
