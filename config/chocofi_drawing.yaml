@@ -9,9 +9,9 @@ layers:
     - [Z, X, C, {h: Alt, t: D}, V, K, {h: Alt, t: H}, {t: ',', s: ';'}, {t: ., s: ':'}, {t: /, s: '?'}]
     - [{type: layer, h: FUN, t: "[FUN]"}, {type: layer, h: SYM, t: "[SYM]"}, {h: Shift, t: "[Shift]", s: "CAPS WORD"}, {h: NUM, t: Enter}, {h: NAV, t: Space}, {h: MEDIA, t: Bspace}]
   NUM:
-    - [null, null, null, null, null, "Kp  /", 7, 8, 9, "Kp  -"]
+    - [null, null, null, null, null, "Kp  +", 7, 8, 9, "Kp  *"]
     - [null, Gui, Shift, Ctrl, null, 0, 4, 5, 6, .]
-    - [null, null, null, Alt, null, "Kp  *", 1, 2, 3, "Kp  +"]
+    - [null, null, null, Alt, null, "Kp  -", 1, 2, 3, "Kp  /"]
     - [null, null, null, {type: held}, null, null]
   SYM:
     - [null, '+', '{', '}', '|', '~', '<', '>', '_', {type: dead, t: '́◌'}]
