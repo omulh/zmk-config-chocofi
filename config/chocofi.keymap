@@ -46,6 +46,14 @@
             bindings = <&mo>;
         };
 
+        swp_prev: window_swapper_previous {
+            compatible = "zmk,behavior-tri-state";
+            display-name = "Window Swapper Previous";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+            ignored-key-positions = <15 16 17 18>;
+        };
+
         ms_td: magic_shift_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -224,7 +232,7 @@
             bindings = <
 &none  &none     &none      &none      &none    &kp HOME  &kp PG_DN        &kp PG_UP    &kp END    &kp INS
 &none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &kp LEFT  &kp DOWN         &kp UP       &kp RIGHT  &kp PSCRN
-&none  &none     &none      &kp LALT   &none    &none     &kp LC(LS(TAB))  &kp LC(TAB)  &none      &kp K_CMENU
+&none  &none     &none      &kp LALT   &none    &none     &kp LC(LS(TAB))  &kp LC(TAB)  &swp_prev  &kp K_CMENU
                  &none      &none      &none    &none     &none            &none
             >;
         };
