@@ -6,7 +6,6 @@
 
 #include <behaviors/rgbled_widget.dtsi>
 
-#define TD_TAPPING_TERM_MS 200
 #define HT_TAPPING_TERM_MS 250
 #define QUICK_TAP_MS 200
 #define REQUIRE_PRIOR_IDLE_MS 150
@@ -47,12 +46,11 @@
             bindings = <&mo>;
         };
 
-        magic_shift: shift_caps_word_morph {
-            compatible = "zmk,behavior-mod-morph";
-            display-name = "Shift/Caps Word Morph";
+        ms_td: magic_shift_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
+            tapping-term-ms = <250>;
             bindings = <&skq LSHFT>, <&caps_word>;
-            mods = <(MOD_LSFT)>;
         };
 
         dot_colon: dot_colon_morph {
@@ -69,16 +67,6 @@
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp SEMI>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        ms_ht: magic_shift_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "Magic Shift Hold/Tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&magic_shift>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HT_TAPPING_TERM_MS>;
         };
 
         lhm_ht: left_homerow_mod_hold_tap {
@@ -214,10 +202,10 @@
         default_layer {
             display-name = "Colemak DH";
             bindings = <
-&kp Q  &kp W           &kp F            &kp P            &kp B             &kp J         &kp L            &kp U            &kp Y           &kp SQT
-&kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp G             &kp M         &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp O
-&kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V             &kp K         &rhm_ht LALT H   &comma_semi      &dot_colon      &kp FSLH
-                       &lsl_ht 4 4      &lsls_ht 1 1     &ms_ht LSHFT 0    &lk_ht 3 RET  &lk_ht 2 SPACE   &lk_ht 5 BSPC
+&kp Q  &kp W           &kp F            &kp P            &kp B     &kp J         &kp L            &kp U            &kp Y           &kp SQT
+&kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp G     &kp M         &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp O
+&kp Z  &kp X           &kp C            &lhm_ht LALT D   &kp V     &kp K         &rhm_ht LALT H   &comma_semi      &dot_colon      &kp FSLH
+                       &lsl_ht 4 4      &lsls_ht 1 1     &ms_td    &lk_ht 3 RET  &lk_ht 2 SPACE   &lk_ht 5 BSPC
             >;
         };
 
