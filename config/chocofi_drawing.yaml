@@ -19,7 +19,7 @@ layers:
     - [null, '%', '#', {h: Alt, t: '*'}, null, null, {h: Alt, t: '^'}, '$', '&', {type: dead, t: '̈◌'}]
     - [null, {type: held, t: '󰜺'}, null, Esc, Tab, Delete]
   NAV:
-    - [null, null, null, null, null, Home, "Pg  Dn", "Pg  Up", End, Ins]
+    - ["Close Win", null, null, null, null, Home, "Pg  Dn", "Pg  Up", End, Ins]
     - [null, Gui, Shift, Ctrl, null, '←', '↓', '↑', '→', Print]
     - [null, null, null, Alt, null, null, "Prev Tab", "Next Tab", {type: zmk, t: "PREV WIN"}, "Context Menu"]
     - [null, null, null, null, {type: held}, null]
