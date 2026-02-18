@@ -142,7 +142,7 @@
             compatible = "zmk,behavior-macro";
             display-name = "Username Macro";
             #binding-cells = <0>;
-            bindings = <&kp O &kp L &kp H &kp DOT &kp X &kp Y &kp Z>;
+            bindings = <&kp O &kp L &kp H &kp DOT &kp X &kp Y &kp Z &kp TAB>;
         };
     };
 
