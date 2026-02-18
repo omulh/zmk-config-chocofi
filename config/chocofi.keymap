@@ -230,10 +230,10 @@
         navi {
             display-name = "Navigation";
             bindings = <
-&kp LA(F4)  &none     &none      &none      &none    &kp HOME  &kp PG_DN        &kp PG_UP    &kp END    &kp INS
-&none       &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &kp LEFT  &kp DOWN         &kp UP       &kp RIGHT  &kp PSCRN
-&none       &none     &none      &kp LALT   &none    &none     &kp LC(LS(TAB))  &kp LC(TAB)  &swp_prev  &kp K_CMENU
-                      &none      &none      &none    &none     &none            &none
+&kp LG(LC(LS(Q)))  &none     &none      &none      &none    &kp HOME  &kp PG_DN        &kp PG_UP    &kp END    &kp INS
+&none              &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &kp LEFT  &kp DOWN         &kp UP       &kp RIGHT  &kp PSCRN
+&none              &none     &none      &kp LALT   &none    &none     &kp LC(LS(TAB))  &kp LC(TAB)  &swp_prev  &kp K_CMENU
+                             &none      &none      &none    &none     &none            &none
             >;
         };
 
@@ -261,8 +261,8 @@
             display-name = "Media Keys";
             bindings = <
 &none  &none  &none  &none     &none    &kp C_PREV         &kp C_PAUSE   &kp C_PLAY    &kp C_NEXT         &kp C_AL_CALC
-&none  &none  &none  &ind_bat  &none    &kp C_MUTE         &kp C_VOL_DN  &kp C_VOL_UP  &kp LG(LA(K))      &kp LG(LS(S))
-&none  &none  &none  &ind_con  &none    &kp LG(LS(PG_DN))  &kp C_BRI_DN  &kp C_BRI_UP  &kp LG(LS(PG_UP))  &kp LG(L)
+&none  &none  &none  &ind_bat  &none    &kp C_MUTE         &kp C_VOL_DN  &kp C_VOL_UP  &kp LG(LC(LS(A)))  &kp LG(LS(S))
+&none  &none  &none  &ind_con  &none    &kp LG(LS(PG_DN))  &kp C_BRI_DN  &kp C_BRI_UP  &kp LG(LS(PG_UP))  &kp LG(LC(LS(L)))
               &none  &none     &none    &none              &none         &none
             >;
         };
