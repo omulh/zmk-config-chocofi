@@ -21,7 +21,7 @@ layers:
   NAV:
     - [null, null, null, null, null, Home, "Pg  Dn", "Pg  Up", End, Ins]
     - [null, Gui, Shift, Ctrl, null, '←', '↓', '↑', '→', Print]
-    - [null, null, null, Alt, null, null, "Prev Tab", "Next Tab", null, "Context Menu"]
+    - [null, null, null, Alt, null, null, "Prev Tab", "Next Tab", {type: zmk, t: "PREV WIN"}, "Context Menu"]
     - [null, null, null, null, {type: held}, null]
   FUN:
     - [null, null, null, null, {type: zmk, t: "USERNAME MACRO"}, F12, F7, F8, F9, null]
