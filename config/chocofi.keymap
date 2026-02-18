@@ -230,10 +230,10 @@
         navi {
             display-name = "Navigation";
             bindings = <
-&none  &none     &none      &none      &none    &kp HOME  &kp PG_DN        &kp PG_UP    &kp END    &kp INS
-&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &kp LEFT  &kp DOWN         &kp UP       &kp RIGHT  &kp PSCRN
-&none  &none     &none      &kp LALT   &none    &none     &kp LC(LS(TAB))  &kp LC(TAB)  &swp_prev  &kp K_CMENU
-                 &none      &none      &none    &none     &none            &none
+&kp LG(LC(LS(Q)))  &none     &none      &none      &none    &kp HOME  &kp PG_DN        &kp PG_UP    &kp END    &kp INS
+&none              &kp LGUI  &kp LSHFT  &kp LCTRL  &none    &kp LEFT  &kp DOWN         &kp UP       &kp RIGHT  &kp PSCRN
+&none              &none     &none      &kp LALT   &none    &none     &kp LC(LS(TAB))  &kp LC(TAB)  &swp_prev  &kp K_CMENU
+                             &none      &none      &none    &none     &none            &none
             >;
         };
 
