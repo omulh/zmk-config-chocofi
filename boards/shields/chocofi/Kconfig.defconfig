@@ -22,6 +22,10 @@ config BT_MAX_CONN
 config BT_MAX_PAIRED
     default 5
 
+# Needed for concurrent GATT discovery of splits
+config BT_L2CAP_TX_BUF_COUNT
+    default 15 if ZMK_SPLIT_ROLE_CENTRAL
+
 endif
 
 if SHIELD_CHOCOFI_LEFT || SHIELD_CHOCOFI_RIGHT
@@ -36,13 +40,6 @@ if SHIELD_CHOCOFI_DONGLE || SHIELD_CHOCOFI_LEFT || SHIELD_CHOCOFI_RIGHT
 
 # Enable split support
 config ZMK_SPLIT
-    default y
-
-# Enable pointing/mouse functionality
-config ZMK_POINTING
-    default y
-
-config ZMK_POINTING_SMOOTH_SCROLLING
     default y
 
 endif

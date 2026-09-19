@@ -1,11 +1,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-    chosen {
-        zmk,matrix-transform = &default_transform;
-    };
-
-    default_transform: keymap_transform {
+    matrix_transform_chocofi: matrix_transform_chocofi {
         compatible = "zmk,matrix-transform";
         columns = <10>;
         rows = <4>;
@@ -17,3 +13,7 @@
         >;
     };
 };
+
+&physical_layout_chocofi {
+    transform = <&matrix_transform_chocofi>;
+}

@@ -1,21 +1,14 @@
 #include "chocofi.dtsi"
 
 / {
-    chosen {
-        zmk,physical-layout = &chocofi_5_col_layout;
-    };
-
-    mock_kscan: mock_kscan {
+    kscan_dongle: kscan_dongle {
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
         events = <0>;
     };
-
-    chocofi_5_col_layout: physical_layout {
-        compatible = "zmk,physical-layout";
-        display-name = "Default Layout";
-        kscan = <&mock_kscan>;
-        transform = <&default_transform>;
-    };
 };
+
+&physical_layout_chocofi {
+    kscan = <&kscan_dongle>;
+}
