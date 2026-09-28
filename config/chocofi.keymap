@@ -1,0 +1,276 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#include <behaviors/rgbled_widget.dtsi>
+
+#define HT_TAPPING_TERM_MS 250
+#define QUICK_TAP_MS 200
+#define REQUIRE_PRIOR_IDLE_MS 150
+
+&caps_word { continue-list = <UNDERSCORE DOT BACKSPACE DELETE>; };
+
+/ {
+    behaviors {
+
+        q_sk: quick_release_sticky_key {
+            compatible = "zmk,behavior-sticky-key";
+            display-name = "Quick Release Sticky Key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+
+            release-after-ms = <1000>;
+            quick-release;
+            ignore-modifiers;
+        };
+
+        n_sl: normal_release_sticky_layer {
+            compatible = "zmk,behavior-sticky-key";
+            display-name = "Normal Release Sticky Layer";
+            #binding-cells = <1>;
+            bindings = <&mo>;
+
+            release-after-ms = <1000>;
+        };
+
+        ql_sl: quick_release_long_wait_sticky_layer {
+            compatible = "zmk,behavior-sticky-key";
+            display-name = "Quick Release, Long Wait Sticky Layer";
+            #binding-cells = <1>;
+            bindings = <&mo>;
+
+            release-after-ms = <2500>;
+            quick-release;
+        };
+
+        swp_prev: window_swapper_previous {
+            compatible = "zmk,behavior-tri-state";
+            display-name = "Window Swapper Previous";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+            ignored-key-positions = <15 16 17 18>;
+        };
+
+        ms_td: magic_shift_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&q_sk LSHFT>, <&caps_word>;
+        };
+
+        kp_dot_colon: kp_dot_colon_morph {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Dot/Colon Morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        kp_comma_semi: kp_comma_semicolon_morph {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Comma/Semicolon Morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        lhm_ht: left_homerow_mod_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Left Homerow Mod Hold/Tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HT_TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 33 34 35>;
+            hold-trigger-on-release;
+        };
+
+        rhm_ht: right_homerow_mod_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Right Homerow Mod Hold/Tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HT_TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32>;
+            hold-trigger-on-release;
+        };
+
+        lk_ht: layer_key_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Layer/Key Hold/Tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HT_TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+        };
+
+        lsln_ht: layer_sticky_layer_normal_release_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Layer/Sticky Layer Normal Release Hold/Tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&n_sl>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HT_TAPPING_TERM_MS>;
+        };
+
+        lsl_ht: layer_sticky_layer_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Layer/Sticky Layer Hold/Tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&sl>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HT_TAPPING_TERM_MS>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
+            layers = <0>;
+        };
+
+        combo_bspace {
+            bindings = <&kp BSPC>;
+            key-positions = <1 2>;
+            layers = <0>;
+        };
+
+        combo_del {
+            bindings = <&kp DEL>;
+            key-positions = <2 3>;
+            layers = <0>;
+        };
+
+        combo_ret {
+            bindings = <&kp RET>;
+            key-positions = <3 4>;
+            layers = <0>;
+        };
+
+        combo_space {
+            bindings = <&kp SPACE>;
+            key-positions = <10 11>;
+            layers = <0>;
+        };
+
+        combo_tab {
+            bindings = <&kp TAB>;
+            key-positions = <13 14>;
+            layers = <0>;
+        };
+
+        combo_conf_layer {
+            bindings = <&ql_sl 6>;
+            key-positions = <6 7 8>;
+            layers = <0>;
+        };
+
+        combo_rgbled_widget_bat {
+            bindings = <&ind_bat>;
+            key-positions = <16 17 18>;
+            layers = <0>;
+        };
+
+        combo_rgbled_widget_con {
+            bindings = <&ind_con>;
+            key-positions = <26 27 28>;
+            layers = <0>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        // layer 0
+        default_layer {
+            display-name = "Colemak Mod DH";
+            bindings = <
+&kp Q  &kp          W  &kp           F  &kp           P  &kp   B        &kp        J  &kp           L  &kp           U  &kp          Y  &kp  SQT
+&kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp   G        &kp        M  &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp    O
+&kp Z  &kp          X  &kp           C  &lhm_ht LALT  D  &kp   V        &kp        K  &rhm_ht LALT  H  &kp_comma_semi   &kp_dot_colon   &kp FSLH
+                       &lsl_ht     4 4  &lsln_ht    1 1  &ms_td         &lk_ht 3 RET  &lk_ht  2 SPACE  &lk_ht   5 BSPC
+            >;
+        };
+
+        // layer 1
+        symbols {
+            display-name = "Symbols";
+            bindings = <
+&none   &kp          PLUS   &kp           LBRC  &kp           RBRC  &kp PIPE        &kp TILDE  &kp           LT     &kp           GT    &kp          UNDER  &kp RA(SQT)
+&kp AT  &lhm_ht LGUI EQUAL  &lhm_ht LSHFT LBKT  &lhm_ht LCTRL RBKT  &kp BSLH        &kp GRAVE  &rhm_ht RCTRL LPAR   &rhm_ht RSHFT RPAR  &rhm_ht RGUI MINUS  &kp EXCL
+&none   &kp          PRCNT  &kp           HASH  &lhm_ht LALT  STAR  &none           &none      &rhm_ht LALT  CARET  &kp           DLLR  &kp          AMPS   &kp RA(DQT)
+                            &none               &sk           RALT  &none           &kp ESC    &kp           TAB    &kp           DEL
+            >;
+        };
+
+        // layer 2
+        navigation {
+            display-name = "Navigation";
+            bindings = <
+&none  &none     &none      &none      &none        &kp HOME     &kp PG_DN  &kp PG_UP  &kp END    &none
+&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none        &kp LEFT     &kp DOWN   &kp UP     &kp RIGHT  &none
+&none  &none     &none      &kp LALT   &none        &kp K_CMENU  &kp INS    &kp PSCRN  &swp_prev  &none
+                 &none      &none      &none        &none        &none      &none
+            >;
+        };
+
+        // layer 3
+        numbers {
+            display-name = "Numbers";
+            bindings = <
+&none  &none     &none      &none      &none        &kp KP_PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY
+&none  &kp LGUI  &kp LSHFT  &kp LCTRL  &none        &kp N0        &kp N4  &kp N5  &kp N6  &kp DOT
+&none  &none     &none      &kp LALT   &none        &kp KP_MINUS  &kp N1  &kp N2  &kp N3  &kp KP_DIVIDE
+                 &none      &none      &none        &none         &none   &none
+            >;
+        };
+
+        // layer 4
+        function {
+            display-name = "Function Keys";
+            bindings = <
+&none  &none     &none      &none      &none        &kp F12   &kp F7  &kp F8  &kp F9  &none
+&none  &sk LGUI  &sk LSHFT  &sk LCTRL  &none        &kp F11   &kp F4  &kp F5  &kp F6  &none
+&none  &none     &none      &sk LALT   &none        &kp F10   &kp F1  &kp F2  &kp F3  &none
+                 &kp CAPS   &none      &none        &none     &none   &none
+            >;
+        };
+
+        // layer 5
+        media {
+            display-name = "Media Keys";
+            bindings = <
+&none  &none  &none  &none  &none        &kp LG(LS(PG_DN))  &kp C_BRI_DN      &kp C_BRI_UP  &kp LG(LS(PG_UP))  &none
+&none  &none  &none  &none  &none        &kp C_MUTE         &kp C_VOL_DN      &kp C_VOL_UP  &kp LG(LC(LS(A)))  &none
+&none  &none  &none  &none  &none        &kp LG(LC(LS(L)))  &kp C_PLAY_PAUSE  &kp LG(LS(S)) &kp C_AL_CALC      &none
+              &none  &none  &none        &none              &none             &none
+            >;
+        };
+
+        // layer 6
+        config {
+            display-name = "Configuration";
+            bindings = <
+&none  &none  &none  &none  &none        &out OUT_BLE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR
+&none  &none  &none  &none  &none        &out OUT_USB  &none         &none         &none         &none
+&none  &none  &none  &none  &none        &none         &none         &none         &none         &none
+              &none  &none  &none        &none         &none         &none
+            >;
+        };
+    };
+};
