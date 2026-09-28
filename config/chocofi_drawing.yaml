@@ -33,6 +33,21 @@ layers:
     - [null, null, null, null, null, '󰖁', '', '', '󰍭', null]
     - [null, null, null, null, null, '', '󰐎', '󱣴', '󰃬', null]
     - [null, null, null, null, null, {type: held}]
+  (AltGr) DEF:
+    - [null, null, null, null, null, null, null, null, null, null]
+    - [null, null, null, null, null, null, null, null, null, null]
+    - [null, null, null, null, null, null, null, null, null, null]
+    - [null, null, null, null, null, null]
+  (AltGr) NUM:
+    - [null, null, null, null, null, null, null, null, null, null]
+    - [null, null, null, null, null, null, null, null, null, null]
+    - [null, null, null, null, null, null, null, null, null, null]
+    - [null, null, null, null, null, null]
+  (AltGr) SYM:
+    - [null, '÷', '“', '”', '¦', '◌̃', 'Ç', '◌̌', '◌̣', null]
+    - ['◌̋', '×', '«', '»', '¬', '◌̀', '◌̆', '◌̊', '¥', '¡']
+    - [null, '◌̧', '◌̄', '¾', null, null, '¼', '£', '½', null]
+    - [null, null, null, null, null, null]
   CONF:
     - [null, null, null, null, null, {type: zmk, t: "OUT BLE"}, {type: zmk, t: "BT0"}, {type: zmk, t: "BT1"}, {type: zmk, t: "BT2"}, {type: zmk, t: "BT CLR"}]
     - [null, null, null, null, null, {type: zmk, t: "OUT USB"}, null, null, null, null]
