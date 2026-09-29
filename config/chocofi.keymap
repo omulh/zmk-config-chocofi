@@ -104,6 +104,16 @@
             quick-tap-ms = <QUICK_TAP_MS>;
         };
 
+        lkh_ht: layer_key_hold_preferred_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Layer/Key Hold-Preferred Hold/Tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+
+            flavor = "hold-preferred";
+            tapping-term-ms = <HT_TAPPING_TERM_MS>;
+        };
+
         lsln_ht: layer_sticky_layer_normal_release_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             display-name = "Layer/Sticky Layer Normal Release Hold/Tap";
@@ -190,10 +200,10 @@
         default_layer {
             display-name = "Colemak Mod DH";
             bindings = <
-&kp Q  &kp          W  &kp           F  &kp           P  &kp   B        &kp        J  &kp           L  &kp           U  &kp          Y  &kp  SQT
-&kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp   G        &kp        M  &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp    O
-&kp Z  &kp          X  &kp           C  &lhm_ht LALT  D  &kp   V        &kp        K  &rhm_ht LALT  H  &kp_comma_semi   &kp_dot_colon   &kp FSLH
-                       &lsl_ht     4 4  &lsln_ht    1 1  &ms_td         &lk_ht 3 RET  &lk_ht  2 SPACE  &lk_ht   5 BSPC
+&kp Q  &kp          W  &kp           F  &kp           P  &kp   B        &kp         J  &kp           L  &kp           U  &kp          Y  &kp  SQT
+&kp A  &lhm_ht LGUI R  &lhm_ht LSHFT S  &lhm_ht LCTRL T  &kp   G        &kp         M  &rhm_ht RCTRL N  &rhm_ht RSHFT E  &rhm_ht RGUI I  &kp    O
+&kp Z  &kp          X  &kp           C  &lhm_ht LALT  D  &kp   V        &kp         K  &rhm_ht LALT  H  &kp_comma_semi   &kp_dot_colon   &kp FSLH
+                       &lsl_ht     4 4  &lsln_ht    1 1  &ms_td         &lkh_ht 3 RET  &lk_ht  2 SPACE  &lk_ht   5 BSPC
             >;
         };
 
