@@ -34,16 +34,6 @@
             release-after-ms = <1000>;
         };
 
-        ql_sl: quick_release_long_wait_sticky_layer {
-            compatible = "zmk,behavior-sticky-key";
-            display-name = "Quick Release, Long Wait Sticky Layer";
-            #binding-cells = <1>;
-            bindings = <&mo>;
-
-            release-after-ms = <2500>;
-            quick-release;
-        };
-
         swp_prev: window_swapper_previous {
             compatible = "zmk,behavior-tri-state";
             display-name = "Window Swapper Previous";
@@ -175,7 +165,7 @@
         };
 
         combo_conf_layer {
-            bindings = <&ql_sl 6>;
+            bindings = <&sl 6>;
             key-positions = <6 7 8>;
             layers = <0>;
         };
