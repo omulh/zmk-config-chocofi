@@ -114,9 +114,9 @@
             tapping-term-ms = <HT_TAPPING_TERM_MS>;
         };
 
-        lsl_ht: layer_sticky_layer_hold_tap {
+        lsl_ht: layer_sticky_layer_quick_release_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            display-name = "Layer/Sticky Layer Hold/Tap";
+            display-name = "Layer/Sticky Layer Quick Release Hold/Tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&sl>;
 
